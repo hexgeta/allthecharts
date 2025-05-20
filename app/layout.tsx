@@ -77,7 +77,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="font-sans">
+    <html lang="en" className="">
       <head>
         <FontLoader weight="bold" />
         <script defer data-domain="allthecharts.com" src="https://plausible.io/js/script.js"></script>        <FontLoader weight="regular" priority={true} />
