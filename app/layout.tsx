@@ -2,9 +2,9 @@ import '@/styles/global.css'
 import { FontLoader } from '@/components/ui/FontLoader'
 import NavBar from '@/components/ui/NavBar'
 import Footer from '@/components/ui/Footer'
-import MobileNavigation from '@/components/ui/MobileNavigation'
 import { Providers } from '@/components/Providers'
 import type { Metadata } from 'next'
+import Script from 'next/script'
 
 // Static layout with revalidation
 export const revalidate = 2592000; // 30 days in seconds
@@ -18,9 +18,9 @@ const FAVICON_FILES = [
 ];
 
 export const metadata: Metadata = {
-  title: 'PlsCharts.com',
-  description: 'Live, real-time PulseChain price charts and statistics tracking PLS, HEX, PLSX and more!',
-  keywords: 'PulseChain, PLS, HEX, PLSX, price charts, crypto statistics, PulseX',
+  title: 'AllTheCharts.xyz',
+  description: 'Charts and statistics on real social problems!',
+  keywords: 'uk statistics, crime, charts, london, crime charts, london crime, uk crime, london crime charts, uk crime charts',
   manifest: '/manifest.json',
   icons: {
     icon: [
@@ -40,21 +40,21 @@ export const metadata: Metadata = {
   },
   appleWebApp: {
     capable: true,
-    title: 'PlsCharts',
+    title: 'AllTheCharts',
     statusBarStyle: 'default'
   },
   openGraph: {
-    title: 'PlsCharts.com',
-    description: 'Live, real-time PulseChain price charts and statistics tracking PLS, HEX, PLSX and more!',
-    url: 'https://www.plscharts.com',
-    siteName: 'PlsCharts.com',
+    title: 'AllTheCharts.xyz',
+    description: 'Charts and statistics on real social problems!',
+    url: 'https://www.allthecharts.xyz',
+    siteName: 'AllTheCharts.xyz',
     images: [
       {
-        url: 'https://www.plscharts.com/opengraph-image.png',
+        url: 'https://www.allthecharts.xyz/opengraph-image.png',
         width: 1200,
         height: 630,
         type: 'image/png',
-        alt: 'PlsCharts.com Preview'
+        alt: 'AllTheCharts Preview'
       }
     ],
     locale: 'en_US',
@@ -62,10 +62,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PlsCharts.com',
-    description: 'Live, real-time PulseChain price charts and statistics tracking PLS, HEX, PLSX and more!',
+    title: 'AllTheCharts.xyz',
+    description: 'Charts and statistics on real social problems!',
     images: {
-      url: 'https://www.plscharts.com/opengraph-image.png',
+      url: 'https://www.allthecharts.com/opengraph-image.png',
       type: 'image/png',
       width: 1200,
       height: 630
@@ -89,7 +89,6 @@ export const viewport = {
 function FontLoadingOptimizer() {
   return (
     <>
-      <FontLoader priority={true} />
       {/* Preconnect to font directory for faster loading */}
       <link 
         rel="preconnect" 
@@ -177,7 +176,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="font-sans scrollbar-hide">
       <head>
-        <script defer data-domain="plscharts.com" src="https://plausible.io/js/script.js"></script>
+        <script defer data-domain="allthecharts.xyz" src="https://plausible.io/js/script.js"></script>
         {/* Prevent mobile browser UI bars from resizing content */}
         <meta name="format-detection" content="telephone=no" />
         <meta name="theme-color" content="#000000" />
@@ -208,12 +207,12 @@ export default function RootLayout({
         ))}
       </head>
       <body className="no-select min-h-screen bg-black text-white overflow-y-auto scrollbar-hide">
+        <FontLoader priority={true} />
         <Providers>
           <div className="flex flex-col min-h-screen scrollbar-hide">
             <NavBar />
             <main className="flex-grow scrollbar-hide">{children}</main>
             <Footer />
-            <MobileNavigation />
           </div>
         </Providers>
       </body>

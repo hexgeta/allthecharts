@@ -1,6 +1,5 @@
 'use client';
 
-import { PulseChainTable } from '@/components/pulse-chain-table'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useEffect, useState } from 'react'
 

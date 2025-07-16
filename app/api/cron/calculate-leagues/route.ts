@@ -77,7 +77,7 @@ async function getTotalHolders(ticker: string): Promise<number> {
     const response = await fetch(apiUrl, {
       headers: {
         'Accept': 'application/json',
-        'User-Agent': 'PLSCharts/1.0'
+        'User-Agent': 'AllTheCharts/1.0'
       }
     });
 

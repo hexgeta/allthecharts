@@ -30,13 +30,13 @@ const Footer = () => {
         <div className="col-span-1">
           <h3 className="text-s font-semibold mb-2">Links</h3>
           <ul className="text-sm space-y-1">
-          <li><a href="" target="_blank" rel="noopener noreferrer" className="text-[rgb(153,153,153)] hover:text-gray-300">Info</a></li>
+          <li><a href="https://x.com/all_the_charts" target="_blank" rel="noopener noreferrer" className="text-[rgb(153,153,153)] hover:text-gray-300">Twitter</a></li>
+
           </ul>
         </div>
         <div className="col-span-1">
-          <h3 className="text-s font-semibold mb-2">Socials</h3>
+          <h3 className="text-s font-semibold mb-2">Links2</h3>
           <ul className="text-sm space-y-1">
-            <li><a href="https://x.com/allthecharts" target="_blank" rel="noopener noreferrer" className="text-[rgb(153,153,153)] hover:text-gray-300">Twitter</a></li>
 
           </ul>
         </div>

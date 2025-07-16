@@ -1,304 +1,197 @@
 'use client'
 
-import React, { useMemo } from 'react'
-import { XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, BarChart, Bar } from 'recharts'
+import React from 'react'
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { CrimeData, PopulationData } from '@/utils/csvParser'
-
-interface ChartDataPoint {
-  date: string
-  value: number
-  formattedDate: string
-}
-
-interface StackedDataPoint {
-  date: string
-  [borough: string]: number | string  // borough values plus date string
-}
-
-interface ChartData {
-  chartPoints: ChartDataPoint[] | StackedDataPoint[]
-  sortedBoroughs: string[]
-}
+import { OptimizedChartData, OptimizedChartDataPoint } from '@/utils/optimizedCsvParser'
 
 interface MpsCrimeChartProps {
-  data: CrimeData[]
-  populationData: PopulationData[]
+  chartData: OptimizedChartData
   selectedBorough: string
   selectedCrimeType: string
-  timeRange: 'all' | 'recent' | 'year'
+  timeRange: 'all' | 'year'
   viewMode: 'absolute' | 'per100k'
 }
 
+// Color palette for different boroughs (all 33 London boroughs)
+const BOROUGH_COLORS = [
+  '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FECA57', '#FF9FF3', '#54A0FF', '#5F27CD',
+  '#00D2D3', '#FF9F43', '#10AC84', '#EE5A24', '#0984E3', '#6C5CE7', '#A29BFE', '#FD79A8',
+  '#E17055', '#81ECEC', '#74B9FF', '#E84393', '#2D3436', '#636E72', '#DDD', '#B2BEC3',
+  '#00B894', '#00CEC9', '#E17055', '#FDCB6E', '#6C5CE7', '#A29BFE', '#FD79A8', '#FF7675',
+  '#74B9FF', '#55A3FF', '#26DE81'
+]
+
 export default function MpsCrimeChart({ 
-  data, 
-  populationData, 
+  chartData, 
   selectedBorough, 
   selectedCrimeType, 
-  timeRange, 
+  timeRange,
   viewMode 
 }: MpsCrimeChartProps) {
-  // Helper function to get population for a borough and year
-  const getPopulation = (borough: string, year: number): number | null => {
-    if (borough === 'all') {
-      // For "all boroughs", sum up all populations for that year
-      // This ensures per-capita calculation uses total London population
-      const yearData = populationData.filter(p => p.year === year)
-      const totalPop = yearData.reduce((sum, p) => sum + p.population, 0)
-      return totalPop > 0 ? totalPop : null
-    } else {
-      // For specific borough, find exact match for the year
-      const pop = populationData.find(p => p.borough === borough && p.year === year)
-      return pop ? pop.population : null
+  // Helper function to format numbers with abbreviations
+  const formatNumber = (value: number): string => {
+    if (value >= 1000000) {
+      return `${Math.round(value / 1000000)}M`
     }
+    if (value >= 1000) {
+      return `${Math.round(value / 1000)}K`
+    }
+    // For per100k rates, show 1 decimal place if it's a decimal, otherwise whole number
+    if (value % 1 !== 0 && value < 100) {
+      return value.toFixed(1)
+    }
+    return Math.round(value).toString()
   }
 
-  // Process data for chart
-  const chartData = useMemo(() => {
-    const filtered = data.filter(item => {
-      const boroughMatch = selectedBorough === 'all' || item.boroughName === selectedBorough
-      const crimeMatch = selectedCrimeType === 'all' || 
-        `${item.majorText} - ${item.minorText}` === selectedCrimeType
-      return boroughMatch && crimeMatch
+  // Format date for display
+  const formatDate = (dateStr: string) => {
+    const [year, month] = dateStr.split('-')
+    const date = new Date(parseInt(year), parseInt(month) - 1)
+    return date.toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'short' 
     })
-
-    if (selectedBorough === 'all') {
-      // Stacked chart logic: separate data by borough
-      const boroughData: { [date: string]: { [borough: string]: number } } = {}
-      
-      filtered.forEach(item => {
-        Object.entries(item.monthlyData).forEach(([date, value]) => {
-          if (!boroughData[date]) {
-            boroughData[date] = {}
-          }
-          
-          const year = parseInt(date.substring(0, 4))
-          let adjustedValue = value
-          
-          // Apply population adjustment for per-capita calculation
-          if (viewMode === 'per100k') {
-            const population = getPopulation(item.boroughName, year)
-            if (population && population > 0) {
-              adjustedValue = (value / population) * 100000
-            }
-          }
-          
-          boroughData[date][item.boroughName] = (boroughData[date][item.boroughName] || 0) + adjustedValue
-        })
-      })
-
-      // Calculate total values per borough for sorting
-      const boroughTotals: { [borough: string]: number } = {}
-      Object.values(boroughData).forEach(dateData => {
-        Object.entries(dateData).forEach(([borough, value]) => {
-          boroughTotals[borough] = (boroughTotals[borough] || 0) + value
-        })
-      })
-
-      // Sort boroughs by total values (descending - largest at bottom of stack)
-      const sortedBoroughs = Object.keys(boroughTotals).sort((a, b) => boroughTotals[b] - boroughTotals[a])
-
-      // Convert to chart format
-      let chartPoints = Object.entries(boroughData).map(([date, boroughValues]) => {
-        const chartPoint: any = { date }
-        
-        // Add borough values in sorted order
-        sortedBoroughs.forEach(borough => {
-          chartPoint[borough] = boroughValues[borough] || 0
-        })
-        
-        return chartPoint
-      }).sort((a, b) => a.date.localeCompare(b.date))
-
-      // Apply time range filter
-      if (timeRange === 'recent') {
-        chartPoints = chartPoints.slice(-24) // Last 2 years
-      } else if (timeRange === 'year') {
-        chartPoints = chartPoints.slice(-12) // Last year
-      }
-
-      return { chartPoints, sortedBoroughs }
-    } else {
-      // Single borough logic (existing logic)
-      const aggregated: { [key: string]: number } = {}
-      
-      filtered.forEach(item => {
-        Object.entries(item.monthlyData).forEach(([date, value]) => {
-          aggregated[date] = (aggregated[date] || 0) + value
-        })
-      })
-
-      // Convert to chart format and sort by date
-      let chartPoints: ChartDataPoint[] = Object.entries(aggregated).map(([date, value]) => {
-        const year = parseInt(date.substring(0, 4))
-        const month = date.substring(4, 6)
-        const formattedDate = `${year}-${month}`
-        
-        // Apply population adjustment for per-capita calculation
-        let adjustedValue = value
-        if (viewMode === 'per100k') {
-          const population = getPopulation(selectedBorough, year)
-          if (population && population > 0) {
-            adjustedValue = (value / population) * 100000
-          } else {
-            // If no population data available, keep original value
-            adjustedValue = value
-          }
-        }
-        
-        return {
-          date,
-          value: adjustedValue,
-          formattedDate
-        }
-      }).sort((a, b) => a.date.localeCompare(b.date))
-
-      // Apply time range filter
-      if (timeRange === 'recent') {
-        chartPoints = chartPoints.slice(-24) // Last 2 years
-      } else if (timeRange === 'year') {
-        chartPoints = chartPoints.slice(-12) // Last year
-      }
-
-      return { chartPoints, sortedBoroughs: [] }
-    }
-  }, [data, selectedBorough, selectedCrimeType, timeRange, viewMode, populationData])
-
-  // Generate colors for boroughs (when stacking)
-  const getBoroughColor = (index: number) => {
-    const colors = [
-      '#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6',
-      '#06b6d4', '#84cc16', '#f97316', '#ec4899', '#6366f1',
-      '#14b8a6', '#eab308', '#dc2626', '#9333ea', '#0891b2',
-      '#65a30d', '#ea580c', '#db2777', '#7c3aed', '#0e7490',
-      '#4d7c0f', '#c2410c', '#be185d', '#5b21b6', '#164e63',
-      '#365314', '#9a3412', '#9d174d', '#4c1d95', '#155e75',
-      '#166534', '#7c2d12', '#831843', '#581c87', '#0c4a6e'
-    ]
-    return colors[index % colors.length]
   }
 
-  // Custom tooltip component for colored borough names
+  // Prepare chart data based on view mode
+  const chartPoints = chartData.chartPoints.map(point => ({
+    ...point,
+    value: viewMode === 'absolute' ? point.absolute : point.per100k
+  }))
+
+  // Custom tooltip component - simplified for performance
   const CustomTooltip = ({ active, payload, label }: any) => {
     if (active && payload && payload.length) {
-      // Sort payload by value in descending order for stacked chart
-      const sortedPayload = selectedBorough === 'all' 
-        ? [...payload].sort((a, b) => b.value - a.value)
-        : payload
+      const data = payload[0].payload
 
-      // Calculate total for stacked chart
-      const total = selectedBorough === 'all' 
-        ? payload.reduce((sum: number, entry: any) => sum + entry.value, 0)
-        : null
-
-      return (
-        <div className="bg-black/85 p-3 border border-white/20 rounded-lg">
-          <p className="text-white mb-2">{formatDate(label)}</p>
-          {selectedBorough === 'all' && (
-            <p className="text-white text-sm font-bold mb-2 pb-2 border-b border-white/20">
-              Total: {Math.round(total).toLocaleString()}
-            </p>
-          )}
-          {selectedBorough === 'all' ? (
-            // For stacked chart, show boroughs in 2 columns
-            <div className="grid grid-cols-2 gap-x-4 gap-y-1">
-              {sortedPayload.map((entry: any, index: number) => {
-                const formattedValue = Math.round(entry.value).toLocaleString()
-                
-                return (
-                  <p key={index} className="text-sm">
-                    <span style={{ color: entry.color }} className="font-medium">
-                      {entry.dataKey}
-                    </span>
-                    : {formattedValue}
-                  </p>
-                )
-              })}
-            </div>
-          ) : (
-            // For single borough chart
-            sortedPayload.map((entry: any, index: number) => {
-              const formattedValue = Math.round(entry.value).toLocaleString()
-              
-              return (
-                <p key={index} className="text-white text-sm">
-                  {viewMode === 'absolute' ? 'Crime Count' : 'Crime Count per 100k'}: {formattedValue}
-                </p>
-              )
+      if (selectedBorough === 'All Boroughs') {
+        // Stacked chart tooltip - simplified
+        const boroughEntries: Array<{name: string, value: number, color: string}> = []
+        
+        chartData.sortedBoroughs.forEach((borough, index) => {
+          const suffix = viewMode === 'absolute' ? '_absolute' : '_per100k'
+          const value = data[`${borough}${suffix}`] || 0
+          if (value > 0) {
+            boroughEntries.push({
+              name: borough,
+              value: value,
+              color: BOROUGH_COLORS[index % BOROUGH_COLORS.length]
             })
-          )}
-        </div>
-      )
+          }
+        })
+
+        // Sort by value for display
+        boroughEntries.sort((a, b) => b.value - a.value)
+        
+        // Organize boroughs into columns of 10
+        const boroughColumns: Array<Array<{name: string, value: number, color: string}>> = []
+        for (let i = 0; i < boroughEntries.length; i += 10) {
+          boroughColumns.push(boroughEntries.slice(i, i + 10))
+        }
+        
+        return (
+          <div className="bg-black/90 border border-white/20 rounded-lg p-3 shadow-xl max-w-4xl">
+            <p className="text-white font-medium mb-3">{formatDate(label)}</p>
+            <div className={`grid gap-x-6 gap-y-1 max-h-80 overflow-y-auto`} style={{ gridTemplateColumns: `repeat(${boroughColumns.length}, minmax(180px, 1fr))` }}>
+              {boroughColumns.map((column, columnIndex) => (
+                <div key={columnIndex} className="space-y-1">
+                  {column.map(({ name, value, color }) => (
+                    <div key={name} className="flex items-center justify-between text-sm">
+                      <div className="flex items-center">
+                        <div 
+                          className="w-3 h-3 rounded-sm mr-2 flex-shrink-0" 
+                          style={{ backgroundColor: color }}
+                        />
+                        <span className="text-gray-300 truncate">{name}</span>
+                      </div>
+                      <span className="text-white font-medium ml-2">{value.toLocaleString()}</span>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+            <div className="border-t border-white/20 mt-3 pt-2">
+              <div className="flex justify-between text-sm">
+                <span className="text-gray-300">Total:</span>
+                <span className="text-white font-medium">{data.value?.toLocaleString()}</span>
+              </div>
+            </div>
+          </div>
+        )
+      } else {
+        // Single borough tooltip
+        return (
+          <div className="bg-black/90 border border-white/20 rounded-lg p-3 shadow-xl">
+            <p className="text-white font-medium">{formatDate(label)}</p>
+            <p className="text-gray-300">
+              {viewMode === 'absolute' ? 'Count' : 'Per 100k'}: {' '}
+              <span className="text-white font-medium">{data.value?.toLocaleString()}</span>
+            </p>
+          </div>
+        )
+      }
     }
     return null
   }
 
-  const formatDate = (dateStr: string) => {
-    const year = dateStr.substring(0, 4)
-    const month = dateStr.substring(4, 6)
-    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                       'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-    return `${monthNames[parseInt(month) - 1]} ${year}`
-  }
-
   return (
-    <div className="w-full space-y-6">
-      {/* Chart */}
-      <Card className="bg-black border-white/20">
-        <CardHeader>
-          <CardTitle className="text-white">
-            Crime Trends: {selectedBorough === 'all' ? 'All Boroughs' : selectedBorough}
-          </CardTitle>
-          <CardDescription className="text-gray-400">
-            {selectedCrimeType === 'all' ? 'All Crime Types' : selectedCrimeType}
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="h-96">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={chartData.chartPoints} margin={{ top: 30, right: 20, left: 20, bottom: 30 }}>
-                <CartesianGrid 
-                  strokeDasharray="3 3" 
-                  stroke="rgba(136, 136, 136, 0.2)" 
-                  vertical={false} 
-                />
-                <XAxis 
-                  dataKey="date"
-                  tickFormatter={formatDate}
-                  interval="preserveStartEnd"
-                  axisLine={{ stroke: '#888', strokeWidth: 0 }}
-                  tickLine={false}
-                  tick={{ fill: '#888', fontSize: 14, dy: 5 }}
-                />
-                <YAxis 
-                  axisLine={false}
-                  tickLine={false}
-                  tick={{ fill: '#888', fontSize: 14, dx: -5 }}
-                  tickFormatter={(value) => viewMode === 'per100k' ? value.toFixed(1) : value.toLocaleString()}
-                />
-                <Tooltip content={<CustomTooltip />} />
-                {selectedBorough === 'all' ? (
-                  chartData.sortedBoroughs.map((borough, index) => (
-                    <Bar 
+    <Card className="bg-black/20 border-gray-800">
+      <CardHeader>
+        <CardTitle className="text-white">
+          Crime Trends: {selectedBorough}
+        </CardTitle>
+        <CardDescription className="text-gray-400">
+          {selectedCrimeType}
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <div className="h-96">
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart data={chartPoints} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
+              <XAxis 
+                dataKey="date"
+                tickFormatter={formatDate}
+                ticks={chartPoints.map(point => point.date).filter(date => date.endsWith('-01'))}
+                axisLine={{ stroke: '#888', strokeWidth: 0 }}
+                tickLine={false}
+                tick={{ fill: '#888', fontSize: 14, dy: 5 }}
+              />
+              <YAxis 
+                axisLine={false}
+                tickLine={false}
+                tick={{ fill: '#888', fontSize: 14, dx: -5 }}
+                tickFormatter={formatNumber}
+              />
+              <Tooltip content={<CustomTooltip />} />
+              
+              {selectedBorough === 'All Boroughs' ? (
+                // Stacked bars for top boroughs - much more efficient
+                chartData.sortedBoroughs.map((borough, index) => {
+                  const dataKey = `${borough}_${viewMode}`
+                  return (
+                    <Bar
                       key={borough}
-                      dataKey={borough} 
-                      stackId="a" 
-                      fill={getBoroughColor(index)} 
-                      name={borough} 
+                      dataKey={dataKey}
+                      stackId="boroughs"
+                      fill={BOROUGH_COLORS[index % BOROUGH_COLORS.length]}
+                      stroke="none"
                     />
-                  ))
-                ) : (
-                  <Bar 
-                    dataKey="value" 
-                    fill="#3b82f6" 
-                    name={viewMode === 'absolute' ? 'Crime Count' : 'Crime Count per 100k'} 
-                  />
-                )}
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
-        </CardContent>
-      </Card>
-    </div>
+                  )
+                })
+              ) : (
+                // Single bar for individual borough
+                <Bar 
+                  dataKey="value" 
+                  fill="#3B82F6" 
+                  stroke="none"
+                />
+              )}
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </CardContent>
+    </Card>
   )
 } 

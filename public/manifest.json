@@ -1,7 +1,7 @@
 {
-  "name": "PlsCharts",
-  "short_name": "PlsCharts",
-  "description": "Live, real-time PulseChain price charts and statistics tracking PLS, HEX, PLSX and more",
+  "name": "AllTheCharts",
+  "short_name": "AllTheCharts",
+  "description": "Charts and statistics on real social problems!",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",

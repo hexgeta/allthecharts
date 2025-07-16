@@ -15,30 +15,29 @@ interface ChartDataPoint {
 interface PopulationChartProps {
   populationData: PopulationData[]
   selectedBorough: string
-  timeRange: 'all' | 'recent' | 'year'
+  timeRange: 'all' | 'year'
 }
 
 export default function PopulationChart({ populationData, selectedBorough, timeRange }: PopulationChartProps) {
   // Helper function to format large numbers with abbreviations
   const formatLargeNumber = (value: number): string => {
     if (value >= 1000000000) {
-      return `${(value / 1000000000).toFixed(1)}B`
+      return `${Math.round(value / 1000000000)}B`
     }
     if (value >= 1000000) {
-      return `${(value / 1000000).toFixed(1)}M`
+      return `${Math.round(value / 1000000)}M`
     }
     if (value >= 1000) {
-      return `${(value / 1000).toFixed(1)}K`
+      return `${Math.round(value / 1000)}K`
     }
-    return value.toString()
+    return Math.round(value).toString()
   }
 
   // Process data for chart
   const chartData = useMemo(() => {
-    const filtered = populationData.filter(item => {
-      const boroughMatch = selectedBorough === 'all' || item.borough === selectedBorough
-      return boroughMatch
-    })
+    const filtered = selectedBorough === 'All Boroughs' 
+      ? populationData 
+      : populationData.filter(item => item.borough === selectedBorough)
 
     // Aggregate data by year, separating historical and predicted
     const aggregated: { [key: number]: { historical: number; predicted: number } } = {}
@@ -64,9 +63,7 @@ export default function PopulationChart({ populationData, selectedBorough, timeR
     })).sort((a, b) => a.year - b.year)
 
     // Apply time range filter
-    if (timeRange === 'recent') {
-      chartPoints = chartPoints.slice(-10) // Show more years to see both historical and predicted
-    } else if (timeRange === 'year') {
+    if (timeRange === 'year') {
       chartPoints = chartPoints.slice(-1) // Last year
     }
 
