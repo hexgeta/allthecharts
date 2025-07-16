@@ -4,6 +4,7 @@ module.exports = {
     content: [
       "./pages/**/*.{js,ts,jsx,tsx}",
       "./components/**/*.{js,ts,jsx,tsx}",
+      "./app/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
     	extend: {
@@ -99,10 +100,32 @@ module.exports = {
     		},
     		fontFamily: {
     			sans: [
-					'Archia',
-    				'ui-sans-serif',
-    				'system-ui',
-    				'sans-serif',
+					'Departure Mono',
+					'ui-monospace',
+					'SFMono-Regular',
+					'"SF Mono"',
+					'Consolas',
+					'"Liberation Mono"',
+					'Menlo',
+					'monospace',
+					'system-ui',
+					'-apple-system',
+					'BlinkMacSystemFont',
+					'"Segoe UI"',
+					'Roboto',
+					'"Helvetica Neue"',
+					'Arial',
+					'sans-serif',
+    			],
+    			mono: [
+    				'Departure Mono',
+    				'ui-monospace',
+    				'SFMono-Regular',
+    				'"SF Mono"',
+    				'Consolas',
+    				'"Liberation Mono"',
+    				'Menlo',
+    				'monospace',
     			],
     		},
     	}

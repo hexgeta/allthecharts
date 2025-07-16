@@ -1,7 +1,15 @@
 @font-face {
+  font-family: 'Departure Mono';
+  src: url('/fonts/Archia/departure-mono-regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'Archia';
-  src: url('/fonts/Archia/archia-regular.woff2') format('woff2');
-  font-weight: 400;
+  src: url('/fonts/Archia/archia-regular.woff') format('woff');
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
@@ -9,7 +17,7 @@
 @font-face {
   font-family: 'Archia';
   src: url('/fonts/Archia/archia-bold.woff2') format('woff2');
-  font-weight: 700;
+  font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
@@ -21,6 +29,8 @@
 :root {
   --background-color: #000000;
   --text-color: #ffffff;
+  --font-sans: 'Archia', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  --font-mono: 'Departure Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 .skeleton {
@@ -56,6 +66,40 @@
 html,
 body {
   @apply w-full m-0 font-sans bg-[var(--background-color)] text-[var(--text-color)];
+  font-family: var(--font-sans);
+  /* Prevent mobile browser UI bars from resizing content */
+  height: 100vh;
+  height: 100svh; /* Small viewport height - static */
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+/* Allow scrolling in the main content area */
+body {
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Prevent address bar hiding/showing from affecting layout */
+@supports (height: 100svh) {
+  html, body {
+    height: 100svh;
+  }
+}
+
+/* Additional mobile browser UI prevention */
+@media screen and (max-width: 768px) {
+  html {
+    height: -webkit-fill-available;
+    height: fill-available;
+  }
+  
+  body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    min-height: fill-available;
+  }
 }
 
 @keyframes wave {
@@ -75,6 +119,7 @@ body {
     transform: rotate(0deg);
   }
 }
+
 .App {
   @apply max-w-[1200px] mx-auto relative;
 }
@@ -113,12 +158,7 @@ a {
   @apply text-inherit no-underline;
 }
 
-/* Adjust text color for inputs and textareas */
-input,
-textarea {
-  @apply text-[var(--background-color)];
-}
-
+/* Remove the problematic input styles */
 /* Optional: Style scrollbars for webkit browsers */
 ::-webkit-scrollbar {
   @apply w-3;
@@ -130,6 +170,47 @@ textarea {
 
 ::-webkit-scrollbar-thumb {
   @apply bg-neutral-800 rounded-md border-[3px] border-solid border-[var(--background-color)];
+}
+
+/* Hide scrollbars utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;             /* Safari and Chrome */
+}
+
+/* Global scrollbar hiding for all elements */
+* {
+  -webkit-overflow-scrolling: touch;
+}
+
+*::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+  display: none;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: transparent;
+  display: none;
+}
+
+/* Enhanced mobile scrollbar hiding */
+@supports (-webkit-overflow-scrolling: touch) {
+  * {
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  *::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
 }
 
 @layer base {
@@ -215,6 +296,43 @@ textarea {
 
 .hamburger-line {
   @apply w-[25px] h-[3px] bg-white my-1 transition-all duration-300;
+}
+
+/* No-select utility classes */
+.no-select {
+  @apply select-none !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  pointer-events: auto !important;
+}
+
+.no-select * {
+  @apply select-none !important;
+  pointer-events: auto !important;
+}
+
+.no-select img {
+  -webkit-user-drag: none !important;
+  -khtml-user-drag: none !important;
+  -moz-user-drag: none !important;
+  -o-user-drag: none !important;
+  user-drag: none !important;
+  pointer-events: none !important;
+}
+
+/* Text selection styling for better visibility */
+::selection {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+}
+
+::-moz-selection {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
 }
 
 /* Only hide overflow on desktop for radio page */

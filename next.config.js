@@ -30,14 +30,22 @@ const nextConfig = {
         source: '/livestream',
         destination: 'https://x.com/i/broadcasts/1YqxookRyOvxv',
         permanent: false,
-      },
-      
+      }
+    ]
+  },
+  async rewrites() {
+    return [
+      {
+        // Match Ethereum addresses (0x followed by 40 hex characters)
+        source: '/0x:address([a-fA-F0-9]{40})',
+        destination: '/address/0x:address',
+      }
     ]
   },
   async headers() {
     return [
       {
-        // Match all image files
+        // Match all coin logo image files
         source: '/coin-logos/:path*',
         headers: [
           {
@@ -65,7 +73,7 @@ const nextConfig = {
         ],
       },
       {
-        source: '/favicon.png',
+        source: '/favicon.svg',
         headers: [
           {
             key: 'Cache-Control',
