@@ -13,12 +13,12 @@ export const revalidate = 2592000; // 30 days in seconds
 // Navigation links configuration
 const NAV_LINKS = [
   { 
-    href: '/crime-analysis', 
+    href: '/crime/london', 
     label: 'Crime', 
     mobileLabel: 'Crime',
     hasDropdown: true,
     dropdownItems: [
-      { href: '/crime-analysis', label: 'London' }
+      { href: '/crime/london', label: 'London' }
     ]
   },
 ];
