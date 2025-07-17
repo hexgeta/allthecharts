@@ -85,7 +85,7 @@ function formatTShares(num: number): string {
     return (num / 1000).toFixed(1) + 'K'
   }
   if (num >= 100) {
-    return Math.round(num).toString()
+    return Math.round(num).toLocaleString()
   }
   if (num >= 1) {
     return num.toFixed(1)

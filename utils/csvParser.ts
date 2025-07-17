@@ -514,10 +514,10 @@ export function processCrimeData(
       // Calculate yearly per100k rates (re-calculate based on yearly totals and population)
       chartPoints = Object.values(yearlyAggregated).map(yearData => {
         const year = parseInt(yearData.date)
-        const totalPopulation = getTotalLondonPopulation(populationData, year)
         
-        // Calculate main per100k rate
-        yearData.per100k = totalPopulation > 0 ? (yearData.absolute / totalPopulation) * 100000 : 0
+        // Calculate main per100k rate for selected borough
+        const selectedBoroughPopulation = getPopulationForBorough(populationData, selectedBorough, year)
+        yearData.per100k = selectedBoroughPopulation > 0 ? (yearData.absolute / selectedBoroughPopulation) * 100000 : 0
         
         // Calculate borough per100k rates
         sortedBoroughs.forEach(borough => {

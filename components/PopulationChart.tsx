@@ -39,7 +39,7 @@ export default function PopulationChart({ populationData, selectedBorough, timeR
     if (value >= 1000) {
       return `${Math.round(value / 1000)}K`
     }
-    return Math.round(value).toString()
+    return Math.round(value).toLocaleString()
   }
 
   // Process data for chart - include all borough data for tooltip

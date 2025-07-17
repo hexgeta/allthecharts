@@ -113,7 +113,7 @@ const NavBar = () => {
               : 'text-[rgb(153,153,153)] hover:text-white'
           )}
         >
-          All The Charts
+          AllTheCharts
         </Link>
         
         <div className="hidden sm:flex items-center justify-between flex-grow ml-6 relative z-[100]">

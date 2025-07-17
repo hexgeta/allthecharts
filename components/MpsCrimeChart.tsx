@@ -45,7 +45,15 @@ export default function MpsCrimeChart({
     if (value % 1 !== 0 && value < 100) {
       return value.toFixed(1)
     }
-    return Math.round(value).toString()
+    return Math.round(value).toLocaleString()
+  }
+
+  // Helper function to format per100k rates (no decimals for 100+)
+  const formatPer100k = (value: number): string => {
+    if (value >= 100) {
+      return Math.round(value).toLocaleString()
+    }
+    return value.toFixed(1)
   }
 
   // Format date for display on X-axis (just year)
@@ -119,7 +127,7 @@ export default function MpsCrimeChart({
                 <span className="text-white font-semibold text-lg">
                   {viewMode === 'absolute' 
                     ? data.value?.toLocaleString() 
-                    : `${data.value?.toFixed(1)} per 100k`
+                    : `${data.value ? formatPer100k(data.value) : '0'} per 100k`
                   }
                 </span>
               </div>
@@ -144,7 +152,7 @@ export default function MpsCrimeChart({
                       <span className="text-white font-medium ml-2 flex-shrink-0">
                         {viewMode === 'absolute' 
                           ? value.toLocaleString() 
-                          : `${value.toFixed(1)}`
+                          : formatPer100k(value)
                         }
                       </span>
                     </div>
@@ -192,7 +200,7 @@ export default function MpsCrimeChart({
                                  <span className="text-white font-semibold text-lg ml-2">
                    {viewMode === 'absolute' 
                      ? data.absolute?.toLocaleString() 
-                     : `${data.per100k?.toFixed(1)} per 100k`
+                     : `${data.per100k ? formatPer100k(data.per100k) : '0'} per 100k`
                    }
                  </span>
               </div>
@@ -217,7 +225,7 @@ export default function MpsCrimeChart({
                       <span className={`ml-2 flex-shrink-0 ${isSelected ? 'text-blue-200 font-semibold' : 'text-white font-medium'}`}>
                         {viewMode === 'absolute' 
                           ? value.toLocaleString() 
-                          : `${value.toFixed(1)}`
+                          : formatPer100k(value)
                         }
                       </span>
                     </div>
