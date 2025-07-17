@@ -76,7 +76,7 @@ function loadPopulationData() {
     boroughPopulations[borough][year] += population;
   });
   
-  // Generate predictions for 2016-2025 using linear regression
+  // Generate predictions for 2016-2030 using linear regression
   const allData = [];
   
   Object.keys(boroughPopulations).forEach(borough => {
@@ -93,11 +93,11 @@ function loadPopulationData() {
       });
     });
     
-    // Generate predictions for 2016-2025
+    // Generate predictions for 2016-2030
     if (years.length >= 2) {
       const { slope, intercept } = linearRegression(years, populations);
       
-      for (let year = 2016; year <= 2025; year++) {
+      for (let year = 2016; year <= 2030; year++) {
         if (!boroughPopulations[borough][year]) {
           const predictedPopulation = Math.round(slope * year + intercept);
           allData.push({

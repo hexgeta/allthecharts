@@ -3,17 +3,17 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import MpsCrimeChart from '@/components/MpsCrimeChart'
 import PopulationChart from '@/components/PopulationChart'
-import { loadOptimizedCrimeData, processOptimizedCrimeData, OptimizedCrimeData } from '@/utils/optimizedCsvParser'
-import { loadPopulationDataFromPublic, PopulationData } from '@/utils/csvParser'
+import { loadCrimeDataFromPublic, loadPopulationDataFromPublic, processCrimeData, CrimeData, PopulationData } from '@/utils/csvParser'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Alert, AlertDescription } from '@/components/ui/alert'
+import { Switch } from '@/components/ui/switch'
 import { Loader2, Upload, BarChart3 } from 'lucide-react'
 
 export default function CrimeAnalysisPage() {
-  const [crimeData, setCrimeData] = useState<OptimizedCrimeData[]>([])
+  const [crimeData, setCrimeData] = useState<CrimeData[]>([])
   const [populationData, setPopulationData] = useState<PopulationData[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -21,8 +21,9 @@ export default function CrimeAnalysisPage() {
   // Filter states
   const [selectedBorough, setSelectedBorough] = useState('All Boroughs')
   const [selectedCrimeType, setSelectedCrimeType] = useState('All Crime Types')
-  const [timeRange, setTimeRange] = useState<'all' | 'year'>('all')
-  const [viewMode, setViewMode] = useState<'absolute' | 'per100k'>('absolute')
+  const [timeGranularity, setTimeGranularity] = useState<'monthly' | 'yearly'>('monthly')
+  const timeRange = 'all' // Always use all time data
+
 
   // Load optimized data on component mount
   useEffect(() => {
@@ -31,13 +32,13 @@ export default function CrimeAnalysisPage() {
         setLoading(true)
         setError(null)
         
-        // Load optimized crime data and population data in parallel
-        const [optimizedCrime, population] = await Promise.all([
-          loadOptimizedCrimeData(),
+        // Load crime data and population data in parallel
+        const [crime, population] = await Promise.all([
+          loadCrimeDataFromPublic(),
           loadPopulationDataFromPublic()
         ])
         
-        setCrimeData(optimizedCrime)
+        setCrimeData(crime)
         setPopulationData(population)
       } catch (err) {
         console.error('Error loading data:', err)
@@ -72,16 +73,16 @@ export default function CrimeAnalysisPage() {
 
   // Process data for charts
   const chartData = useMemo(() => {
-    if (crimeData.length === 0) return null
-    return processOptimizedCrimeData(crimeData, selectedBorough, selectedCrimeType, timeRange)
-  }, [crimeData, selectedBorough, selectedCrimeType, timeRange])
+    if (crimeData.length === 0 || populationData.length === 0) return null
+    return processCrimeData(crimeData, populationData, selectedBorough, selectedCrimeType, timeRange, timeGranularity)
+  }, [crimeData, populationData, selectedBorough, selectedCrimeType, timeRange, timeGranularity])
 
   if (loading) {
     return (
       <div className="min-h-screen bg-black flex items-center justify-center">
         <div className="text-center">
           <Loader2 className="h-8 w-8 animate-spin text-white mx-auto mb-4" />
-          <p className="text-gray-300">Loading optimized crime data...</p>
+          <p className="text-gray-300">Loading charts...</p>
         </div>
       </div>
     )
@@ -104,9 +105,9 @@ export default function CrimeAnalysisPage() {
       <div className="max-w-7xl mx-auto space-y-6">
         {/* Header */}
         <div className="text-center space-y-2">
-          <h1 className="text-4xl font-bold text-white">London Crime & Population Data</h1>
+          <h1 className="text-4xl font-bold text-white">London Crime</h1>
           <p className="text-gray-400 text-lg">
-            Interactive visualization of Metropolitan Police crime statistics and population data from 2010-2025
+            Interactive visualization of Metropolitan Police crime statistics and population data from 2010-2030
           </p>
         </div>
 
@@ -119,14 +120,14 @@ export default function CrimeAnalysisPage() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               <div>
                 <label className="text-sm font-medium mb-2 block text-gray-300">Borough</label>
                 <Select value={selectedBorough} onValueChange={setSelectedBorough}>
-                  <SelectTrigger className="bg-gray-900 border-gray-700 text-white">
+                  <SelectTrigger className="bg-black border-white/10 text-white focus:border-white/10 focus:ring-white/10">
                     <SelectValue />
                   </SelectTrigger>
-                  <SelectContent className="bg-gray-900 border-gray-700">
+                  <SelectContent className="bg-black border-white/10">
                     {uniqueBoroughs.map(borough => (
                       <SelectItem key={borough} value={borough} className="text-white hover:bg-gray-800">
                         {borough}
@@ -139,10 +140,10 @@ export default function CrimeAnalysisPage() {
               <div>
                 <label className="text-sm font-medium mb-2 block text-gray-300">Crime Type</label>
                 <Select value={selectedCrimeType} onValueChange={setSelectedCrimeType}>
-                  <SelectTrigger className="bg-gray-900 border-gray-700 text-white">
+                  <SelectTrigger className="bg-black border-white/10 text-white focus:border-white/10 focus:ring-white/10">
                     <SelectValue />
                   </SelectTrigger>
-                  <SelectContent className="bg-gray-900 border-gray-700">
+                  <SelectContent className="bg-black border-white/10">
                     {uniqueCrimeTypes.map(crimeType => (
                       <SelectItem key={crimeType} value={crimeType} className="text-white hover:bg-gray-800">
                         {crimeType}
@@ -153,44 +154,22 @@ export default function CrimeAnalysisPage() {
               </div>
               
               <div>
-                <label className="text-sm font-medium mb-2 block text-gray-300">Time Range</label>
-                <div className="flex gap-2">
-                  <Button
-                    variant={timeRange === 'all' ? 'default' : 'outline'}
-                    onClick={() => setTimeRange('all')}
-                    size="sm"
-                  >
-                    All Time
-                  </Button>
-                  <Button
-                    variant={timeRange === 'year' ? 'default' : 'outline'}
-                    onClick={() => setTimeRange('year')}
-                    size="sm"
-                  >
-                    Last Year
-                  </Button>
+                <label className="text-sm font-medium mb-2 block text-gray-300">Time Granularity</label>
+                <div className="flex items-center space-x-3">
+                  <span className={`text-sm ${timeGranularity === 'monthly' ? 'text-white font-medium' : 'text-gray-400'}`}>
+                    Monthly
+                  </span>
+                  <Switch
+                    checked={timeGranularity === 'yearly'}
+                    onCheckedChange={(checked) => setTimeGranularity(checked ? 'yearly' : 'monthly')}
+                    className="data-[state=checked]:bg-[#3B82F6]"
+                  />
+                  <span className={`text-sm ${timeGranularity === 'yearly' ? 'text-white font-medium' : 'text-gray-400'}`}>
+                    Yearly
+                  </span>
                 </div>
               </div>
-              
-              <div>
-                <label className="text-sm font-medium mb-2 block text-gray-300">View Mode (Crime Only)</label>
-                <div className="flex gap-2">
-                  <Button
-                    variant={viewMode === 'absolute' ? 'default' : 'outline'}
-                    onClick={() => setViewMode('absolute')}
-                    size="sm"
-                  >
-                    Absolute
-                  </Button>
-                  <Button
-                    variant={viewMode === 'per100k' ? 'default' : 'outline'}
-                    onClick={() => setViewMode('per100k')}
-                    size="sm"
-                  >
-                    Per 100k
-                  </Button>
-                </div>
-              </div>
+
             </div>
           </CardContent>
         </Card>
@@ -198,13 +177,26 @@ export default function CrimeAnalysisPage() {
         {/* Charts */}
         <div className="space-y-6">
           {chartData && (
-            <MpsCrimeChart 
-              chartData={chartData}
-              selectedBorough={selectedBorough}
-              selectedCrimeType={selectedCrimeType}
-              timeRange={timeRange}
-              viewMode={viewMode}
-            />
+            <>
+              <MpsCrimeChart 
+                chartData={chartData}
+                selectedBorough={selectedBorough}
+                selectedCrimeType={selectedCrimeType}
+                timeRange={timeRange}
+                viewMode="absolute"
+                timeGranularity={timeGranularity}
+                title="Crime Trends (Absolute Numbers)"
+              />
+              <MpsCrimeChart 
+                chartData={chartData}
+                selectedBorough={selectedBorough}
+                selectedCrimeType={selectedCrimeType}
+                timeRange={timeRange}
+                viewMode="per100k"
+                timeGranularity={timeGranularity}
+                title="Crime Trends (Per 100k Population)"
+              />
+            </>
           )}
           <PopulationChart 
             populationData={populationData}

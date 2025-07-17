@@ -26,6 +26,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Leaflet CSS */
+@import 'leaflet/dist/leaflet.css';
+
+/* Mapbox GL CSS */
+@import 'mapbox-gl/dist/mapbox-gl.css';
+
 :root {
   --background-color: #000000;
   --text-color: #ffffff;
@@ -92,13 +98,13 @@ body {
 @media screen and (max-width: 768px) {
   html {
     height: -webkit-fill-available;
-    height: fill-available;
+    height: stretch;
   }
   
   body {
     min-height: 100vh;
     min-height: -webkit-fill-available;
-    min-height: fill-available;
+    min-height: stretch;
   }
 }
 

@@ -44,7 +44,9 @@ export async function loadOptimizedCrimeData(): Promise<OptimizedCrimeData[]> {
     const content = await response.text()
     const rows = parseOptimizedCSV(content)
     
-    return rows.map(row => {
+    console.log(`📊 Loaded ${rows.length} rows from optimized-crime-data.csv`)
+    
+    const result = rows.map(row => {
       const monthlyData: { [key: string]: number } = {}
       const monthlyPer100k: { [key: string]: number } = {}
       
@@ -67,6 +69,15 @@ export async function loadOptimizedCrimeData(): Promise<OptimizedCrimeData[]> {
         monthlyPer100k
       }
     })
+    
+    // Debug: Log a sample of the data
+    console.log('📊 Sample crime data:', result[0])
+    if (result[0] && result[0].monthlyData) {
+      console.log('📊 Sample dates available:', Object.keys(result[0].monthlyData).slice(0, 10))
+      console.log('📊 Looking for 202106:', result[0].monthlyData['202106'])
+    }
+    
+    return result
   } catch (error) {
     console.error('Error loading optimized crime data:', error)
     throw error
@@ -80,14 +91,19 @@ export function processOptimizedCrimeData(
   selectedCrimeType: string,
   timeRange: 'all' | 'year'
 ): OptimizedChartData {
+  console.log('📊 Processing data with filters:', { selectedBorough, selectedCrimeType, timeRange })
+  console.log('📊 Input data length:', data.length)
+  
   // Filter data based on selections - simplified
   let filtered = data.filter(item => {
     if (selectedBorough !== 'All Boroughs' && item.boroughName !== selectedBorough) return false
     if (selectedCrimeType !== 'All Crime Types' && `${item.majorText} - ${item.minorText}` !== selectedCrimeType) return false
     return true
   })
+  
+  console.log('📊 Filtered data length:', filtered.length)
 
-  if (selectedBorough === 'All Boroughs') {
+      if (selectedBorough === 'All Boroughs') {
     // Stacked chart logic for all boroughs - optimized for performance
     const dateAggregated: { 
       [date: string]: { 
@@ -109,6 +125,9 @@ export function processOptimizedCrimeData(
         })
       }
     })
+    
+    console.log('📊 Date aggregated keys sample:', Object.keys(dateAggregated).slice(0, 10))
+    console.log('📊 Data for 202106:', dateAggregated['202106'])
 
     // Get all unique boroughs and sort by total crime count
     const boroughTotals: { [borough: string]: number } = {}
@@ -151,6 +170,10 @@ export function processOptimizedCrimeData(
     if (timeRange === 'year') {
       chartPoints = chartPoints.slice(-12) // Last year
     }
+
+    console.log('📊 Final chart points length:', chartPoints.length)
+    const june2021Point = chartPoints.find(p => p.date === '2021-06')
+    console.log('📊 June 2021 data point:', june2021Point)
 
     return { chartPoints, sortedBoroughs }
   } else {

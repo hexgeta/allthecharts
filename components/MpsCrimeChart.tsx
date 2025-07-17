@@ -3,14 +3,16 @@
 import React from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { OptimizedChartData, OptimizedChartDataPoint } from '@/utils/optimizedCsvParser'
+import { ChartData, ChartDataPoint } from '@/utils/csvParser'
 
 interface MpsCrimeChartProps {
-  chartData: OptimizedChartData
+  chartData: ChartData
   selectedBorough: string
   selectedCrimeType: string
   timeRange: 'all' | 'year'
   viewMode: 'absolute' | 'per100k'
+  timeGranularity: 'monthly' | 'yearly'
+  title?: string
 }
 
 // Color palette for different boroughs (all 33 London boroughs)
@@ -27,7 +29,9 @@ export default function MpsCrimeChart({
   selectedBorough, 
   selectedCrimeType, 
   timeRange,
-  viewMode 
+  viewMode,
+  timeGranularity,
+  title
 }: MpsCrimeChartProps) {
   // Helper function to format numbers with abbreviations
   const formatNumber = (value: number): string => {
@@ -44,14 +48,27 @@ export default function MpsCrimeChart({
     return Math.round(value).toString()
   }
 
-  // Format date for display
+  // Format date for display on X-axis (just year)
   const formatDate = (dateStr: string) => {
     const [year, month] = dateStr.split('-')
-    const date = new Date(parseInt(year), parseInt(month) - 1)
-    return date.toLocaleDateString('en-US', { 
-      year: 'numeric', 
-      month: 'short' 
-    })
+    return year
+  }
+
+  // Format date for tooltip (Month Year or just Year)
+  const formatTooltipDate = (dateStr: string) => {
+    if (dateStr.includes('-')) {
+      // Monthly format: "YYYY-MM"
+      const [year, month] = dateStr.split('-')
+      const monthNames = [
+        'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+        'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+      ]
+      const monthIndex = parseInt(month) - 1
+      return `${monthNames[monthIndex]} ${year}`
+    } else {
+      // Yearly format: "YYYY"
+      return dateStr
+    }
   }
 
   // Prepare chart data based on view mode
@@ -66,11 +83,11 @@ export default function MpsCrimeChart({
       const data = payload[0].payload
 
       if (selectedBorough === 'All Boroughs') {
-        // Stacked chart tooltip - simplified
+        // Show borough breakdown for both modes, but clarify what the values mean
+        const suffix = viewMode === 'absolute' ? '_absolute' : '_per100k'
         const boroughEntries: Array<{name: string, value: number, color: string}> = []
         
         chartData.sortedBoroughs.forEach((borough, index) => {
-          const suffix = viewMode === 'absolute' ? '_absolute' : '_per100k'
           const value = data[`${borough}${suffix}`] || 0
           if (value > 0) {
             boroughEntries.push({
@@ -84,50 +101,130 @@ export default function MpsCrimeChart({
         // Sort by value for display
         boroughEntries.sort((a, b) => b.value - a.value)
         
-        // Organize boroughs into columns of 10
+        // Organize boroughs into 2 columns
         const boroughColumns: Array<Array<{name: string, value: number, color: string}>> = []
-        for (let i = 0; i < boroughEntries.length; i += 10) {
-          boroughColumns.push(boroughEntries.slice(i, i + 10))
+        const itemsPerColumn = Math.ceil(boroughEntries.length / 2)
+        for (let i = 0; i < boroughEntries.length; i += itemsPerColumn) {
+          boroughColumns.push(boroughEntries.slice(i, i + itemsPerColumn))
         }
         
         return (
-          <div className="bg-black/90 border border-white/20 rounded-lg p-3 shadow-xl max-w-4xl">
-            <p className="text-white font-medium mb-3">{formatDate(label)}</p>
-            <div className={`grid gap-x-6 gap-y-1 max-h-80 overflow-y-auto`} style={{ gridTemplateColumns: `repeat(${boroughColumns.length}, minmax(180px, 1fr))` }}>
+          <div className="bg-black/90 border border-white/20 rounded-lg p-3 shadow-xl max-w-3xl">
+            <p className="text-white font-medium mb-2">{formatTooltipDate(label)}</p>
+            <div className="border-b border-white/20 mb-3 pb-2">
+              <div className="flex items-center">
+                <span className="text-gray-300 text-base">
+                  {viewMode === 'absolute' ? 'Total:' : 'London Rate:'}
+                </span>
+                <span className="text-white font-semibold text-lg">
+                  {viewMode === 'absolute' 
+                    ? data.value?.toLocaleString() 
+                    : `${data.value?.toFixed(1)} per 100k`
+                  }
+                </span>
+              </div>
+              {viewMode === 'per100k' && (
+                <p className="text-xs text-gray-400 mt-1">
+                  Individual borough rates shown below:
+                </p>
+              )}
+            </div>
+            <div className="grid grid-cols-2 gap-x-4 gap-y-0.5">
               {boroughColumns.map((column, columnIndex) => (
-                <div key={columnIndex} className="space-y-1">
+                <div key={columnIndex} className="space-y-0.5">
                   {column.map(({ name, value, color }) => (
-                    <div key={name} className="flex items-center justify-between text-sm">
-                      <div className="flex items-center">
+                    <div key={name} className="flex items-center justify-between text-xs">
+                      <div className="flex items-center min-w-0">
                         <div 
-                          className="w-3 h-3 rounded-sm mr-2 flex-shrink-0" 
+                          className="w-2.5 h-2.5 rounded-sm mr-1.5 flex-shrink-0" 
                           style={{ backgroundColor: color }}
                         />
                         <span className="text-gray-300 truncate">{name}</span>
                       </div>
-                      <span className="text-white font-medium ml-2">{value.toLocaleString()}</span>
+                      <span className="text-white font-medium ml-2 flex-shrink-0">
+                        {viewMode === 'absolute' 
+                          ? value.toLocaleString() 
+                          : `${value.toFixed(1)}`
+                        }
+                      </span>
                     </div>
                   ))}
                 </div>
               ))}
             </div>
-            <div className="border-t border-white/20 mt-3 pt-2">
-              <div className="flex justify-between text-sm">
-                <span className="text-gray-300">Total:</span>
-                <span className="text-white font-medium">{data.value?.toLocaleString()}</span>
-              </div>
-            </div>
           </div>
         )
       } else {
-        // Single borough tooltip
+        // Single borough tooltip - but show all boroughs for comparison
+        const suffix = viewMode === 'absolute' ? '_absolute' : '_per100k'
+        const boroughEntries: Array<{name: string, value: number, color: string, isSelected: boolean}> = []
+        
+        chartData.sortedBoroughs.forEach((borough, index) => {
+          const value = data[`${borough}${suffix}`] || 0
+          if (value >= 0) { // Show all boroughs, even with 0 values
+            boroughEntries.push({
+              name: borough,
+              value: value,
+              color: BOROUGH_COLORS[index % BOROUGH_COLORS.length],
+              isSelected: borough === selectedBorough
+            })
+          }
+        })
+
+        // Sort by value for display
+        boroughEntries.sort((a, b) => b.value - a.value)
+        
+        // Organize boroughs into 2 columns
+        const boroughColumns: Array<Array<{name: string, value: number, color: string, isSelected: boolean}>> = []
+        const itemsPerColumn = Math.ceil(boroughEntries.length / 2)
+        for (let i = 0; i < boroughEntries.length; i += itemsPerColumn) {
+          boroughColumns.push(boroughEntries.slice(i, i + itemsPerColumn))
+        }
+        
         return (
-          <div className="bg-black/90 border border-white/20 rounded-lg p-3 shadow-xl">
-            <p className="text-white font-medium">{formatDate(label)}</p>
-            <p className="text-gray-300">
-              {viewMode === 'absolute' ? 'Count' : 'Per 100k'}: {' '}
-              <span className="text-white font-medium">{data.value?.toLocaleString()}</span>
-            </p>
+          <div className="bg-black/90 border border-white/20 rounded-lg p-3 shadow-xl max-w-3xl">
+            <p className="text-white font-medium mb-2">{formatTooltipDate(label)}</p>
+            <div className="border-b border-white/20 mb-3 pb-2">
+              <div className="flex items-center">
+                <span className="text-gray-300 text-base">
+                  {selectedBorough} {viewMode === 'absolute' ? 'Count:' : 'Rate:'}
+                </span>
+                                 <span className="text-white font-semibold text-lg ml-2">
+                   {viewMode === 'absolute' 
+                     ? data.absolute?.toLocaleString() 
+                     : `${data.per100k?.toFixed(1)} per 100k`
+                   }
+                 </span>
+              </div>
+              <p className="text-xs text-gray-400 mt-1">
+                All borough comparison:
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-x-4 gap-y-0.5">
+              {boroughColumns.map((column, columnIndex) => (
+                <div key={columnIndex} className="space-y-0.5">
+                  {column.map(({ name, value, color, isSelected }) => (
+                    <div key={name} className={`flex items-center justify-between text-xs ${isSelected ? 'bg-blue-600/30 px-2 py-1 rounded' : ''}`}>
+                      <div className="flex items-center min-w-0">
+                        <div 
+                          className="w-2.5 h-2.5 rounded-sm mr-1.5 flex-shrink-0" 
+                          style={{ backgroundColor: color }}
+                        />
+                        <span className={`truncate ${isSelected ? 'text-blue-200 font-semibold' : 'text-gray-300'}`}>
+                          {name}
+                        </span>
+                      </div>
+                      <span className={`ml-2 flex-shrink-0 ${isSelected ? 'text-blue-200 font-semibold' : 'text-white font-medium'}`}>
+                        {viewMode === 'absolute' 
+                          ? value.toLocaleString() 
+                          : `${value.toFixed(1)}`
+                        }
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
         )
       }
@@ -139,10 +236,10 @@ export default function MpsCrimeChart({
     <Card className="bg-black/20 border-gray-800">
       <CardHeader>
         <CardTitle className="text-white">
-          Crime Trends: {selectedBorough}
+          {title || `Crime Trends: ${selectedBorough}`}
         </CardTitle>
         <CardDescription className="text-gray-400">
-          {selectedCrimeType}
+          {selectedCrimeType} - {selectedBorough}
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -153,9 +250,12 @@ export default function MpsCrimeChart({
               <XAxis 
                 dataKey="date"
                 tickFormatter={formatDate}
-                ticks={chartPoints.map(point => point.date).filter(date => date.endsWith('-01'))}
+                ticks={timeGranularity === 'yearly' 
+                  ? chartPoints.map(point => point.date) // Show all years
+                  : chartPoints.map(point => point.date).filter(date => date.endsWith('-01')) // Show January months only
+                }
                 axisLine={{ stroke: '#888', strokeWidth: 0 }}
-                tickLine={false}
+                tickLine={{ stroke: '#888', strokeWidth: 1 }}
                 tick={{ fill: '#888', fontSize: 14, dy: 5 }}
               />
               <YAxis 
@@ -164,29 +264,41 @@ export default function MpsCrimeChart({
                 tick={{ fill: '#888', fontSize: 14, dx: -5 }}
                 tickFormatter={formatNumber}
               />
-              <Tooltip content={<CustomTooltip />} />
+              <Tooltip 
+                content={<CustomTooltip />} 
+                cursor={{ fill: 'rgba(255, 255, 255, 0.1)' }}
+              />
               
               {selectedBorough === 'All Boroughs' ? (
-                // Stacked bars for top boroughs - much more efficient
-                chartData.sortedBoroughs.map((borough, index) => {
-                  const dataKey = `${borough}_${viewMode}`
-                  return (
-                    <Bar
-                      key={borough}
-                      dataKey={dataKey}
-                      stackId="boroughs"
-                      fill={BOROUGH_COLORS[index % BOROUGH_COLORS.length]}
-                      stroke="none"
+                // Single bar showing total for all boroughs
+                <Bar 
+                  dataKey={viewMode === 'absolute' ? 'absolute' : 'per100k'} 
+                  fill="#3B82F6" 
+                  stroke="none"
+                >
+                  {chartPoints.map((entry, index) => (
+                    <Cell 
+                      key={`cell-${index}`} 
+                      fill="#3B82F6" 
+                      fillOpacity={entry.isIncomplete ? 0.4 : 1.0}
                     />
-                  )
-                })
+                  ))}
+                </Bar>
               ) : (
                 // Single bar for individual borough
                 <Bar 
-                  dataKey="value" 
+                  dataKey={viewMode === 'absolute' ? 'absolute' : 'per100k'} 
                   fill="#3B82F6" 
                   stroke="none"
-                />
+                >
+                  {chartPoints.map((entry, index) => (
+                    <Cell 
+                      key={`cell-${index}`} 
+                      fill="#3B82F6" 
+                      fillOpacity={entry.isIncomplete ? 0.4 : 1.0}
+                    />
+                  ))}
+                </Bar>
               )}
             </BarChart>
           </ResponsiveContainer>
