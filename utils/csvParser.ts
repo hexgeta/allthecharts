@@ -252,8 +252,7 @@ export function processCrimeData(
   timeRange: 'all' | 'year',
   timeGranularity: 'monthly' | 'yearly' = 'monthly'
 ): ChartData {
-  console.log('📊 Processing data with filters:', { selectedBorough, selectedCrimeType, timeRange, timeGranularity })
-  console.log('📊 Input data length:', data.length)
+
   
   // Filter data based on selections
   let filtered = data.filter(item => {
@@ -338,8 +337,7 @@ export function processCrimeData(
 
           // Apply time granularity aggregation for all boroughs
     if (timeGranularity === 'yearly') {
-      console.log('🗓️ ALL BOROUGHS - BEFORE yearly aggregation - chartPoints length:', chartPoints.length)
-      console.log('🗓️ ALL BOROUGHS - Sample dates before:', chartPoints.slice(0, 3).map(p => p.date))
+
       
       // Aggregate monthly data into yearly totals
       const yearlyAggregated: { [year: string]: any } = {}
@@ -396,9 +394,7 @@ export function processCrimeData(
         return yearData
       }).sort((a, b) => a.date.localeCompare(b.date))
       
-      console.log('🗓️ ALL BOROUGHS - AFTER yearly aggregation - chartPoints length:', chartPoints.length)
-      console.log('🗓️ ALL BOROUGHS - Sample dates after:', chartPoints.slice(0, 3).map(p => p.date))
-      console.log('🗓️ ALL BOROUGHS - Incomplete years:', chartPoints.filter(p => p.isIncomplete).map(p => `${p.date} (${p.monthCount || 'unknown'} months)`))
+
     }
 
     // Apply time range filter
@@ -406,7 +402,7 @@ export function processCrimeData(
       chartPoints = chartPoints.slice(-12) // Last year (or last 12 data points for yearly view)
     }
 
-    console.log('📊 Final chart points length:', chartPoints.length)
+
 
     return { chartPoints, sortedBoroughs }
   } else {
@@ -481,8 +477,7 @@ export function processCrimeData(
 
     // Apply time granularity aggregation for single borough
     if (timeGranularity === 'yearly') {
-      console.log('🗓️ SINGLE BOROUGH - BEFORE yearly aggregation - chartPoints length:', chartPoints.length)
-      console.log('🗓️ SINGLE BOROUGH - Sample dates before:', chartPoints.slice(0, 3).map(p => p.date))
+
       
       // Aggregate monthly data into yearly totals
       const yearlyAggregated: { [year: string]: any } = {}
@@ -539,8 +534,7 @@ export function processCrimeData(
         return yearData
       }).sort((a, b) => a.date.localeCompare(b.date))
       
-      console.log('🗓️ SINGLE BOROUGH - AFTER yearly aggregation - chartPoints length:', chartPoints.length)
-      console.log('🗓️ SINGLE BOROUGH - Sample dates after:', chartPoints.slice(0, 3).map(p => p.date))
+
     }
 
     // Apply time range filter
