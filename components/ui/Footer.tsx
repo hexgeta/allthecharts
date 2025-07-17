@@ -35,13 +35,13 @@ const Footer = () => {
           </ul>
         </div>
         <div className="col-span-1">
-          <h3 className="text-s font-semibold mb-2">Links2</h3>
+          <h3 className="text-s font-semibold mb-2"></h3>
           <ul className="text-sm space-y-1">
 
           </ul>
         </div>
         <div className="col-span-1">
-          <h3 className="text-s font-semibold mb-2">Legal</h3>
+          <h3 className="text-s font-semibold mb-2"></h3>
           <ul className="text-sm space-y-1">
 
           </ul>
