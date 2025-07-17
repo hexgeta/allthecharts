@@ -26,12 +26,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Leaflet CSS */
-@import 'leaflet/dist/leaflet.css';
-
-/* Mapbox GL CSS */
-@import 'mapbox-gl/dist/mapbox-gl.css';
-
 :root {
   --background-color: #000000;
   --text-color: #ffffff;
