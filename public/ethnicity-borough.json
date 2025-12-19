@@ -1,0 +1,2902 @@
+[
+  {
+    "year": 2020,
+    "borough": "Barking and Dagenham",
+    "areaCode": "E09000002",
+    "white": 99000,
+    "asian": 55000,
+    "black": 51000,
+    "mixedOther": 16000,
+    "total": 222000
+  },
+  {
+    "year": 2020,
+    "borough": "Barnet",
+    "areaCode": "E09000003",
+    "white": 255000,
+    "asian": 79000,
+    "black": 28000,
+    "mixedOther": 35000,
+    "total": 398000
+  },
+  {
+    "year": 2020,
+    "borough": "Bexley",
+    "areaCode": "E09000004",
+    "white": 188000,
+    "asian": 20000,
+    "black": 28000,
+    "mixedOther": 18000,
+    "total": 254000
+  },
+  {
+    "year": 2020,
+    "borough": "Brent",
+    "areaCode": "E09000005",
+    "white": 117000,
+    "asian": 138000,
+    "black": 40000,
+    "mixedOther": 37000,
+    "total": 332000
+  },
+  {
+    "year": 2020,
+    "borough": "Bromley",
+    "areaCode": "E09000006",
+    "white": 264000,
+    "asian": 25000,
+    "black": 23000,
+    "mixedOther": 25000,
+    "total": 338000
+  },
+  {
+    "year": 2020,
+    "borough": "Camden",
+    "areaCode": "E09000007",
+    "white": 155000,
+    "asian": 34000,
+    "black": 29000,
+    "mixedOther": 45000,
+    "total": 263000
+  },
+  {
+    "year": 2020,
+    "borough": "Croydon",
+    "areaCode": "E09000008",
+    "white": 224000,
+    "asian": 78000,
+    "black": 61000,
+    "mixedOther": 30000,
+    "total": 392000
+  },
+  {
+    "year": 2020,
+    "borough": "Ealing",
+    "areaCode": "E09000009",
+    "white": 163000,
+    "asian": 91000,
+    "black": 29000,
+    "mixedOther": 61000,
+    "total": 344000
+  },
+  {
+    "year": 2020,
+    "borough": "Enfield",
+    "areaCode": "E09000010",
+    "white": 218000,
+    "asian": 44000,
+    "black": 58000,
+    "mixedOther": 24000,
+    "total": 343000
+  },
+  {
+    "year": 2020,
+    "borough": "Greenwich",
+    "areaCode": "E09000011",
+    "white": 158000,
+    "asian": 61000,
+    "black": 55000,
+    "mixedOther": 19000,
+    "total": 292000
+  },
+  {
+    "year": 2020,
+    "borough": "Hackney",
+    "areaCode": "E09000012",
+    "white": 167000,
+    "asian": 19000,
+    "black": 49000,
+    "mixedOther": 53000,
+    "total": 289000
+  },
+  {
+    "year": 2020,
+    "borough": "Hammersmith and Fulham",
+    "areaCode": "E09000013",
+    "white": 122000,
+    "asian": 14000,
+    "black": 15000,
+    "mixedOther": 29000,
+    "total": 180000
+  },
+  {
+    "year": 2020,
+    "borough": "Haringey",
+    "areaCode": "E09000014",
+    "white": 208000,
+    "asian": 13000,
+    "black": 36000,
+    "mixedOther": 23000,
+    "total": 280000
+  },
+  {
+    "year": 2020,
+    "borough": "Harrow",
+    "areaCode": "E09000015",
+    "white": 101000,
+    "asian": 103000,
+    "black": 8000,
+    "mixedOther": 35000,
+    "total": 248000
+  },
+  {
+    "year": 2020,
+    "borough": "Havering",
+    "areaCode": "E09000016",
+    "white": 196000,
+    "asian": 30000,
+    "black": 28000,
+    "mixedOther": 10000,
+    "total": 264000
+  },
+  {
+    "year": 2020,
+    "borough": "Hillingdon",
+    "areaCode": "E09000017",
+    "white": 154000,
+    "asian": 96000,
+    "black": 37000,
+    "mixedOther": 26000,
+    "total": 313000
+  },
+  {
+    "year": 2020,
+    "borough": "Hounslow",
+    "areaCode": "E09000018",
+    "white": 125000,
+    "asian": 102000,
+    "black": 36000,
+    "mixedOther": 12000,
+    "total": 275000
+  },
+  {
+    "year": 2020,
+    "borough": "Islington",
+    "areaCode": "E09000019",
+    "white": 177000,
+    "asian": 14000,
+    "black": 18000,
+    "mixedOther": 34000,
+    "total": 243000
+  },
+  {
+    "year": 2020,
+    "borough": "Kensington and Chelsea",
+    "areaCode": "E09000020",
+    "white": 109000,
+    "asian": 15000,
+    "black": 14000,
+    "mixedOther": 15000,
+    "total": 153000
+  },
+  {
+    "year": 2020,
+    "borough": "Kingston upon Thames",
+    "areaCode": "E09000021",
+    "white": 135000,
+    "asian": 26000,
+    "black": 7000,
+    "mixedOther": 14000,
+    "total": 181000
+  },
+  {
+    "year": 2020,
+    "borough": "Lambeth",
+    "areaCode": "E09000022",
+    "white": 215000,
+    "asian": 22000,
+    "black": 55000,
+    "mixedOther": 38000,
+    "total": 329000
+  },
+  {
+    "year": 2020,
+    "borough": "Lewisham",
+    "areaCode": "E09000023",
+    "white": 194000,
+    "asian": 24000,
+    "black": 61000,
+    "mixedOther": 34000,
+    "total": 312000
+  },
+  {
+    "year": 2020,
+    "borough": "Merton",
+    "areaCode": "E09000024",
+    "white": 140000,
+    "asian": 33000,
+    "black": 21000,
+    "mixedOther": 14000,
+    "total": 208000
+  },
+  {
+    "year": 2020,
+    "borough": "Newham",
+    "areaCode": "E09000025",
+    "white": 165000,
+    "asian": 120000,
+    "black": 56000,
+    "mixedOther": 20000,
+    "total": 361000
+  },
+  {
+    "year": 2020,
+    "borough": "Redbridge",
+    "areaCode": "E09000026",
+    "white": 132000,
+    "asian": 139000,
+    "black": 26000,
+    "mixedOther": 16000,
+    "total": 313000
+  },
+  {
+    "year": 2020,
+    "borough": "Richmond upon Thames",
+    "areaCode": "E09000027",
+    "white": 163000,
+    "asian": 14000,
+    "black": null,
+    "mixedOther": 18000,
+    "total": 200000
+  },
+  {
+    "year": 2020,
+    "borough": "Southwark",
+    "areaCode": "E09000028",
+    "white": 183000,
+    "asian": 26000,
+    "black": 79000,
+    "mixedOther": 33000,
+    "total": 321000
+  },
+  {
+    "year": 2020,
+    "borough": "Sutton",
+    "areaCode": "E09000029",
+    "white": 136000,
+    "asian": 34000,
+    "black": 16000,
+    "mixedOther": 21000,
+    "total": 207000
+  },
+  {
+    "year": 2020,
+    "borough": "Tower Hamlets",
+    "areaCode": "E09000030",
+    "white": 161000,
+    "asian": 123000,
+    "black": 16000,
+    "mixedOther": 26000,
+    "total": 326000
+  },
+  {
+    "year": 2020,
+    "borough": "Waltham Forest",
+    "areaCode": "E09000031",
+    "white": 188000,
+    "asian": 32000,
+    "black": 34000,
+    "mixedOther": 29000,
+    "total": 282000
+  },
+  {
+    "year": 2020,
+    "borough": "Wandsworth",
+    "areaCode": "E09000032",
+    "white": 249000,
+    "asian": 26000,
+    "black": 25000,
+    "mixedOther": 25000,
+    "total": 325000
+  },
+  {
+    "year": 2020,
+    "borough": "Westminster",
+    "areaCode": "E09000033",
+    "white": 159000,
+    "asian": 18000,
+    "black": 19000,
+    "mixedOther": 44000,
+    "total": 240000
+  },
+  {
+    "year": 2019,
+    "borough": "Barking and Dagenham",
+    "areaCode": "E09000002",
+    "white": 108000,
+    "asian": 43000,
+    "black": 59000,
+    "mixedOther": 8000,
+    "total": 219000
+  },
+  {
+    "year": 2019,
+    "borough": "Barnet",
+    "areaCode": "E09000003",
+    "white": 257000,
+    "asian": 61000,
+    "black": 24000,
+    "mixedOther": 55000,
+    "total": 396000
+  },
+  {
+    "year": 2019,
+    "borough": "Bexley",
+    "areaCode": "E09000004",
+    "white": 207000,
+    "asian": 15000,
+    "black": 20000,
+    "mixedOther": 9000,
+    "total": 251000
+  },
+  {
+    "year": 2019,
+    "borough": "Brent",
+    "areaCode": "E09000005",
+    "white": 124000,
+    "asian": 101000,
+    "black": 53000,
+    "mixedOther": 53000,
+    "total": 330000
+  },
+  {
+    "year": 2019,
+    "borough": "Bromley",
+    "areaCode": "E09000006",
+    "white": 262000,
+    "asian": 26000,
+    "black": 24000,
+    "mixedOther": 23000,
+    "total": 335000
+  },
+  {
+    "year": 2019,
+    "borough": "Camden",
+    "areaCode": "E09000007",
+    "white": 162000,
+    "asian": 30000,
+    "black": 24000,
+    "mixedOther": 44000,
+    "total": 260000
+  },
+  {
+    "year": 2019,
+    "borough": "City of London",
+    "areaCode": "E09000001",
+    "white": 12000,
+    "asian": null,
+    "black": null,
+    "mixedOther": null,
+    "total": 12000
+  },
+  {
+    "year": 2019,
+    "borough": "Croydon",
+    "areaCode": "E09000008",
+    "white": 228000,
+    "asian": 64000,
+    "black": 75000,
+    "mixedOther": 22000,
+    "total": 389000
+  },
+  {
+    "year": 2019,
+    "borough": "Ealing",
+    "areaCode": "E09000009",
+    "white": 172000,
+    "asian": 88000,
+    "black": 40000,
+    "mixedOther": 44000,
+    "total": 343000
+  },
+  {
+    "year": 2019,
+    "borough": "Enfield",
+    "areaCode": "E09000010",
+    "white": 199000,
+    "asian": 47000,
+    "black": 61000,
+    "mixedOther": 33000,
+    "total": 340000
+  },
+  {
+    "year": 2019,
+    "borough": "Greenwich",
+    "areaCode": "E09000011",
+    "white": 175000,
+    "asian": 43000,
+    "black": 53000,
+    "mixedOther": 18000,
+    "total": 289000
+  },
+  {
+    "year": 2019,
+    "borough": "Hackney",
+    "areaCode": "E09000012",
+    "white": 159000,
+    "asian": 24000,
+    "black": 70000,
+    "mixedOther": 31000,
+    "total": 285000
+  },
+  {
+    "year": 2019,
+    "borough": "Hammersmith and Fulham",
+    "areaCode": "E09000013",
+    "white": 126000,
+    "asian": 14000,
+    "black": 21000,
+    "mixedOther": 19000,
+    "total": 180000
+  },
+  {
+    "year": 2019,
+    "borough": "Haringey",
+    "areaCode": "E09000014",
+    "white": 182000,
+    "asian": 16000,
+    "black": 39000,
+    "mixedOther": 43000,
+    "total": 279000
+  },
+  {
+    "year": 2019,
+    "borough": "Harrow",
+    "areaCode": "E09000015",
+    "white": 106000,
+    "asian": 108000,
+    "black": 8000,
+    "mixedOther": 28000,
+    "total": 250000
+  },
+  {
+    "year": 2019,
+    "borough": "Havering",
+    "areaCode": "E09000016",
+    "white": 202000,
+    "asian": 28000,
+    "black": 23000,
+    "mixedOther": 7000,
+    "total": 261000
+  },
+  {
+    "year": 2019,
+    "borough": "Hillingdon",
+    "areaCode": "E09000017",
+    "white": 140000,
+    "asian": 122000,
+    "black": 27000,
+    "mixedOther": 21000,
+    "total": 309000
+  },
+  {
+    "year": 2019,
+    "borough": "Hounslow",
+    "areaCode": "E09000018",
+    "white": 125000,
+    "asian": 97000,
+    "black": 23000,
+    "mixedOther": 27000,
+    "total": 273000
+  },
+  {
+    "year": 2019,
+    "borough": "Islington",
+    "areaCode": "E09000019",
+    "white": 158000,
+    "asian": 17000,
+    "black": 35000,
+    "mixedOther": 29000,
+    "total": 240000
+  },
+  {
+    "year": 2019,
+    "borough": "Kensington and Chelsea",
+    "areaCode": "E09000020",
+    "white": 102000,
+    "asian": 18000,
+    "black": 15000,
+    "mixedOther": 18000,
+    "total": 153000
+  },
+  {
+    "year": 2019,
+    "borough": "Kingston upon Thames",
+    "areaCode": "E09000021",
+    "white": 130000,
+    "asian": 23000,
+    "black": 8000,
+    "mixedOther": 18000,
+    "total": 179000
+  },
+  {
+    "year": 2019,
+    "borough": "Lambeth",
+    "areaCode": "E09000022",
+    "white": 200000,
+    "asian": 21000,
+    "black": 62000,
+    "mixedOther": 43000,
+    "total": 326000
+  },
+  {
+    "year": 2019,
+    "borough": "Lewisham",
+    "areaCode": "E09000023",
+    "white": 195000,
+    "asian": 23000,
+    "black": 71000,
+    "mixedOther": 21000,
+    "total": 309000
+  },
+  {
+    "year": 2019,
+    "borough": "Merton",
+    "areaCode": "E09000024",
+    "white": 121000,
+    "asian": 39000,
+    "black": 25000,
+    "mixedOther": 24000,
+    "total": 209000
+  },
+  {
+    "year": 2019,
+    "borough": "Newham",
+    "areaCode": "E09000025",
+    "white": 122000,
+    "asian": 137000,
+    "black": 65000,
+    "mixedOther": 35000,
+    "total": 358000
+  },
+  {
+    "year": 2019,
+    "borough": "Redbridge",
+    "areaCode": "E09000026",
+    "white": 145000,
+    "asian": 142000,
+    "black": 16000,
+    "mixedOther": 8000,
+    "total": 311000
+  },
+  {
+    "year": 2019,
+    "borough": "Richmond upon Thames",
+    "areaCode": "E09000027",
+    "white": 167000,
+    "asian": 11000,
+    "black": 3000,
+    "mixedOther": 16000,
+    "total": 198000
+  },
+  {
+    "year": 2019,
+    "borough": "Southwark",
+    "areaCode": "E09000028",
+    "white": 183000,
+    "asian": 21000,
+    "black": 77000,
+    "mixedOther": 39000,
+    "total": 320000
+  },
+  {
+    "year": 2019,
+    "borough": "Sutton",
+    "areaCode": "E09000029",
+    "white": 161000,
+    "asian": 23000,
+    "black": 7000,
+    "mixedOther": 15000,
+    "total": 206000
+  },
+  {
+    "year": 2019,
+    "borough": "Tower Hamlets",
+    "areaCode": "E09000030",
+    "white": 135000,
+    "asian": 150000,
+    "black": 15000,
+    "mixedOther": 20000,
+    "total": 320000
+  },
+  {
+    "year": 2019,
+    "borough": "Waltham Forest",
+    "areaCode": "E09000031",
+    "white": 180000,
+    "asian": 34000,
+    "black": 36000,
+    "mixedOther": 30000,
+    "total": 280000
+  },
+  {
+    "year": 2019,
+    "borough": "Wandsworth",
+    "areaCode": "E09000032",
+    "white": 245000,
+    "asian": 39000,
+    "black": 21000,
+    "mixedOther": 18000,
+    "total": 324000
+  },
+  {
+    "year": 2019,
+    "borough": "Westminster",
+    "areaCode": "E09000033",
+    "white": 140000,
+    "asian": 31000,
+    "black": 15000,
+    "mixedOther": 53000,
+    "total": 240000
+  },
+  {
+    "year": 2018,
+    "borough": "Barking and Dagenham",
+    "areaCode": "E09000002",
+    "white": 109000,
+    "asian": 54000,
+    "black": 36000,
+    "mixedOther": 15000,
+    "total": 215000
+  },
+  {
+    "year": 2018,
+    "borough": "Barnet",
+    "areaCode": "E09000003",
+    "white": 250000,
+    "asian": 57000,
+    "black": 30000,
+    "mixedOther": 54000,
+    "total": 390000
+  },
+  {
+    "year": 2018,
+    "borough": "Bexley",
+    "areaCode": "E09000004",
+    "white": 195000,
+    "asian": 17000,
+    "black": 21000,
+    "mixedOther": 15000,
+    "total": 248000
+  },
+  {
+    "year": 2018,
+    "borough": "Brent",
+    "areaCode": "E09000005",
+    "white": 102000,
+    "asian": 107000,
+    "black": 62000,
+    "mixedOther": 56000,
+    "total": 328000
+  },
+  {
+    "year": 2018,
+    "borough": "Bromley",
+    "areaCode": "E09000006",
+    "white": 267000,
+    "asian": 15000,
+    "black": 21000,
+    "mixedOther": 28000,
+    "total": 330000
+  },
+  {
+    "year": 2018,
+    "borough": "Camden",
+    "areaCode": "E09000007",
+    "white": 158000,
+    "asian": 39000,
+    "black": 19000,
+    "mixedOther": 38000,
+    "total": 255000
+  },
+  {
+    "year": 2018,
+    "borough": "Croydon",
+    "areaCode": "E09000008",
+    "white": 227000,
+    "asian": 70000,
+    "black": 64000,
+    "mixedOther": 24000,
+    "total": 386000
+  },
+  {
+    "year": 2018,
+    "borough": "Ealing",
+    "areaCode": "E09000009",
+    "white": 174000,
+    "asian": 96000,
+    "black": 23000,
+    "mixedOther": 50000,
+    "total": 343000
+  },
+  {
+    "year": 2018,
+    "borough": "Enfield",
+    "areaCode": "E09000010",
+    "white": 206000,
+    "asian": 37000,
+    "black": 74000,
+    "mixedOther": 20000,
+    "total": 337000
+  },
+  {
+    "year": 2018,
+    "borough": "Greenwich",
+    "areaCode": "E09000011",
+    "white": 178000,
+    "asian": 39000,
+    "black": 48000,
+    "mixedOther": 19000,
+    "total": 284000
+  },
+  {
+    "year": 2018,
+    "borough": "Hackney",
+    "areaCode": "E09000012",
+    "white": 144000,
+    "asian": 32000,
+    "black": 63000,
+    "mixedOther": 42000,
+    "total": 281000
+  },
+  {
+    "year": 2018,
+    "borough": "Hammersmith and Fulham",
+    "areaCode": "E09000013",
+    "white": 119000,
+    "asian": 20000,
+    "black": 23000,
+    "mixedOther": 19000,
+    "total": 180000
+  },
+  {
+    "year": 2018,
+    "borough": "Haringey",
+    "areaCode": "E09000014",
+    "white": 180000,
+    "asian": 18000,
+    "black": 34000,
+    "mixedOther": 44000,
+    "total": 276000
+  },
+  {
+    "year": 2018,
+    "borough": "Harrow",
+    "areaCode": "E09000015",
+    "white": 110000,
+    "asian": 98000,
+    "black": 13000,
+    "mixedOther": 28000,
+    "total": 249000
+  },
+  {
+    "year": 2018,
+    "borough": "Havering",
+    "areaCode": "E09000016",
+    "white": 216000,
+    "asian": 13000,
+    "black": 14000,
+    "mixedOther": 15000,
+    "total": 258000
+  },
+  {
+    "year": 2018,
+    "borough": "Hillingdon",
+    "areaCode": "E09000017",
+    "white": 154000,
+    "asian": 100000,
+    "black": 24000,
+    "mixedOther": 28000,
+    "total": 305000
+  },
+  {
+    "year": 2018,
+    "borough": "Hounslow",
+    "areaCode": "E09000018",
+    "white": 130000,
+    "asian": 86000,
+    "black": 25000,
+    "mixedOther": 29000,
+    "total": 269000
+  },
+  {
+    "year": 2018,
+    "borough": "Islington",
+    "areaCode": "E09000019",
+    "white": 165000,
+    "asian": 17000,
+    "black": 25000,
+    "mixedOther": 28000,
+    "total": 235000
+  },
+  {
+    "year": 2018,
+    "borough": "Kensington and Chelsea",
+    "areaCode": "E09000020",
+    "white": 100000,
+    "asian": 18000,
+    "black": 15000,
+    "mixedOther": 22000,
+    "total": 154000
+  },
+  {
+    "year": 2018,
+    "borough": "Kingston upon Thames",
+    "areaCode": "E09000021",
+    "white": 123000,
+    "asian": 30000,
+    "black": 3000,
+    "mixedOther": 21000,
+    "total": 177000
+  },
+  {
+    "year": 2018,
+    "borough": "Lambeth",
+    "areaCode": "E09000022",
+    "white": 172000,
+    "asian": 28000,
+    "black": 76000,
+    "mixedOther": 49000,
+    "total": 324000
+  },
+  {
+    "year": 2018,
+    "borough": "Lewisham",
+    "areaCode": "E09000023",
+    "white": 193000,
+    "asian": 23000,
+    "black": 58000,
+    "mixedOther": 30000,
+    "total": 305000
+  },
+  {
+    "year": 2018,
+    "borough": "Merton",
+    "areaCode": "E09000024",
+    "white": 135000,
+    "asian": 35000,
+    "black": 16000,
+    "mixedOther": 21000,
+    "total": 207000
+  },
+  {
+    "year": 2018,
+    "borough": "Newham",
+    "areaCode": "E09000025",
+    "white": 111000,
+    "asian": 166000,
+    "black": 47000,
+    "mixedOther": 27000,
+    "total": 351000
+  },
+  {
+    "year": 2018,
+    "borough": "Redbridge",
+    "areaCode": "E09000026",
+    "white": 143000,
+    "asian": 126000,
+    "black": 20000,
+    "mixedOther": 18000,
+    "total": 307000
+  },
+  {
+    "year": 2018,
+    "borough": "Richmond upon Thames",
+    "areaCode": "E09000027",
+    "white": 170000,
+    "asian": 11000,
+    "black": null,
+    "mixedOther": 14000,
+    "total": 196000
+  },
+  {
+    "year": 2018,
+    "borough": "Southwark",
+    "areaCode": "E09000028",
+    "white": 200000,
+    "asian": 17000,
+    "black": 64000,
+    "mixedOther": 35000,
+    "total": 315000
+  },
+  {
+    "year": 2018,
+    "borough": "Sutton",
+    "areaCode": "E09000029",
+    "white": 147000,
+    "asian": 36000,
+    "black": 11000,
+    "mixedOther": 10000,
+    "total": 204000
+  },
+  {
+    "year": 2018,
+    "borough": "Tower Hamlets",
+    "areaCode": "E09000030",
+    "white": 145000,
+    "asian": 128000,
+    "black": 22000,
+    "mixedOther": 19000,
+    "total": 314000
+  },
+  {
+    "year": 2018,
+    "borough": "Waltham Forest",
+    "areaCode": "E09000031",
+    "white": 142000,
+    "asian": 44000,
+    "black": 43000,
+    "mixedOther": 48000,
+    "total": 277000
+  },
+  {
+    "year": 2018,
+    "borough": "Wandsworth",
+    "areaCode": "E09000032",
+    "white": 242000,
+    "asian": 19000,
+    "black": 39000,
+    "mixedOther": 23000,
+    "total": 323000
+  },
+  {
+    "year": 2018,
+    "borough": "Westminster",
+    "areaCode": "E09000033",
+    "white": 140000,
+    "asian": 33000,
+    "black": 17000,
+    "mixedOther": 51000,
+    "total": 241000
+  },
+  {
+    "year": 2017,
+    "borough": "Barking and Dagenham",
+    "areaCode": "E09000002",
+    "white": 104000,
+    "asian": 48000,
+    "black": 41000,
+    "mixedOther": 17000,
+    "total": 210000
+  },
+  {
+    "year": 2017,
+    "borough": "Barnet",
+    "areaCode": "E09000003",
+    "white": 264000,
+    "asian": 57000,
+    "black": 14000,
+    "mixedOther": 49000,
+    "total": 384000
+  },
+  {
+    "year": 2017,
+    "borough": "Bexley",
+    "areaCode": "E09000004",
+    "white": 194000,
+    "asian": 16000,
+    "black": 26000,
+    "mixedOther": 8000,
+    "total": 245000
+  },
+  {
+    "year": 2017,
+    "borough": "Brent",
+    "areaCode": "E09000005",
+    "white": 121000,
+    "asian": 101000,
+    "black": 61000,
+    "mixedOther": 44000,
+    "total": 327000
+  },
+  {
+    "year": 2017,
+    "borough": "Bromley",
+    "areaCode": "E09000006",
+    "white": 255000,
+    "asian": 26000,
+    "black": 18000,
+    "mixedOther": 27000,
+    "total": 326000
+  },
+  {
+    "year": 2017,
+    "borough": "Camden",
+    "areaCode": "E09000007",
+    "white": 157000,
+    "asian": 32000,
+    "black": 22000,
+    "mixedOther": 40000,
+    "total": 251000
+  },
+  {
+    "year": 2017,
+    "borough": "City of London",
+    "areaCode": "E09000001",
+    "white": 10000,
+    "asian": null,
+    "black": null,
+    "mixedOther": null,
+    "total": 14000
+  },
+  {
+    "year": 2017,
+    "borough": "Croydon",
+    "areaCode": "E09000008",
+    "white": 213000,
+    "asian": 77000,
+    "black": 69000,
+    "mixedOther": 22000,
+    "total": 381000
+  },
+  {
+    "year": 2017,
+    "borough": "Ealing",
+    "areaCode": "E09000009",
+    "white": 156000,
+    "asian": 113000,
+    "black": 27000,
+    "mixedOther": 41000,
+    "total": 337000
+  },
+  {
+    "year": 2017,
+    "borough": "Enfield",
+    "areaCode": "E09000010",
+    "white": 213000,
+    "asian": 40000,
+    "black": 46000,
+    "mixedOther": 31000,
+    "total": 330000
+  },
+  {
+    "year": 2017,
+    "borough": "Greenwich",
+    "areaCode": "E09000011",
+    "white": 178000,
+    "asian": 25000,
+    "black": 59000,
+    "mixedOther": 18000,
+    "total": 280000
+  },
+  {
+    "year": 2017,
+    "borough": "Hackney",
+    "areaCode": "E09000012",
+    "white": 150000,
+    "asian": 28000,
+    "black": 48000,
+    "mixedOther": 48000,
+    "total": 275000
+  },
+  {
+    "year": 2017,
+    "borough": "Hammersmith and Fulham",
+    "areaCode": "E09000013",
+    "white": 122000,
+    "asian": 24000,
+    "black": 22000,
+    "mixedOther": 13000,
+    "total": 181000
+  },
+  {
+    "year": 2017,
+    "borough": "Haringey",
+    "areaCode": "E09000014",
+    "white": 180000,
+    "asian": 19000,
+    "black": 39000,
+    "mixedOther": 32000,
+    "total": 269000
+  },
+  {
+    "year": 2017,
+    "borough": "Harrow",
+    "areaCode": "E09000015",
+    "white": 110000,
+    "asian": 103000,
+    "black": 10000,
+    "mixedOther": 24000,
+    "total": 247000
+  },
+  {
+    "year": 2017,
+    "borough": "Havering",
+    "areaCode": "E09000016",
+    "white": 219000,
+    "asian": 13000,
+    "black": 9000,
+    "mixedOther": 14000,
+    "total": 254000
+  },
+  {
+    "year": 2017,
+    "borough": "Hillingdon",
+    "areaCode": "E09000017",
+    "white": 168000,
+    "asian": 91000,
+    "black": 16000,
+    "mixedOther": 25000,
+    "total": 299000
+  },
+  {
+    "year": 2017,
+    "borough": "Hounslow",
+    "areaCode": "E09000018",
+    "white": 119000,
+    "asian": 92000,
+    "black": 23000,
+    "mixedOther": 33000,
+    "total": 267000
+  },
+  {
+    "year": 2017,
+    "borough": "Islington",
+    "areaCode": "E09000019",
+    "white": 150000,
+    "asian": 17000,
+    "black": 26000,
+    "mixedOther": 39000,
+    "total": 232000
+  },
+  {
+    "year": 2017,
+    "borough": "Kensington and Chelsea",
+    "areaCode": "E09000020",
+    "white": 97000,
+    "asian": 12000,
+    "black": 18000,
+    "mixedOther": 26000,
+    "total": 153000
+  },
+  {
+    "year": 2017,
+    "borough": "Kingston upon Thames",
+    "areaCode": "E09000021",
+    "white": 124000,
+    "asian": 26000,
+    "black": 5000,
+    "mixedOther": 17000,
+    "total": 172000
+  },
+  {
+    "year": 2017,
+    "borough": "Lambeth",
+    "areaCode": "E09000022",
+    "white": 217000,
+    "asian": 12000,
+    "black": 65000,
+    "mixedOther": 27000,
+    "total": 321000
+  },
+  {
+    "year": 2017,
+    "borough": "Lewisham",
+    "areaCode": "E09000023",
+    "white": 189000,
+    "asian": 25000,
+    "black": 63000,
+    "mixedOther": 23000,
+    "total": 300000
+  },
+  {
+    "year": 2017,
+    "borough": "Merton",
+    "areaCode": "E09000024",
+    "white": 132000,
+    "asian": 38000,
+    "black": 16000,
+    "mixedOther": 19000,
+    "total": 204000
+  },
+  {
+    "year": 2017,
+    "borough": "Newham",
+    "areaCode": "E09000025",
+    "white": 110000,
+    "asian": 144000,
+    "black": 57000,
+    "mixedOther": 35000,
+    "total": 346000
+  },
+  {
+    "year": 2017,
+    "borough": "Redbridge",
+    "areaCode": "E09000026",
+    "white": 113000,
+    "asian": 145000,
+    "black": 23000,
+    "mixedOther": 19000,
+    "total": 300000
+  },
+  {
+    "year": 2017,
+    "borough": "Richmond upon Thames",
+    "areaCode": "E09000027",
+    "white": 162000,
+    "asian": 12000,
+    "black": 4000,
+    "mixedOther": 15000,
+    "total": 194000
+  },
+  {
+    "year": 2017,
+    "borough": "Southwark",
+    "areaCode": "E09000028",
+    "white": 179000,
+    "asian": 28000,
+    "black": 70000,
+    "mixedOther": 33000,
+    "total": 310000
+  },
+  {
+    "year": 2017,
+    "borough": "Sutton",
+    "areaCode": "E09000029",
+    "white": 139000,
+    "asian": 35000,
+    "black": 12000,
+    "mixedOther": 16000,
+    "total": 201000
+  },
+  {
+    "year": 2017,
+    "borough": "Tower Hamlets",
+    "areaCode": "E09000030",
+    "white": 125000,
+    "asian": 148000,
+    "black": 14000,
+    "mixedOther": 19000,
+    "total": 307000
+  },
+  {
+    "year": 2017,
+    "borough": "Waltham Forest",
+    "areaCode": "E09000031",
+    "white": 153000,
+    "asian": 41000,
+    "black": 44000,
+    "mixedOther": 36000,
+    "total": 274000
+  },
+  {
+    "year": 2017,
+    "borough": "Wandsworth",
+    "areaCode": "E09000032",
+    "white": 227000,
+    "asian": 37000,
+    "black": 19000,
+    "mixedOther": 33000,
+    "total": 316000
+  },
+  {
+    "year": 2017,
+    "borough": "Westminster",
+    "areaCode": "E09000033",
+    "white": 131000,
+    "asian": 34000,
+    "black": 19000,
+    "mixedOther": 50000,
+    "total": 234000
+  },
+  {
+    "year": 2016,
+    "borough": "Barking and Dagenham",
+    "areaCode": "E09000002",
+    "white": 106000,
+    "asian": 41000,
+    "black": 47000,
+    "mixedOther": 13000,
+    "total": 207000
+  },
+  {
+    "year": 2016,
+    "borough": "Barnet",
+    "areaCode": "E09000003",
+    "white": 233000,
+    "asian": 68000,
+    "black": 22000,
+    "mixedOther": 55000,
+    "total": 378000
+  },
+  {
+    "year": 2016,
+    "borough": "Bexley",
+    "areaCode": "E09000004",
+    "white": 192000,
+    "asian": 18000,
+    "black": 28000,
+    "mixedOther": 5000,
+    "total": 243000
+  },
+  {
+    "year": 2016,
+    "borough": "Brent",
+    "areaCode": "E09000005",
+    "white": 117000,
+    "asian": 106000,
+    "black": 53000,
+    "mixedOther": 49000,
+    "total": 324000
+  },
+  {
+    "year": 2016,
+    "borough": "Bromley",
+    "areaCode": "E09000006",
+    "white": 272000,
+    "asian": 17000,
+    "black": 23000,
+    "mixedOther": 13000,
+    "total": 325000
+  },
+  {
+    "year": 2016,
+    "borough": "Camden",
+    "areaCode": "E09000007",
+    "white": 152000,
+    "asian": 28000,
+    "black": 28000,
+    "mixedOther": 37000,
+    "total": 246000
+  },
+  {
+    "year": 2016,
+    "borough": "Croydon",
+    "areaCode": "E09000008",
+    "white": 206000,
+    "asian": 75000,
+    "black": 65000,
+    "mixedOther": 35000,
+    "total": 380000
+  },
+  {
+    "year": 2016,
+    "borough": "Ealing",
+    "areaCode": "E09000009",
+    "white": 151000,
+    "asian": 105000,
+    "black": 31000,
+    "mixedOther": 53000,
+    "total": 340000
+  },
+  {
+    "year": 2016,
+    "borough": "Enfield",
+    "areaCode": "E09000010",
+    "white": 195000,
+    "asian": 36000,
+    "black": 63000,
+    "mixedOther": 35000,
+    "total": 328000
+  },
+  {
+    "year": 2016,
+    "borough": "Greenwich",
+    "areaCode": "E09000011",
+    "white": 164000,
+    "asian": 43000,
+    "black": 54000,
+    "mixedOther": 15000,
+    "total": 276000
+  },
+  {
+    "year": 2016,
+    "borough": "Hackney",
+    "areaCode": "E09000012",
+    "white": 153000,
+    "asian": 23000,
+    "black": 49000,
+    "mixedOther": 48000,
+    "total": 272000
+  },
+  {
+    "year": 2016,
+    "borough": "Hammersmith and Fulham",
+    "areaCode": "E09000013",
+    "white": 121000,
+    "asian": 14000,
+    "black": 29000,
+    "mixedOther": 16000,
+    "total": 180000
+  },
+  {
+    "year": 2016,
+    "borough": "Haringey",
+    "areaCode": "E09000014",
+    "white": 168000,
+    "asian": 17000,
+    "black": 40000,
+    "mixedOther": 46000,
+    "total": 270000
+  },
+  {
+    "year": 2016,
+    "borough": "Harrow",
+    "areaCode": "E09000015",
+    "white": 110000,
+    "asian": 109000,
+    "black": 14000,
+    "mixedOther": 14000,
+    "total": 247000
+  },
+  {
+    "year": 2016,
+    "borough": "Havering",
+    "areaCode": "E09000016",
+    "white": 219000,
+    "asian": 12000,
+    "black": 13000,
+    "mixedOther": 8000,
+    "total": 252000
+  },
+  {
+    "year": 2016,
+    "borough": "Hillingdon",
+    "areaCode": "E09000017",
+    "white": 172000,
+    "asian": 74000,
+    "black": 23000,
+    "mixedOther": 28000,
+    "total": 297000
+  },
+  {
+    "year": 2016,
+    "borough": "Hounslow",
+    "areaCode": "E09000018",
+    "white": 119000,
+    "asian": 103000,
+    "black": 17000,
+    "mixedOther": 26000,
+    "total": 266000
+  },
+  {
+    "year": 2016,
+    "borough": "Islington",
+    "areaCode": "E09000019",
+    "white": 143000,
+    "asian": 17000,
+    "black": 32000,
+    "mixedOther": 37000,
+    "total": 229000
+  },
+  {
+    "year": 2016,
+    "borough": "Kensington and Chelsea",
+    "areaCode": "E09000020",
+    "white": 102000,
+    "asian": 13000,
+    "black": 16000,
+    "mixedOther": 24000,
+    "total": 155000
+  },
+  {
+    "year": 2016,
+    "borough": "Kingston upon Thames",
+    "areaCode": "E09000021",
+    "white": 126000,
+    "asian": 23000,
+    "black": 5000,
+    "mixedOther": 18000,
+    "total": 171000
+  },
+  {
+    "year": 2016,
+    "borough": "Lambeth",
+    "areaCode": "E09000022",
+    "white": 203000,
+    "asian": 14000,
+    "black": 77000,
+    "mixedOther": 26000,
+    "total": 320000
+  },
+  {
+    "year": 2016,
+    "borough": "Lewisham",
+    "areaCode": "E09000023",
+    "white": 186000,
+    "asian": 22000,
+    "black": 65000,
+    "mixedOther": 24000,
+    "total": 297000
+  },
+  {
+    "year": 2016,
+    "borough": "Merton",
+    "areaCode": "E09000024",
+    "white": 129000,
+    "asian": 38000,
+    "black": 21000,
+    "mixedOther": 18000,
+    "total": 205000
+  },
+  {
+    "year": 2016,
+    "borough": "Newham",
+    "areaCode": "E09000025",
+    "white": 114000,
+    "asian": 147000,
+    "black": 49000,
+    "mixedOther": 32000,
+    "total": 343000
+  },
+  {
+    "year": 2016,
+    "borough": "Redbridge",
+    "areaCode": "E09000026",
+    "white": 125000,
+    "asian": 133000,
+    "black": 24000,
+    "mixedOther": 18000,
+    "total": 300000
+  },
+  {
+    "year": 2016,
+    "borough": "Richmond upon Thames",
+    "areaCode": "E09000027",
+    "white": 169000,
+    "asian": 8000,
+    "black": 3000,
+    "mixedOther": 12000,
+    "total": 192000
+  },
+  {
+    "year": 2016,
+    "borough": "Southwark",
+    "areaCode": "E09000028",
+    "white": 170000,
+    "asian": 29000,
+    "black": 71000,
+    "mixedOther": 37000,
+    "total": 308000
+  },
+  {
+    "year": 2016,
+    "borough": "Sutton",
+    "areaCode": "E09000029",
+    "white": 145000,
+    "asian": 25000,
+    "black": 13000,
+    "mixedOther": 18000,
+    "total": 200000
+  },
+  {
+    "year": 2016,
+    "borough": "Tower Hamlets",
+    "areaCode": "E09000030",
+    "white": 124000,
+    "asian": 130000,
+    "black": 28000,
+    "mixedOther": 18000,
+    "total": 299000
+  },
+  {
+    "year": 2016,
+    "borough": "Waltham Forest",
+    "areaCode": "E09000031",
+    "white": 156000,
+    "asian": 57000,
+    "black": 37000,
+    "mixedOther": 23000,
+    "total": 273000
+  },
+  {
+    "year": 2016,
+    "borough": "Wandsworth",
+    "areaCode": "E09000032",
+    "white": 227000,
+    "asian": 30000,
+    "black": 25000,
+    "mixedOther": 34000,
+    "total": 317000
+  },
+  {
+    "year": 2016,
+    "borough": "Westminster",
+    "areaCode": "E09000033",
+    "white": 136000,
+    "asian": 31000,
+    "black": 18000,
+    "mixedOther": 54000,
+    "total": 239000
+  },
+  {
+    "year": 2015,
+    "borough": "Barking and Dagenham",
+    "areaCode": "E09000002",
+    "white": 95000,
+    "asian": 41000,
+    "black": 52000,
+    "mixedOther": 14000,
+    "total": 202000
+  },
+  {
+    "year": 2015,
+    "borough": "Barnet",
+    "areaCode": "E09000003",
+    "white": 247000,
+    "asian": 54000,
+    "black": 29000,
+    "mixedOther": 43000,
+    "total": 373000
+  },
+  {
+    "year": 2015,
+    "borough": "Bexley",
+    "areaCode": "E09000004",
+    "white": 195000,
+    "asian": 15000,
+    "black": 23000,
+    "mixedOther": 7000,
+    "total": 240000
+  },
+  {
+    "year": 2015,
+    "borough": "Brent",
+    "areaCode": "E09000005",
+    "white": 108000,
+    "asian": 108000,
+    "black": 55000,
+    "mixedOther": 50000,
+    "total": 321000
+  },
+  {
+    "year": 2015,
+    "borough": "Bromley",
+    "areaCode": "E09000006",
+    "white": 259000,
+    "asian": 16000,
+    "black": 31000,
+    "mixedOther": 17000,
+    "total": 323000
+  },
+  {
+    "year": 2015,
+    "borough": "Camden",
+    "areaCode": "E09000007",
+    "white": 158000,
+    "asian": 27000,
+    "black": 25000,
+    "mixedOther": 30000,
+    "total": 240000
+  },
+  {
+    "year": 2015,
+    "borough": "Croydon",
+    "areaCode": "E09000008",
+    "white": 221000,
+    "asian": 61000,
+    "black": 66000,
+    "mixedOther": 29000,
+    "total": 377000
+  },
+  {
+    "year": 2015,
+    "borough": "Ealing",
+    "areaCode": "E09000009",
+    "white": 160000,
+    "asian": 102000,
+    "black": 37000,
+    "mixedOther": 41000,
+    "total": 339000
+  },
+  {
+    "year": 2015,
+    "borough": "Enfield",
+    "areaCode": "E09000010",
+    "white": 192000,
+    "asian": 31000,
+    "black": 66000,
+    "mixedOther": 33000,
+    "total": 321000
+  },
+  {
+    "year": 2015,
+    "borough": "Greenwich",
+    "areaCode": "E09000011",
+    "white": 170000,
+    "asian": 30000,
+    "black": 51000,
+    "mixedOther": 20000,
+    "total": 272000
+  },
+  {
+    "year": 2015,
+    "borough": "Hackney",
+    "areaCode": "E09000012",
+    "white": 145000,
+    "asian": 19000,
+    "black": 55000,
+    "mixedOther": 48000,
+    "total": 268000
+  },
+  {
+    "year": 2015,
+    "borough": "Hammersmith and Fulham",
+    "areaCode": "E09000013",
+    "white": 119000,
+    "asian": 15000,
+    "black": 23000,
+    "mixedOther": 23000,
+    "total": 180000
+  },
+  {
+    "year": 2015,
+    "borough": "Haringey",
+    "areaCode": "E09000014",
+    "white": 164000,
+    "asian": 21000,
+    "black": 46000,
+    "mixedOther": 36000,
+    "total": 267000
+  },
+  {
+    "year": 2015,
+    "borough": "Harrow",
+    "areaCode": "E09000015",
+    "white": 103000,
+    "asian": 106000,
+    "black": 13000,
+    "mixedOther": 23000,
+    "total": 245000
+  },
+  {
+    "year": 2015,
+    "borough": "Havering",
+    "areaCode": "E09000016",
+    "white": 217000,
+    "asian": 13000,
+    "black": 11000,
+    "mixedOther": 7000,
+    "total": 248000
+  },
+  {
+    "year": 2015,
+    "borough": "Hillingdon",
+    "areaCode": "E09000017",
+    "white": 159000,
+    "asian": 74000,
+    "black": 36000,
+    "mixedOther": 24000,
+    "total": 293000
+  },
+  {
+    "year": 2015,
+    "borough": "Hounslow",
+    "areaCode": "E09000018",
+    "white": 128000,
+    "asian": 92000,
+    "black": 20000,
+    "mixedOther": 23000,
+    "total": 264000
+  },
+  {
+    "year": 2015,
+    "borough": "Islington",
+    "areaCode": "E09000019",
+    "white": 151000,
+    "asian": 22000,
+    "black": 21000,
+    "mixedOther": 30000,
+    "total": 225000
+  },
+  {
+    "year": 2015,
+    "borough": "Kensington and Chelsea",
+    "areaCode": "E09000020",
+    "white": 104000,
+    "asian": 12000,
+    "black": 15000,
+    "mixedOther": 25000,
+    "total": 156000
+  },
+  {
+    "year": 2015,
+    "borough": "Kingston upon Thames",
+    "areaCode": "E09000021",
+    "white": 130000,
+    "asian": 20000,
+    "black": 2000,
+    "mixedOther": 16000,
+    "total": 169000
+  },
+  {
+    "year": 2015,
+    "borough": "Lambeth",
+    "areaCode": "E09000022",
+    "white": 199000,
+    "asian": 13000,
+    "black": 71000,
+    "mixedOther": 33000,
+    "total": 316000
+  },
+  {
+    "year": 2015,
+    "borough": "Lewisham",
+    "areaCode": "E09000023",
+    "white": 161000,
+    "asian": 31000,
+    "black": 77000,
+    "mixedOther": 24000,
+    "total": 293000
+  },
+  {
+    "year": 2015,
+    "borough": "Merton",
+    "areaCode": "E09000024",
+    "white": 134000,
+    "asian": 31000,
+    "black": 24000,
+    "mixedOther": 15000,
+    "total": 204000
+  },
+  {
+    "year": 2015,
+    "borough": "Newham",
+    "areaCode": "E09000025",
+    "white": 107000,
+    "asian": 128000,
+    "black": 60000,
+    "mixedOther": 40000,
+    "total": 335000
+  },
+  {
+    "year": 2015,
+    "borough": "Redbridge",
+    "areaCode": "E09000026",
+    "white": 123000,
+    "asian": 140000,
+    "black": 19000,
+    "mixedOther": 15000,
+    "total": 296000
+  },
+  {
+    "year": 2015,
+    "borough": "Richmond upon Thames",
+    "areaCode": "E09000027",
+    "white": 166000,
+    "asian": 11000,
+    "black": 3000,
+    "mixedOther": 12000,
+    "total": 191000
+  },
+  {
+    "year": 2015,
+    "borough": "Southwark",
+    "areaCode": "E09000028",
+    "white": 165000,
+    "asian": 22000,
+    "black": 81000,
+    "mixedOther": 37000,
+    "total": 306000
+  },
+  {
+    "year": 2015,
+    "borough": "Sutton",
+    "areaCode": "E09000029",
+    "white": 152000,
+    "asian": 27000,
+    "black": 10000,
+    "mixedOther": 10000,
+    "total": 198000
+  },
+  {
+    "year": 2015,
+    "borough": "Tower Hamlets",
+    "areaCode": "E09000030",
+    "white": 109000,
+    "asian": 132000,
+    "black": 28000,
+    "mixedOther": 22000,
+    "total": 291000
+  },
+  {
+    "year": 2015,
+    "borough": "Waltham Forest",
+    "areaCode": "E09000031",
+    "white": 140000,
+    "asian": 61000,
+    "black": 46000,
+    "mixedOther": 20000,
+    "total": 268000
+  },
+  {
+    "year": 2015,
+    "borough": "Wandsworth",
+    "areaCode": "E09000032",
+    "white": 233000,
+    "asian": 38000,
+    "black": 24000,
+    "mixedOther": 22000,
+    "total": 316000
+  },
+  {
+    "year": 2015,
+    "borough": "Westminster",
+    "areaCode": "E09000033",
+    "white": 132000,
+    "asian": 27000,
+    "black": 26000,
+    "mixedOther": 48000,
+    "total": 233000
+  },
+  {
+    "year": 2014,
+    "borough": "Barking and Dagenham",
+    "areaCode": "E09000002",
+    "white": 99000,
+    "asian": 33000,
+    "black": 44000,
+    "mixedOther": 22000,
+    "total": 198000
+  },
+  {
+    "year": 2014,
+    "borough": "Barnet",
+    "areaCode": "E09000003",
+    "white": 242000,
+    "asian": 53000,
+    "black": 16000,
+    "mixedOther": 57000,
+    "total": 367000
+  },
+  {
+    "year": 2014,
+    "borough": "Bexley",
+    "areaCode": "E09000004",
+    "white": 193000,
+    "asian": 10000,
+    "black": 30000,
+    "mixedOther": 6000,
+    "total": 239000
+  },
+  {
+    "year": 2014,
+    "borough": "Brent",
+    "areaCode": "E09000005",
+    "white": 117000,
+    "asian": 99000,
+    "black": 53000,
+    "mixedOther": 49000,
+    "total": 318000
+  },
+  {
+    "year": 2014,
+    "borough": "Bromley",
+    "areaCode": "E09000006",
+    "white": 269000,
+    "asian": 20000,
+    "black": 14000,
+    "mixedOther": 16000,
+    "total": 318000
+  },
+  {
+    "year": 2014,
+    "borough": "Camden",
+    "areaCode": "E09000007",
+    "white": 154000,
+    "asian": 32000,
+    "black": 17000,
+    "mixedOther": 31000,
+    "total": 233000
+  },
+  {
+    "year": 2014,
+    "borough": "Croydon",
+    "areaCode": "E09000008",
+    "white": 229000,
+    "asian": 48000,
+    "black": 75000,
+    "mixedOther": 21000,
+    "total": 373000
+  },
+  {
+    "year": 2014,
+    "borough": "Ealing",
+    "areaCode": "E09000009",
+    "white": 170000,
+    "asian": 94000,
+    "black": 33000,
+    "mixedOther": 40000,
+    "total": 337000
+  },
+  {
+    "year": 2014,
+    "borough": "Enfield",
+    "areaCode": "E09000010",
+    "white": 200000,
+    "asian": 34000,
+    "black": 60000,
+    "mixedOther": 26000,
+    "total": 319000
+  },
+  {
+    "year": 2014,
+    "borough": "Greenwich",
+    "areaCode": "E09000011",
+    "white": 168000,
+    "asian": 36000,
+    "black": 43000,
+    "mixedOther": 20000,
+    "total": 266000
+  },
+  {
+    "year": 2014,
+    "borough": "Hackney",
+    "areaCode": "E09000012",
+    "white": 135000,
+    "asian": 19000,
+    "black": 63000,
+    "mixedOther": 45000,
+    "total": 262000
+  },
+  {
+    "year": 2014,
+    "borough": "Hammersmith and Fulham",
+    "areaCode": "E09000013",
+    "white": 127000,
+    "asian": 14000,
+    "black": 18000,
+    "mixedOther": 21000,
+    "total": 180000
+  },
+  {
+    "year": 2014,
+    "borough": "Haringey",
+    "areaCode": "E09000014",
+    "white": 160000,
+    "asian": 25000,
+    "black": 49000,
+    "mixedOther": 28000,
+    "total": 262000
+  },
+  {
+    "year": 2014,
+    "borough": "Harrow",
+    "areaCode": "E09000015",
+    "white": 99000,
+    "asian": 102000,
+    "black": 16000,
+    "mixedOther": 26000,
+    "total": 243000
+  },
+  {
+    "year": 2014,
+    "borough": "Havering",
+    "areaCode": "E09000016",
+    "white": 211000,
+    "asian": 13000,
+    "black": 8000,
+    "mixedOther": 12000,
+    "total": 244000
+  },
+  {
+    "year": 2014,
+    "borough": "Hillingdon",
+    "areaCode": "E09000017",
+    "white": 170000,
+    "asian": 71000,
+    "black": 21000,
+    "mixedOther": 27000,
+    "total": 289000
+  },
+  {
+    "year": 2014,
+    "borough": "Hounslow",
+    "areaCode": "E09000018",
+    "white": 139000,
+    "asian": 90000,
+    "black": 12000,
+    "mixedOther": 22000,
+    "total": 263000
+  },
+  {
+    "year": 2014,
+    "borough": "Islington",
+    "areaCode": "E09000019",
+    "white": 155000,
+    "asian": 17000,
+    "black": 19000,
+    "mixedOther": 28000,
+    "total": 219000
+  },
+  {
+    "year": 2014,
+    "borough": "Kensington and Chelsea",
+    "areaCode": "E09000020",
+    "white": 107000,
+    "asian": 12000,
+    "black": 14000,
+    "mixedOther": 23000,
+    "total": 156000
+  },
+  {
+    "year": 2014,
+    "borough": "Kingston upon Thames",
+    "areaCode": "E09000021",
+    "white": 122000,
+    "asian": 21000,
+    "black": 7000,
+    "mixedOther": 17000,
+    "total": 167000
+  },
+  {
+    "year": 2014,
+    "borough": "Lambeth",
+    "areaCode": "E09000022",
+    "white": 209000,
+    "asian": 11000,
+    "black": 66000,
+    "mixedOther": 28000,
+    "total": 314000
+  },
+  {
+    "year": 2014,
+    "borough": "Lewisham",
+    "areaCode": "E09000023",
+    "white": 170000,
+    "asian": 27000,
+    "black": 65000,
+    "mixedOther": 27000,
+    "total": 288000
+  },
+  {
+    "year": 2014,
+    "borough": "Merton",
+    "areaCode": "E09000024",
+    "white": 123000,
+    "asian": 36000,
+    "black": 28000,
+    "mixedOther": 16000,
+    "total": 203000
+  },
+  {
+    "year": 2014,
+    "borough": "Newham",
+    "areaCode": "E09000025",
+    "white": 96000,
+    "asian": 143000,
+    "black": 47000,
+    "mixedOther": 41000,
+    "total": 327000
+  },
+  {
+    "year": 2014,
+    "borough": "Redbridge",
+    "areaCode": "E09000026",
+    "white": 133000,
+    "asian": 112000,
+    "black": 24000,
+    "mixedOther": 22000,
+    "total": 291000
+  },
+  {
+    "year": 2014,
+    "borough": "Richmond upon Thames",
+    "areaCode": "E09000027",
+    "white": 165000,
+    "asian": 10000,
+    "black": 4000,
+    "mixedOther": 13000,
+    "total": 192000
+  },
+  {
+    "year": 2014,
+    "borough": "Southwark",
+    "areaCode": "E09000028",
+    "white": 172000,
+    "asian": 26000,
+    "black": 74000,
+    "mixedOther": 29000,
+    "total": 301000
+  },
+  {
+    "year": 2014,
+    "borough": "Sutton",
+    "areaCode": "E09000029",
+    "white": 143000,
+    "asian": 31000,
+    "black": 6000,
+    "mixedOther": 17000,
+    "total": 196000
+  },
+  {
+    "year": 2014,
+    "borough": "Tower Hamlets",
+    "areaCode": "E09000030",
+    "white": 112000,
+    "asian": 126000,
+    "black": 19000,
+    "mixedOther": 26000,
+    "total": 283000
+  },
+  {
+    "year": 2014,
+    "borough": "Waltham Forest",
+    "areaCode": "E09000031",
+    "white": 138000,
+    "asian": 57000,
+    "black": 47000,
+    "mixedOther": 24000,
+    "total": 266000
+  },
+  {
+    "year": 2014,
+    "borough": "Wandsworth",
+    "areaCode": "E09000032",
+    "white": 224000,
+    "asian": 38000,
+    "black": 27000,
+    "mixedOther": 21000,
+    "total": 310000
+  },
+  {
+    "year": 2014,
+    "borough": "Westminster",
+    "areaCode": "E09000033",
+    "white": 134000,
+    "asian": 24000,
+    "black": 20000,
+    "mixedOther": 51000,
+    "total": 229000
+  },
+  {
+    "year": 2013,
+    "borough": "Barking and Dagenham",
+    "areaCode": "E09000002",
+    "white": 106000,
+    "asian": 32000,
+    "black": 43000,
+    "mixedOther": 12000,
+    "total": 193000
+  },
+  {
+    "year": 2013,
+    "borough": "Barnet",
+    "areaCode": "E09000003",
+    "white": 248000,
+    "asian": 43000,
+    "black": 27000,
+    "mixedOther": 46000,
+    "total": 364000
+  },
+  {
+    "year": 2013,
+    "borough": "Bexley",
+    "areaCode": "E09000004",
+    "white": 194000,
+    "asian": 7000,
+    "black": 26000,
+    "mixedOther": 9000,
+    "total": 236000
+  },
+  {
+    "year": 2013,
+    "borough": "Brent",
+    "areaCode": "E09000005",
+    "white": 99000,
+    "asian": 110000,
+    "black": 55000,
+    "mixedOther": 51000,
+    "total": 315000
+  },
+  {
+    "year": 2013,
+    "borough": "Bromley",
+    "areaCode": "E09000006",
+    "white": 270000,
+    "asian": 20000,
+    "black": 13000,
+    "mixedOther": 13000,
+    "total": 316000
+  },
+  {
+    "year": 2013,
+    "borough": "Camden",
+    "areaCode": "E09000007",
+    "white": 146000,
+    "asian": 35000,
+    "black": 13000,
+    "mixedOther": 33000,
+    "total": 228000
+  },
+  {
+    "year": 2013,
+    "borough": "Croydon",
+    "areaCode": "E09000008",
+    "white": 204000,
+    "asian": 65000,
+    "black": 70000,
+    "mixedOther": 31000,
+    "total": 369000
+  },
+  {
+    "year": 2013,
+    "borough": "Ealing",
+    "areaCode": "E09000009",
+    "white": 153000,
+    "asian": 109000,
+    "black": 32000,
+    "mixedOther": 44000,
+    "total": 339000
+  },
+  {
+    "year": 2013,
+    "borough": "Enfield",
+    "areaCode": "E09000010",
+    "white": 204000,
+    "asian": 33000,
+    "black": 50000,
+    "mixedOther": 30000,
+    "total": 316000
+  },
+  {
+    "year": 2013,
+    "borough": "Greenwich",
+    "areaCode": "E09000011",
+    "white": 163000,
+    "asian": 40000,
+    "black": 47000,
+    "mixedOther": 11000,
+    "total": 262000
+  },
+  {
+    "year": 2013,
+    "borough": "Hackney",
+    "areaCode": "E09000012",
+    "white": 132000,
+    "asian": 23000,
+    "black": 62000,
+    "mixedOther": 39000,
+    "total": 255000
+  },
+  {
+    "year": 2013,
+    "borough": "Hammersmith and Fulham",
+    "areaCode": "E09000013",
+    "white": 128000,
+    "asian": 12000,
+    "black": 20000,
+    "mixedOther": 20000,
+    "total": 180000
+  },
+  {
+    "year": 2013,
+    "borough": "Haringey",
+    "areaCode": "E09000014",
+    "white": 159000,
+    "asian": 28000,
+    "black": 41000,
+    "mixedOther": 31000,
+    "total": 259000
+  },
+  {
+    "year": 2013,
+    "borough": "Harrow",
+    "areaCode": "E09000015",
+    "white": 105000,
+    "asian": 98000,
+    "black": 17000,
+    "mixedOther": 21000,
+    "total": 241000
+  },
+  {
+    "year": 2013,
+    "borough": "Havering",
+    "areaCode": "E09000016",
+    "white": 214000,
+    "asian": 13000,
+    "black": 7000,
+    "mixedOther": 6000,
+    "total": 240000
+  },
+  {
+    "year": 2013,
+    "borough": "Hillingdon",
+    "areaCode": "E09000017",
+    "white": 157000,
+    "asian": 83000,
+    "black": 15000,
+    "mixedOther": 28000,
+    "total": 283000
+  },
+  {
+    "year": 2013,
+    "borough": "Hounslow",
+    "areaCode": "E09000018",
+    "white": 135000,
+    "asian": 93000,
+    "black": 13000,
+    "mixedOther": 19000,
+    "total": 260000
+  },
+  {
+    "year": 2013,
+    "borough": "Islington",
+    "areaCode": "E09000019",
+    "white": 145000,
+    "asian": 14000,
+    "black": 29000,
+    "mixedOther": 24000,
+    "total": 213000
+  },
+  {
+    "year": 2013,
+    "borough": "Kensington and Chelsea",
+    "areaCode": "E09000020",
+    "white": 106000,
+    "asian": 11000,
+    "black": 13000,
+    "mixedOther": 24000,
+    "total": 155000
+  },
+  {
+    "year": 2013,
+    "borough": "Kingston upon Thames",
+    "areaCode": "E09000021",
+    "white": 127000,
+    "asian": 24000,
+    "black": 3000,
+    "mixedOther": 10000,
+    "total": 164000
+  },
+  {
+    "year": 2013,
+    "borough": "Lambeth",
+    "areaCode": "E09000022",
+    "white": 209000,
+    "asian": 13000,
+    "black": 60000,
+    "mixedOther": 28000,
+    "total": 310000
+  },
+  {
+    "year": 2013,
+    "borough": "Lewisham",
+    "areaCode": "E09000023",
+    "white": 178000,
+    "asian": 28000,
+    "black": 52000,
+    "mixedOther": 25000,
+    "total": 283000
+  },
+  {
+    "year": 2013,
+    "borough": "Merton",
+    "areaCode": "E09000024",
+    "white": 138000,
+    "asian": 29000,
+    "black": 21000,
+    "mixedOther": 13000,
+    "total": 202000
+  },
+  {
+    "year": 2013,
+    "borough": "Newham",
+    "areaCode": "E09000025",
+    "white": 76000,
+    "asian": 146000,
+    "black": 45000,
+    "mixedOther": 53000,
+    "total": 320000
+  },
+  {
+    "year": 2013,
+    "borough": "Redbridge",
+    "areaCode": "E09000026",
+    "white": 118000,
+    "asian": 124000,
+    "black": 23000,
+    "mixedOther": 22000,
+    "total": 287000
+  },
+  {
+    "year": 2013,
+    "borough": "Richmond upon Thames",
+    "areaCode": "E09000027",
+    "white": 168000,
+    "asian": 10000,
+    "black": null,
+    "mixedOther": 10000,
+    "total": 189000
+  },
+  {
+    "year": 2013,
+    "borough": "Southwark",
+    "areaCode": "E09000028",
+    "white": 176000,
+    "asian": 23000,
+    "black": 70000,
+    "mixedOther": 28000,
+    "total": 297000
+  },
+  {
+    "year": 2013,
+    "borough": "Sutton",
+    "areaCode": "E09000029",
+    "white": 147000,
+    "asian": 28000,
+    "black": 10000,
+    "mixedOther": 9000,
+    "total": 194000
+  },
+  {
+    "year": 2013,
+    "borough": "Tower Hamlets",
+    "areaCode": "E09000030",
+    "white": 110000,
+    "asian": 126000,
+    "black": 12000,
+    "mixedOther": 24000,
+    "total": 272000
+  },
+  {
+    "year": 2013,
+    "borough": "Waltham Forest",
+    "areaCode": "E09000031",
+    "white": 138000,
+    "asian": 60000,
+    "black": 43000,
+    "mixedOther": 23000,
+    "total": 264000
+  },
+  {
+    "year": 2013,
+    "borough": "Wandsworth",
+    "areaCode": "E09000032",
+    "white": 234000,
+    "asian": 30000,
+    "black": 26000,
+    "mixedOther": 18000,
+    "total": 308000
+  },
+  {
+    "year": 2013,
+    "borough": "Westminster",
+    "areaCode": "E09000033",
+    "white": 136000,
+    "asian": 25000,
+    "black": 12000,
+    "mixedOther": 50000,
+    "total": 224000
+  },
+  {
+    "year": 2012,
+    "borough": "Barking and Dagenham",
+    "areaCode": "E09000002",
+    "white": 106000,
+    "asian": 27000,
+    "black": 44000,
+    "mixedOther": 12000,
+    "total": 189000
+  },
+  {
+    "year": 2012,
+    "borough": "Barnet",
+    "areaCode": "E09000003",
+    "white": 235000,
+    "asian": 66000,
+    "black": 24000,
+    "mixedOther": 35000,
+    "total": 361000
+  },
+  {
+    "year": 2012,
+    "borough": "Bexley",
+    "areaCode": "E09000004",
+    "white": 186000,
+    "asian": 8000,
+    "black": 31000,
+    "mixedOther": 8000,
+    "total": 233000
+  },
+  {
+    "year": 2012,
+    "borough": "Brent",
+    "areaCode": "E09000005",
+    "white": 95000,
+    "asian": 109000,
+    "black": 58000,
+    "mixedOther": 50000,
+    "total": 312000
+  },
+  {
+    "year": 2012,
+    "borough": "Bromley",
+    "areaCode": "E09000006",
+    "white": 262000,
+    "asian": 19000,
+    "black": 14000,
+    "mixedOther": 18000,
+    "total": 312000
+  },
+  {
+    "year": 2012,
+    "borough": "Camden",
+    "areaCode": "E09000007",
+    "white": 134000,
+    "asian": 32000,
+    "black": 19000,
+    "mixedOther": 35000,
+    "total": 221000
+  },
+  {
+    "year": 2012,
+    "borough": "Croydon",
+    "areaCode": "E09000008",
+    "white": 212000,
+    "asian": 63000,
+    "black": 58000,
+    "mixedOther": 31000,
+    "total": 365000
+  },
+  {
+    "year": 2012,
+    "borough": "Ealing",
+    "areaCode": "E09000009",
+    "white": 169000,
+    "asian": 99000,
+    "black": 25000,
+    "mixedOther": 44000,
+    "total": 337000
+  },
+  {
+    "year": 2012,
+    "borough": "Enfield",
+    "areaCode": "E09000010",
+    "white": 203000,
+    "asian": 37000,
+    "black": 45000,
+    "mixedOther": 28000,
+    "total": 313000
+  },
+  {
+    "year": 2012,
+    "borough": "Greenwich",
+    "areaCode": "E09000011",
+    "white": 165000,
+    "asian": 32000,
+    "black": 47000,
+    "mixedOther": 13000,
+    "total": 257000
+  },
+  {
+    "year": 2012,
+    "borough": "Hackney",
+    "areaCode": "E09000012",
+    "white": 132000,
+    "asian": 30000,
+    "black": 46000,
+    "mixedOther": 41000,
+    "total": 251000
+  },
+  {
+    "year": 2012,
+    "borough": "Hammersmith and Fulham",
+    "areaCode": "E09000013",
+    "white": 123000,
+    "asian": 15000,
+    "black": 24000,
+    "mixedOther": 20000,
+    "total": 181000
+  },
+  {
+    "year": 2012,
+    "borough": "Haringey",
+    "areaCode": "E09000014",
+    "white": 155000,
+    "asian": 26000,
+    "black": 43000,
+    "mixedOther": 32000,
+    "total": 255000
+  },
+  {
+    "year": 2012,
+    "borough": "Harrow",
+    "areaCode": "E09000015",
+    "white": 94000,
+    "asian": 105000,
+    "black": 13000,
+    "mixedOther": 27000,
+    "total": 240000
+  },
+  {
+    "year": 2012,
+    "borough": "Havering",
+    "areaCode": "E09000016",
+    "white": 211000,
+    "asian": 8000,
+    "black": 12000,
+    "mixedOther": 6000,
+    "total": 237000
+  },
+  {
+    "year": 2012,
+    "borough": "Hillingdon",
+    "areaCode": "E09000017",
+    "white": 178000,
+    "asian": 70000,
+    "black": 16000,
+    "mixedOther": 15000,
+    "total": 279000
+  },
+  {
+    "year": 2012,
+    "borough": "Hounslow",
+    "areaCode": "E09000018",
+    "white": 147000,
+    "asian": 73000,
+    "black": 13000,
+    "mixedOther": 24000,
+    "total": 257000
+  },
+  {
+    "year": 2012,
+    "borough": "Islington",
+    "areaCode": "E09000019",
+    "white": 143000,
+    "asian": 19000,
+    "black": 24000,
+    "mixedOther": 23000,
+    "total": 209000
+  },
+  {
+    "year": 2012,
+    "borough": "Kensington and Chelsea",
+    "areaCode": "E09000020",
+    "white": 108000,
+    "asian": 13000,
+    "black": 11000,
+    "mixedOther": 22000,
+    "total": 154000
+  },
+  {
+    "year": 2012,
+    "borough": "Kingston upon Thames",
+    "areaCode": "E09000021",
+    "white": 120000,
+    "asian": 29000,
+    "black": 3000,
+    "mixedOther": 9000,
+    "total": 162000
+  },
+  {
+    "year": 2012,
+    "borough": "Lambeth",
+    "areaCode": "E09000022",
+    "white": 201000,
+    "asian": 15000,
+    "black": 71000,
+    "mixedOther": 20000,
+    "total": 306000
+  },
+  {
+    "year": 2012,
+    "borough": "Lewisham",
+    "areaCode": "E09000023",
+    "white": 160000,
+    "asian": 34000,
+    "black": 60000,
+    "mixedOther": 24000,
+    "total": 278000
+  },
+  {
+    "year": 2012,
+    "borough": "Merton",
+    "areaCode": "E09000024",
+    "white": 129000,
+    "asian": 40000,
+    "black": 18000,
+    "mixedOther": 12000,
+    "total": 200000
+  },
+  {
+    "year": 2012,
+    "borough": "Newham",
+    "areaCode": "E09000025",
+    "white": 83000,
+    "asian": 144000,
+    "black": 52000,
+    "mixedOther": 35000,
+    "total": 315000
+  },
+  {
+    "year": 2012,
+    "borough": "Redbridge",
+    "areaCode": "E09000026",
+    "white": 128000,
+    "asian": 116000,
+    "black": 19000,
+    "mixedOther": 20000,
+    "total": 282000
+  },
+  {
+    "year": 2012,
+    "borough": "Richmond upon Thames",
+    "areaCode": "E09000027",
+    "white": 164000,
+    "asian": 11000,
+    "black": null,
+    "mixedOther": 10000,
+    "total": 186000
+  },
+  {
+    "year": 2012,
+    "borough": "Southwark",
+    "areaCode": "E09000028",
+    "white": 171000,
+    "asian": 30000,
+    "black": 60000,
+    "mixedOther": 28000,
+    "total": 290000
+  },
+  {
+    "year": 2012,
+    "borough": "Sutton",
+    "areaCode": "E09000029",
+    "white": 147000,
+    "asian": 23000,
+    "black": 9000,
+    "mixedOther": 13000,
+    "total": 192000
+  },
+  {
+    "year": 2012,
+    "borough": "Tower Hamlets",
+    "areaCode": "E09000030",
+    "white": 100000,
+    "asian": 128000,
+    "black": 18000,
+    "mixedOther": 16000,
+    "total": 261000
+  },
+  {
+    "year": 2012,
+    "borough": "Waltham Forest",
+    "areaCode": "E09000031",
+    "white": 141000,
+    "asian": 56000,
+    "black": 38000,
+    "mixedOther": 25000,
+    "total": 260000
+  },
+  {
+    "year": 2012,
+    "borough": "Wandsworth",
+    "areaCode": "E09000032",
+    "white": 229000,
+    "asian": 26000,
+    "black": 29000,
+    "mixedOther": 23000,
+    "total": 306000
+  },
+  {
+    "year": 2012,
+    "borough": "Westminster",
+    "areaCode": "E09000033",
+    "white": 119000,
+    "asian": 30000,
+    "black": 19000,
+    "mixedOther": 55000,
+    "total": 222000
+  }
+]

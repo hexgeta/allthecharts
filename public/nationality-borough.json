@@ -1,0 +1,4098 @@
+[
+  {
+    "year": 2019,
+    "borough": "Barking and Dagenham",
+    "areaCode": "E09000002",
+    "total": 219000,
+    "british": 168000,
+    "nonBritish": 51000
+  },
+  {
+    "year": 2019,
+    "borough": "Barnet",
+    "areaCode": "E09000003",
+    "total": 396000,
+    "british": 303000,
+    "nonBritish": 92000
+  },
+  {
+    "year": 2019,
+    "borough": "Bexley",
+    "areaCode": "E09000004",
+    "total": 251000,
+    "british": 219000,
+    "nonBritish": 32000
+  },
+  {
+    "year": 2019,
+    "borough": "Brent",
+    "areaCode": "E09000005",
+    "total": 330000,
+    "british": 233000,
+    "nonBritish": 97000
+  },
+  {
+    "year": 2019,
+    "borough": "Bromley",
+    "areaCode": "E09000006",
+    "total": 335000,
+    "british": 281000,
+    "nonBritish": 54000
+  },
+  {
+    "year": 2019,
+    "borough": "Camden",
+    "areaCode": "E09000007",
+    "total": 260000,
+    "british": 195000,
+    "nonBritish": 64000
+  },
+  {
+    "year": 2019,
+    "borough": "Croydon",
+    "areaCode": "E09000008",
+    "total": 390000,
+    "british": 305000,
+    "nonBritish": 84000
+  },
+  {
+    "year": 2019,
+    "borough": "Ealing",
+    "areaCode": "E09000009",
+    "total": 344000,
+    "british": 262000,
+    "nonBritish": 81000
+  },
+  {
+    "year": 2019,
+    "borough": "Enfield",
+    "areaCode": "E09000010",
+    "total": 340000,
+    "british": 268000,
+    "nonBritish": 72000
+  },
+  {
+    "year": 2019,
+    "borough": "Greenwich",
+    "areaCode": "E09000011",
+    "total": 289000,
+    "british": 228000,
+    "nonBritish": 60000
+  },
+  {
+    "year": 2019,
+    "borough": "Hackney",
+    "areaCode": "E09000012",
+    "total": 285000,
+    "british": 214000,
+    "nonBritish": 71000
+  },
+  {
+    "year": 2019,
+    "borough": "Hammersmith and Fulham",
+    "areaCode": "E09000013",
+    "total": 180000,
+    "british": 135000,
+    "nonBritish": 45000
+  },
+  {
+    "year": 2019,
+    "borough": "Haringey",
+    "areaCode": "E09000014",
+    "total": 279000,
+    "british": 207000,
+    "nonBritish": 72000
+  },
+  {
+    "year": 2019,
+    "borough": "Harrow",
+    "areaCode": "E09000015",
+    "total": 250000,
+    "british": 187000,
+    "nonBritish": 63000
+  },
+  {
+    "year": 2019,
+    "borough": "Havering",
+    "areaCode": "E09000016",
+    "total": 261000,
+    "british": 242000,
+    "nonBritish": 19000
+  },
+  {
+    "year": 2019,
+    "borough": "Hillingdon",
+    "areaCode": "E09000017",
+    "total": 310000,
+    "british": 240000,
+    "nonBritish": 70000
+  },
+  {
+    "year": 2019,
+    "borough": "Hounslow",
+    "areaCode": "E09000018",
+    "total": 273000,
+    "british": 203000,
+    "nonBritish": 70000
+  },
+  {
+    "year": 2019,
+    "borough": "Islington",
+    "areaCode": "E09000019",
+    "total": 240000,
+    "british": 188000,
+    "nonBritish": 52000
+  },
+  {
+    "year": 2019,
+    "borough": "Kensington and Chelsea",
+    "areaCode": "E09000020",
+    "total": 154000,
+    "british": 101000,
+    "nonBritish": 53000
+  },
+  {
+    "year": 2019,
+    "borough": "Kingston upon Thames",
+    "areaCode": "E09000021",
+    "total": 179000,
+    "british": 150000,
+    "nonBritish": 29000
+  },
+  {
+    "year": 2019,
+    "borough": "Lambeth",
+    "areaCode": "E09000022",
+    "total": 328000,
+    "british": 258000,
+    "nonBritish": 69000
+  },
+  {
+    "year": 2019,
+    "borough": "Lewisham",
+    "areaCode": "E09000023",
+    "total": 309000,
+    "british": 246000,
+    "nonBritish": 63000
+  },
+  {
+    "year": 2019,
+    "borough": "Merton",
+    "areaCode": "E09000024",
+    "total": 209000,
+    "british": 161000,
+    "nonBritish": 48000
+  },
+  {
+    "year": 2019,
+    "borough": "Newham",
+    "areaCode": "E09000025",
+    "total": 358000,
+    "british": 265000,
+    "nonBritish": 93000
+  },
+  {
+    "year": 2019,
+    "borough": "Redbridge",
+    "areaCode": "E09000026",
+    "total": 311000,
+    "british": 232000,
+    "nonBritish": 79000
+  },
+  {
+    "year": 2019,
+    "borough": "Richmond upon Thames",
+    "areaCode": "E09000027",
+    "total": 198000,
+    "british": 165000,
+    "nonBritish": 34000
+  },
+  {
+    "year": 2019,
+    "borough": "Southwark",
+    "areaCode": "E09000028",
+    "total": 321000,
+    "british": 243000,
+    "nonBritish": 77000
+  },
+  {
+    "year": 2019,
+    "borough": "Sutton",
+    "areaCode": "E09000029",
+    "total": 206000,
+    "british": 179000,
+    "nonBritish": 28000
+  },
+  {
+    "year": 2019,
+    "borough": "Tower Hamlets",
+    "areaCode": "E09000030",
+    "total": 320000,
+    "british": 253000,
+    "nonBritish": 67000
+  },
+  {
+    "year": 2019,
+    "borough": "Waltham Forest",
+    "areaCode": "E09000031",
+    "total": 280000,
+    "british": 224000,
+    "nonBritish": 56000
+  },
+  {
+    "year": 2019,
+    "borough": "Wandsworth",
+    "areaCode": "E09000032",
+    "total": 325000,
+    "british": 246000,
+    "nonBritish": 79000
+  },
+  {
+    "year": 2019,
+    "borough": "Westminster",
+    "areaCode": "E09000033",
+    "total": 253000,
+    "british": 171000,
+    "nonBritish": 82000
+  },
+  {
+    "year": 2018,
+    "borough": "Barking and Dagenham",
+    "areaCode": "E09000002",
+    "total": 215000,
+    "british": 167000,
+    "nonBritish": 48000
+  },
+  {
+    "year": 2018,
+    "borough": "Barnet",
+    "areaCode": "E09000003",
+    "total": 391000,
+    "british": 321000,
+    "nonBritish": 71000
+  },
+  {
+    "year": 2018,
+    "borough": "Bexley",
+    "areaCode": "E09000004",
+    "total": 249000,
+    "british": 219000,
+    "nonBritish": 29000
+  },
+  {
+    "year": 2018,
+    "borough": "Brent",
+    "areaCode": "E09000005",
+    "total": 328000,
+    "british": 226000,
+    "nonBritish": 102000
+  },
+  {
+    "year": 2018,
+    "borough": "Bromley",
+    "areaCode": "E09000006",
+    "total": 332000,
+    "british": 291000,
+    "nonBritish": 41000
+  },
+  {
+    "year": 2018,
+    "borough": "Camden",
+    "areaCode": "E09000007",
+    "total": 256000,
+    "british": 184000,
+    "nonBritish": 70000
+  },
+  {
+    "year": 2018,
+    "borough": "Croydon",
+    "areaCode": "E09000008",
+    "total": 387000,
+    "british": 320000,
+    "nonBritish": 66000
+  },
+  {
+    "year": 2018,
+    "borough": "Ealing",
+    "areaCode": "E09000009",
+    "total": 343000,
+    "british": 271000,
+    "nonBritish": 72000
+  },
+  {
+    "year": 2018,
+    "borough": "Enfield",
+    "areaCode": "E09000010",
+    "total": 337000,
+    "british": 272000,
+    "nonBritish": 65000
+  },
+  {
+    "year": 2018,
+    "borough": "Greenwich",
+    "areaCode": "E09000011",
+    "total": 285000,
+    "british": 221000,
+    "nonBritish": 62000
+  },
+  {
+    "year": 2018,
+    "borough": "Hackney",
+    "areaCode": "E09000012",
+    "total": 281000,
+    "british": 214000,
+    "nonBritish": 67000
+  },
+  {
+    "year": 2018,
+    "borough": "Hammersmith and Fulham",
+    "areaCode": "E09000013",
+    "total": 180000,
+    "british": 131000,
+    "nonBritish": 50000
+  },
+  {
+    "year": 2018,
+    "borough": "Haringey",
+    "areaCode": "E09000014",
+    "total": 276000,
+    "british": 199000,
+    "nonBritish": 77000
+  },
+  {
+    "year": 2018,
+    "borough": "Harrow",
+    "areaCode": "E09000015",
+    "total": 249000,
+    "british": 185000,
+    "nonBritish": 64000
+  },
+  {
+    "year": 2018,
+    "borough": "Havering",
+    "areaCode": "E09000016",
+    "total": 258000,
+    "british": 237000,
+    "nonBritish": 20000
+  },
+  {
+    "year": 2018,
+    "borough": "Hillingdon",
+    "areaCode": "E09000017",
+    "total": 306000,
+    "british": 248000,
+    "nonBritish": 58000
+  },
+  {
+    "year": 2018,
+    "borough": "Hounslow",
+    "areaCode": "E09000018",
+    "total": 271000,
+    "british": 201000,
+    "nonBritish": 70000
+  },
+  {
+    "year": 2018,
+    "borough": "Islington",
+    "areaCode": "E09000019",
+    "total": 237000,
+    "british": 192000,
+    "nonBritish": 44000
+  },
+  {
+    "year": 2018,
+    "borough": "Kensington and Chelsea",
+    "areaCode": "E09000020",
+    "total": 154000,
+    "british": 100000,
+    "nonBritish": 55000
+  },
+  {
+    "year": 2018,
+    "borough": "Kingston upon Thames",
+    "areaCode": "E09000021",
+    "total": 177000,
+    "british": 141000,
+    "nonBritish": 36000
+  },
+  {
+    "year": 2018,
+    "borough": "Lambeth",
+    "areaCode": "E09000022",
+    "total": 326000,
+    "british": 253000,
+    "nonBritish": 72000
+  },
+  {
+    "year": 2018,
+    "borough": "Lewisham",
+    "areaCode": "E09000023",
+    "total": 305000,
+    "british": 235000,
+    "nonBritish": 70000
+  },
+  {
+    "year": 2018,
+    "borough": "Merton",
+    "areaCode": "E09000024",
+    "total": 208000,
+    "british": 162000,
+    "nonBritish": 46000
+  },
+  {
+    "year": 2018,
+    "borough": "Newham",
+    "areaCode": "E09000025",
+    "total": 354000,
+    "british": 257000,
+    "nonBritish": 97000
+  },
+  {
+    "year": 2018,
+    "borough": "Redbridge",
+    "areaCode": "E09000026",
+    "total": 307000,
+    "british": 222000,
+    "nonBritish": 85000
+  },
+  {
+    "year": 2018,
+    "borough": "Richmond upon Thames",
+    "areaCode": "E09000027",
+    "total": 197000,
+    "british": 162000,
+    "nonBritish": 34000
+  },
+  {
+    "year": 2018,
+    "borough": "Southwark",
+    "areaCode": "E09000028",
+    "total": 317000,
+    "british": 230000,
+    "nonBritish": 88000
+  },
+  {
+    "year": 2018,
+    "borough": "Sutton",
+    "areaCode": "E09000029",
+    "total": 204000,
+    "british": 171000,
+    "nonBritish": 33000
+  },
+  {
+    "year": 2018,
+    "borough": "Tower Hamlets",
+    "areaCode": "E09000030",
+    "total": 314000,
+    "british": 222000,
+    "nonBritish": 92000
+  },
+  {
+    "year": 2018,
+    "borough": "Waltham Forest",
+    "areaCode": "E09000031",
+    "total": 278000,
+    "british": 225000,
+    "nonBritish": 53000
+  },
+  {
+    "year": 2018,
+    "borough": "Wandsworth",
+    "areaCode": "E09000032",
+    "total": 323000,
+    "british": 259000,
+    "nonBritish": 63000
+  },
+  {
+    "year": 2018,
+    "borough": "Westminster",
+    "areaCode": "E09000033",
+    "total": 251000,
+    "british": 171000,
+    "nonBritish": 80000
+  },
+  {
+    "year": 2017,
+    "borough": "Barking and Dagenham",
+    "areaCode": "E09000002",
+    "total": 210000,
+    "british": 160000,
+    "nonBritish": 50000
+  },
+  {
+    "year": 2017,
+    "borough": "Barnet",
+    "areaCode": "E09000003",
+    "total": 391000,
+    "british": 310000,
+    "nonBritish": 81000
+  },
+  {
+    "year": 2017,
+    "borough": "Bexley",
+    "areaCode": "E09000004",
+    "total": 247000,
+    "british": 225000,
+    "nonBritish": 22000
+  },
+  {
+    "year": 2017,
+    "borough": "Brent",
+    "areaCode": "E09000005",
+    "total": 333000,
+    "british": 217000,
+    "nonBritish": 114000
+  },
+  {
+    "year": 2017,
+    "borough": "Bromley",
+    "areaCode": "E09000006",
+    "total": 330000,
+    "british": 305000,
+    "nonBritish": 25000
+  },
+  {
+    "year": 2017,
+    "borough": "Camden",
+    "areaCode": "E09000007",
+    "total": 250000,
+    "british": 181000,
+    "nonBritish": 69000
+  },
+  {
+    "year": 2017,
+    "borough": "Croydon",
+    "areaCode": "E09000008",
+    "total": 387000,
+    "british": 307000,
+    "nonBritish": 80000
+  },
+  {
+    "year": 2017,
+    "borough": "Ealing",
+    "areaCode": "E09000009",
+    "total": 348000,
+    "british": 250000,
+    "nonBritish": 98000
+  },
+  {
+    "year": 2017,
+    "borough": "Enfield",
+    "areaCode": "E09000010",
+    "total": 336000,
+    "british": 288000,
+    "nonBritish": 49000
+  },
+  {
+    "year": 2017,
+    "borough": "Greenwich",
+    "areaCode": "E09000011",
+    "total": 280000,
+    "british": 210000,
+    "nonBritish": 70000
+  },
+  {
+    "year": 2017,
+    "borough": "Hackney",
+    "areaCode": "E09000012",
+    "total": 277000,
+    "british": 204000,
+    "nonBritish": 73000
+  },
+  {
+    "year": 2017,
+    "borough": "Hammersmith and Fulham",
+    "areaCode": "E09000013",
+    "total": 182000,
+    "british": 127000,
+    "nonBritish": 55000
+  },
+  {
+    "year": 2017,
+    "borough": "Haringey",
+    "areaCode": "E09000014",
+    "total": 278000,
+    "british": 199000,
+    "nonBritish": 79000
+  },
+  {
+    "year": 2017,
+    "borough": "Harrow",
+    "areaCode": "E09000015",
+    "total": 252000,
+    "british": 186000,
+    "nonBritish": 67000
+  },
+  {
+    "year": 2017,
+    "borough": "Havering",
+    "areaCode": "E09000016",
+    "total": 253000,
+    "british": 229000,
+    "nonBritish": 23000
+  },
+  {
+    "year": 2017,
+    "borough": "Hillingdon",
+    "areaCode": "E09000017",
+    "total": 307000,
+    "british": 257000,
+    "nonBritish": 50000
+  },
+  {
+    "year": 2017,
+    "borough": "Hounslow",
+    "areaCode": "E09000018",
+    "total": 278000,
+    "british": 187000,
+    "nonBritish": 91000
+  },
+  {
+    "year": 2017,
+    "borough": "Islington",
+    "areaCode": "E09000019",
+    "total": 234000,
+    "british": 182000,
+    "nonBritish": 52000
+  },
+  {
+    "year": 2017,
+    "borough": "Kensington and Chelsea",
+    "areaCode": "E09000020",
+    "total": 157000,
+    "british": 106000,
+    "nonBritish": 51000
+  },
+  {
+    "year": 2017,
+    "borough": "Kingston upon Thames",
+    "areaCode": "E09000021",
+    "total": 178000,
+    "british": 145000,
+    "nonBritish": 33000
+  },
+  {
+    "year": 2017,
+    "borough": "Lambeth",
+    "areaCode": "E09000022",
+    "total": 329000,
+    "british": 258000,
+    "nonBritish": 71000
+  },
+  {
+    "year": 2017,
+    "borough": "Lewisham",
+    "areaCode": "E09000023",
+    "total": 304000,
+    "british": 226000,
+    "nonBritish": 78000
+  },
+  {
+    "year": 2017,
+    "borough": "Merton",
+    "areaCode": "E09000024",
+    "total": 210000,
+    "british": 170000,
+    "nonBritish": 40000
+  },
+  {
+    "year": 2017,
+    "borough": "Newham",
+    "areaCode": "E09000025",
+    "total": 346000,
+    "british": 216000,
+    "nonBritish": 130000
+  },
+  {
+    "year": 2017,
+    "borough": "Redbridge",
+    "areaCode": "E09000026",
+    "total": 307000,
+    "british": 221000,
+    "nonBritish": 85000
+  },
+  {
+    "year": 2017,
+    "borough": "Richmond upon Thames",
+    "areaCode": "E09000027",
+    "total": 201000,
+    "british": 172000,
+    "nonBritish": 29000
+  },
+  {
+    "year": 2017,
+    "borough": "Southwark",
+    "areaCode": "E09000028",
+    "total": 317000,
+    "british": 228000,
+    "nonBritish": 89000
+  },
+  {
+    "year": 2017,
+    "borough": "Sutton",
+    "areaCode": "E09000029",
+    "total": 204000,
+    "british": 176000,
+    "nonBritish": 28000
+  },
+  {
+    "year": 2017,
+    "borough": "Tower Hamlets",
+    "areaCode": "E09000030",
+    "total": 311000,
+    "british": 216000,
+    "nonBritish": 94000
+  },
+  {
+    "year": 2017,
+    "borough": "Waltham Forest",
+    "areaCode": "E09000031",
+    "total": 277000,
+    "british": 211000,
+    "nonBritish": 66000
+  },
+  {
+    "year": 2017,
+    "borough": "Wandsworth",
+    "areaCode": "E09000032",
+    "total": 320000,
+    "british": 244000,
+    "nonBritish": 77000
+  },
+  {
+    "year": 2017,
+    "borough": "Westminster",
+    "areaCode": "E09000033",
+    "total": 255000,
+    "british": 162000,
+    "nonBritish": 92000
+  },
+  {
+    "year": 2016,
+    "borough": "Barking and Dagenham",
+    "areaCode": "E09000002",
+    "total": 206000,
+    "british": 161000,
+    "nonBritish": 45000
+  },
+  {
+    "year": 2016,
+    "borough": "Barnet",
+    "areaCode": "E09000003",
+    "total": 385000,
+    "british": 304000,
+    "nonBritish": 80000
+  },
+  {
+    "year": 2016,
+    "borough": "Bexley",
+    "areaCode": "E09000004",
+    "total": 244000,
+    "british": 217000,
+    "nonBritish": 27000
+  },
+  {
+    "year": 2016,
+    "borough": "Brent",
+    "areaCode": "E09000005",
+    "total": 329000,
+    "british": 217000,
+    "nonBritish": 112000
+  },
+  {
+    "year": 2016,
+    "borough": "Bromley",
+    "areaCode": "E09000006",
+    "total": 326000,
+    "british": 290000,
+    "nonBritish": 36000
+  },
+  {
+    "year": 2016,
+    "borough": "Camden",
+    "areaCode": "E09000007",
+    "total": 246000,
+    "british": 182000,
+    "nonBritish": 63000
+  },
+  {
+    "year": 2016,
+    "borough": "Croydon",
+    "areaCode": "E09000008",
+    "total": 382000,
+    "british": 309000,
+    "nonBritish": 74000
+  },
+  {
+    "year": 2016,
+    "borough": "Ealing",
+    "areaCode": "E09000009",
+    "total": 346000,
+    "british": 234000,
+    "nonBritish": 111000
+  },
+  {
+    "year": 2016,
+    "borough": "Enfield",
+    "areaCode": "E09000010",
+    "total": 332000,
+    "british": 271000,
+    "nonBritish": 60000
+  },
+  {
+    "year": 2016,
+    "borough": "Greenwich",
+    "areaCode": "E09000011",
+    "total": 276000,
+    "british": 209000,
+    "nonBritish": 67000
+  },
+  {
+    "year": 2016,
+    "borough": "Hackney",
+    "areaCode": "E09000012",
+    "total": 272000,
+    "british": 208000,
+    "nonBritish": 64000
+  },
+  {
+    "year": 2016,
+    "borough": "Hammersmith and Fulham",
+    "areaCode": "E09000013",
+    "total": 181000,
+    "british": 125000,
+    "nonBritish": 55000
+  },
+  {
+    "year": 2016,
+    "borough": "Haringey",
+    "areaCode": "E09000014",
+    "total": 275000,
+    "british": 201000,
+    "nonBritish": 74000
+  },
+  {
+    "year": 2016,
+    "borough": "Harrow",
+    "areaCode": "E09000015",
+    "total": 250000,
+    "british": 172000,
+    "nonBritish": 78000
+  },
+  {
+    "year": 2016,
+    "borough": "Havering",
+    "areaCode": "E09000016",
+    "total": 250000,
+    "british": 229000,
+    "nonBritish": 21000
+  },
+  {
+    "year": 2016,
+    "borough": "Hillingdon",
+    "areaCode": "E09000017",
+    "total": 302000,
+    "british": 250000,
+    "nonBritish": 51000
+  },
+  {
+    "year": 2016,
+    "borough": "Hounslow",
+    "areaCode": "E09000018",
+    "total": 274000,
+    "british": 194000,
+    "nonBritish": 80000
+  },
+  {
+    "year": 2016,
+    "borough": "Islington",
+    "areaCode": "E09000019",
+    "total": 230000,
+    "british": 174000,
+    "nonBritish": 56000
+  },
+  {
+    "year": 2016,
+    "borough": "Kensington and Chelsea",
+    "areaCode": "E09000020",
+    "total": 156000,
+    "british": 98000,
+    "nonBritish": 58000
+  },
+  {
+    "year": 2016,
+    "borough": "Kingston upon Thames",
+    "areaCode": "E09000021",
+    "total": 175000,
+    "british": 143000,
+    "nonBritish": 31000
+  },
+  {
+    "year": 2016,
+    "borough": "Lambeth",
+    "areaCode": "E09000022",
+    "total": 325000,
+    "british": 259000,
+    "nonBritish": 67000
+  },
+  {
+    "year": 2016,
+    "borough": "Lewisham",
+    "areaCode": "E09000023",
+    "total": 300000,
+    "british": 239000,
+    "nonBritish": 61000
+  },
+  {
+    "year": 2016,
+    "borough": "Merton",
+    "areaCode": "E09000024",
+    "total": 207000,
+    "british": 152000,
+    "nonBritish": 55000
+  },
+  {
+    "year": 2016,
+    "borough": "Newham",
+    "areaCode": "E09000025",
+    "total": 339000,
+    "british": 229000,
+    "nonBritish": 111000
+  },
+  {
+    "year": 2016,
+    "borough": "Redbridge",
+    "areaCode": "E09000026",
+    "total": 302000,
+    "british": 230000,
+    "nonBritish": 71000
+  },
+  {
+    "year": 2016,
+    "borough": "Richmond upon Thames",
+    "areaCode": "E09000027",
+    "total": 198000,
+    "british": 171000,
+    "nonBritish": 27000
+  },
+  {
+    "year": 2016,
+    "borough": "Southwark",
+    "areaCode": "E09000028",
+    "total": 312000,
+    "british": 244000,
+    "nonBritish": 69000
+  },
+  {
+    "year": 2016,
+    "borough": "Sutton",
+    "areaCode": "E09000029",
+    "total": 202000,
+    "british": 171000,
+    "nonBritish": 31000
+  },
+  {
+    "year": 2016,
+    "borough": "Tower Hamlets",
+    "areaCode": "E09000030",
+    "total": 302000,
+    "british": 229000,
+    "nonBritish": 74000
+  },
+  {
+    "year": 2016,
+    "borough": "Waltham Forest",
+    "areaCode": "E09000031",
+    "total": 274000,
+    "british": 203000,
+    "nonBritish": 71000
+  },
+  {
+    "year": 2016,
+    "borough": "Wandsworth",
+    "areaCode": "E09000032",
+    "total": 317000,
+    "british": 239000,
+    "nonBritish": 77000
+  },
+  {
+    "year": 2016,
+    "borough": "Westminster",
+    "areaCode": "E09000033",
+    "total": 251000,
+    "british": 166000,
+    "nonBritish": 85000
+  },
+  {
+    "year": 2015,
+    "borough": "Barking and Dagenham",
+    "areaCode": "E09000002",
+    "total": 201000,
+    "british": 144000,
+    "nonBritish": 57000
+  },
+  {
+    "year": 2015,
+    "borough": "Barnet",
+    "areaCode": "E09000003",
+    "total": 378000,
+    "british": 298000,
+    "nonBritish": 79000
+  },
+  {
+    "year": 2015,
+    "borough": "Bexley",
+    "areaCode": "E09000004",
+    "total": 242000,
+    "british": 217000,
+    "nonBritish": 24000
+  },
+  {
+    "year": 2015,
+    "borough": "Brent",
+    "areaCode": "E09000005",
+    "total": 323000,
+    "british": 214000,
+    "nonBritish": 107000
+  },
+  {
+    "year": 2015,
+    "borough": "Bromley",
+    "areaCode": "E09000006",
+    "total": 322000,
+    "british": 284000,
+    "nonBritish": 37000
+  },
+  {
+    "year": 2015,
+    "borough": "Camden",
+    "areaCode": "E09000007",
+    "total": 237000,
+    "british": 183000,
+    "nonBritish": 53000
+  },
+  {
+    "year": 2015,
+    "borough": "Croydon",
+    "areaCode": "E09000008",
+    "total": 377000,
+    "british": 318000,
+    "nonBritish": 59000
+  },
+  {
+    "year": 2015,
+    "borough": "Ealing",
+    "areaCode": "E09000009",
+    "total": 340000,
+    "british": 235000,
+    "nonBritish": 104000
+  },
+  {
+    "year": 2015,
+    "borough": "Enfield",
+    "areaCode": "E09000010",
+    "total": 326000,
+    "british": 267000,
+    "nonBritish": 59000
+  },
+  {
+    "year": 2015,
+    "borough": "Greenwich",
+    "areaCode": "E09000011",
+    "total": 271000,
+    "british": 203000,
+    "nonBritish": 68000
+  },
+  {
+    "year": 2015,
+    "borough": "Hackney",
+    "areaCode": "E09000012",
+    "total": 268000,
+    "british": 209000,
+    "nonBritish": 59000
+  },
+  {
+    "year": 2015,
+    "borough": "Hammersmith and Fulham",
+    "areaCode": "E09000013",
+    "total": 176000,
+    "british": 128000,
+    "nonBritish": 48000
+  },
+  {
+    "year": 2015,
+    "borough": "Haringey",
+    "areaCode": "E09000014",
+    "total": 270000,
+    "british": 204000,
+    "nonBritish": 67000
+  },
+  {
+    "year": 2015,
+    "borough": "Harrow",
+    "areaCode": "E09000015",
+    "total": 246000,
+    "british": 183000,
+    "nonBritish": 63000
+  },
+  {
+    "year": 2015,
+    "borough": "Havering",
+    "areaCode": "E09000016",
+    "total": 248000,
+    "british": 230000,
+    "nonBritish": 18000
+  },
+  {
+    "year": 2015,
+    "borough": "Hillingdon",
+    "areaCode": "E09000017",
+    "total": 296000,
+    "british": 240000,
+    "nonBritish": 56000
+  },
+  {
+    "year": 2015,
+    "borough": "Hounslow",
+    "areaCode": "E09000018",
+    "total": 268000,
+    "british": 193000,
+    "nonBritish": 74000
+  },
+  {
+    "year": 2015,
+    "borough": "Islington",
+    "areaCode": "E09000019",
+    "total": 224000,
+    "british": 167000,
+    "nonBritish": 57000
+  },
+  {
+    "year": 2015,
+    "borough": "Kensington and Chelsea",
+    "areaCode": "E09000020",
+    "total": 154000,
+    "british": 98000,
+    "nonBritish": 57000
+  },
+  {
+    "year": 2015,
+    "borough": "Kingston upon Thames",
+    "areaCode": "E09000021",
+    "total": 171000,
+    "british": 138000,
+    "nonBritish": 33000
+  },
+  {
+    "year": 2015,
+    "borough": "Lambeth",
+    "areaCode": "E09000022",
+    "total": 320000,
+    "british": 251000,
+    "nonBritish": 69000
+  },
+  {
+    "year": 2015,
+    "borough": "Lewisham",
+    "areaCode": "E09000023",
+    "total": 295000,
+    "british": 233000,
+    "nonBritish": 62000
+  },
+  {
+    "year": 2015,
+    "borough": "Merton",
+    "areaCode": "E09000024",
+    "total": 203000,
+    "british": 146000,
+    "nonBritish": 57000
+  },
+  {
+    "year": 2015,
+    "borough": "Newham",
+    "areaCode": "E09000025",
+    "total": 329000,
+    "british": 212000,
+    "nonBritish": 117000
+  },
+  {
+    "year": 2015,
+    "borough": "Redbridge",
+    "areaCode": "E09000026",
+    "total": 296000,
+    "british": 238000,
+    "nonBritish": 58000
+  },
+  {
+    "year": 2015,
+    "borough": "Richmond upon Thames",
+    "areaCode": "E09000027",
+    "total": 194000,
+    "british": 165000,
+    "nonBritish": 29000
+  },
+  {
+    "year": 2015,
+    "borough": "Southwark",
+    "areaCode": "E09000028",
+    "total": 305000,
+    "british": 231000,
+    "nonBritish": 74000
+  },
+  {
+    "year": 2015,
+    "borough": "Sutton",
+    "areaCode": "E09000029",
+    "total": 199000,
+    "british": 172000,
+    "nonBritish": 26000
+  },
+  {
+    "year": 2015,
+    "borough": "Tower Hamlets",
+    "areaCode": "E09000030",
+    "total": 293000,
+    "british": 231000,
+    "nonBritish": 62000
+  },
+  {
+    "year": 2015,
+    "borough": "Waltham Forest",
+    "areaCode": "E09000031",
+    "total": 269000,
+    "british": 210000,
+    "nonBritish": 59000
+  },
+  {
+    "year": 2015,
+    "borough": "Wandsworth",
+    "areaCode": "E09000032",
+    "total": 311000,
+    "british": 241000,
+    "nonBritish": 69000
+  },
+  {
+    "year": 2015,
+    "borough": "Westminster",
+    "areaCode": "E09000033",
+    "total": 243000,
+    "british": 166000,
+    "nonBritish": 76000
+  },
+  {
+    "year": 2014,
+    "borough": "Barking and Dagenham",
+    "areaCode": "E09000002",
+    "total": 197000,
+    "british": 145000,
+    "nonBritish": 52000
+  },
+  {
+    "year": 2014,
+    "borough": "Barnet",
+    "areaCode": "E09000003",
+    "total": 373000,
+    "british": 286000,
+    "nonBritish": 87000
+  },
+  {
+    "year": 2014,
+    "borough": "Bexley",
+    "areaCode": "E09000004",
+    "total": 236000,
+    "british": 211000,
+    "nonBritish": 25000
+  },
+  {
+    "year": 2014,
+    "borough": "Brent",
+    "areaCode": "E09000005",
+    "total": 322000,
+    "british": 198000,
+    "nonBritish": 122000
+  },
+  {
+    "year": 2014,
+    "borough": "Bromley",
+    "areaCode": "E09000006",
+    "total": 316000,
+    "british": 278000,
+    "nonBritish": 38000
+  },
+  {
+    "year": 2014,
+    "borough": "Camden",
+    "areaCode": "E09000007",
+    "total": 230000,
+    "british": 171000,
+    "nonBritish": 58000
+  },
+  {
+    "year": 2014,
+    "borough": "Croydon",
+    "areaCode": "E09000008",
+    "total": 374000,
+    "british": 310000,
+    "nonBritish": 65000
+  },
+  {
+    "year": 2014,
+    "borough": "Ealing",
+    "areaCode": "E09000009",
+    "total": 342000,
+    "british": 242000,
+    "nonBritish": 100000
+  },
+  {
+    "year": 2014,
+    "borough": "Enfield",
+    "areaCode": "E09000010",
+    "total": 323000,
+    "british": 276000,
+    "nonBritish": 48000
+  },
+  {
+    "year": 2014,
+    "borough": "Greenwich",
+    "areaCode": "E09000011",
+    "total": 267000,
+    "british": 209000,
+    "nonBritish": 58000
+  },
+  {
+    "year": 2014,
+    "borough": "Hackney",
+    "areaCode": "E09000012",
+    "total": 261000,
+    "british": 204000,
+    "nonBritish": 57000
+  },
+  {
+    "year": 2014,
+    "borough": "Hammersmith and Fulham",
+    "areaCode": "E09000013",
+    "total": 176000,
+    "british": 124000,
+    "nonBritish": 52000
+  },
+  {
+    "year": 2014,
+    "borough": "Haringey",
+    "areaCode": "E09000014",
+    "total": 263000,
+    "british": 191000,
+    "nonBritish": 72000
+  },
+  {
+    "year": 2014,
+    "borough": "Harrow",
+    "areaCode": "E09000015",
+    "total": 245000,
+    "british": 175000,
+    "nonBritish": 70000
+  },
+  {
+    "year": 2014,
+    "borough": "Havering",
+    "areaCode": "E09000016",
+    "total": 241000,
+    "british": 221000,
+    "nonBritish": 20000
+  },
+  {
+    "year": 2014,
+    "borough": "Hillingdon",
+    "areaCode": "E09000017",
+    "total": 290000,
+    "british": 232000,
+    "nonBritish": 58000
+  },
+  {
+    "year": 2014,
+    "borough": "Hounslow",
+    "areaCode": "E09000018",
+    "total": 267000,
+    "british": 182000,
+    "nonBritish": 85000
+  },
+  {
+    "year": 2014,
+    "borough": "Islington",
+    "areaCode": "E09000019",
+    "total": 218000,
+    "british": 164000,
+    "nonBritish": 54000
+  },
+  {
+    "year": 2014,
+    "borough": "Kensington and Chelsea",
+    "areaCode": "E09000020",
+    "total": 150000,
+    "british": 93000,
+    "nonBritish": 56000
+  },
+  {
+    "year": 2014,
+    "borough": "Kingston upon Thames",
+    "areaCode": "E09000021",
+    "total": 167000,
+    "british": 136000,
+    "nonBritish": 30000
+  },
+  {
+    "year": 2014,
+    "borough": "Lambeth",
+    "areaCode": "E09000022",
+    "total": 318000,
+    "british": 249000,
+    "nonBritish": 69000
+  },
+  {
+    "year": 2014,
+    "borough": "Lewisham",
+    "areaCode": "E09000023",
+    "total": 287000,
+    "british": 230000,
+    "nonBritish": 58000
+  },
+  {
+    "year": 2014,
+    "borough": "Merton",
+    "areaCode": "E09000024",
+    "total": 203000,
+    "british": 145000,
+    "nonBritish": 58000
+  },
+  {
+    "year": 2014,
+    "borough": "Newham",
+    "areaCode": "E09000025",
+    "total": 327000,
+    "british": 227000,
+    "nonBritish": 100000
+  },
+  {
+    "year": 2014,
+    "borough": "Redbridge",
+    "areaCode": "E09000026",
+    "total": 291000,
+    "british": 228000,
+    "nonBritish": 62000
+  },
+  {
+    "year": 2014,
+    "borough": "Richmond upon Thames",
+    "areaCode": "E09000027",
+    "total": 190000,
+    "british": 157000,
+    "nonBritish": 33000
+  },
+  {
+    "year": 2014,
+    "borough": "Southwark",
+    "areaCode": "E09000028",
+    "total": 299000,
+    "british": 231000,
+    "nonBritish": 68000
+  },
+  {
+    "year": 2014,
+    "borough": "Sutton",
+    "areaCode": "E09000029",
+    "total": 196000,
+    "british": 170000,
+    "nonBritish": 25000
+  },
+  {
+    "year": 2014,
+    "borough": "Tower Hamlets",
+    "areaCode": "E09000030",
+    "total": 276000,
+    "british": 216000,
+    "nonBritish": 60000
+  },
+  {
+    "year": 2014,
+    "borough": "Waltham Forest",
+    "areaCode": "E09000031",
+    "total": 269000,
+    "british": 202000,
+    "nonBritish": 64000
+  },
+  {
+    "year": 2014,
+    "borough": "Wandsworth",
+    "areaCode": "E09000032",
+    "total": 308000,
+    "british": 234000,
+    "nonBritish": 72000
+  },
+  {
+    "year": 2014,
+    "borough": "Westminster",
+    "areaCode": "E09000033",
+    "total": 232000,
+    "british": 156000,
+    "nonBritish": 77000
+  },
+  {
+    "year": 2013,
+    "borough": "Barking and Dagenham",
+    "areaCode": "E09000002",
+    "total": 193000,
+    "british": 147000,
+    "nonBritish": 46000
+  },
+  {
+    "year": 2013,
+    "borough": "Barnet",
+    "areaCode": "E09000003",
+    "total": 367000,
+    "british": 297000,
+    "nonBritish": 68000
+  },
+  {
+    "year": 2013,
+    "borough": "Bexley",
+    "areaCode": "E09000004",
+    "total": 235000,
+    "british": 208000,
+    "nonBritish": 27000
+  },
+  {
+    "year": 2013,
+    "borough": "Brent",
+    "areaCode": "E09000005",
+    "total": 317000,
+    "british": 196000,
+    "nonBritish": 117000
+  },
+  {
+    "year": 2013,
+    "borough": "Bromley",
+    "areaCode": "E09000006",
+    "total": 314000,
+    "british": 283000,
+    "nonBritish": 31000
+  },
+  {
+    "year": 2013,
+    "borough": "Camden",
+    "areaCode": "E09000007",
+    "total": 226000,
+    "british": 168000,
+    "nonBritish": 58000
+  },
+  {
+    "year": 2013,
+    "borough": "Croydon",
+    "areaCode": "E09000008",
+    "total": 370000,
+    "british": 298000,
+    "nonBritish": 72000
+  },
+  {
+    "year": 2013,
+    "borough": "Ealing",
+    "areaCode": "E09000009",
+    "total": 340000,
+    "british": 260000,
+    "nonBritish": 80000
+  },
+  {
+    "year": 2013,
+    "borough": "Enfield",
+    "areaCode": "E09000010",
+    "total": 319000,
+    "british": 266000,
+    "nonBritish": 54000
+  },
+  {
+    "year": 2013,
+    "borough": "Greenwich",
+    "areaCode": "E09000011",
+    "total": 262000,
+    "british": 207000,
+    "nonBritish": 55000
+  },
+  {
+    "year": 2013,
+    "borough": "Hackney",
+    "areaCode": "E09000012",
+    "total": 256000,
+    "british": 203000,
+    "nonBritish": 52000
+  },
+  {
+    "year": 2013,
+    "borough": "Hammersmith and Fulham",
+    "areaCode": "E09000013",
+    "total": 177000,
+    "british": 123000,
+    "nonBritish": 54000
+  },
+  {
+    "year": 2013,
+    "borough": "Haringey",
+    "areaCode": "E09000014",
+    "total": 260000,
+    "british": 197000,
+    "nonBritish": 62000
+  },
+  {
+    "year": 2013,
+    "borough": "Harrow",
+    "areaCode": "E09000015",
+    "total": 243000,
+    "british": 176000,
+    "nonBritish": 67000
+  },
+  {
+    "year": 2013,
+    "borough": "Havering",
+    "areaCode": "E09000016",
+    "total": 240000,
+    "british": 222000,
+    "nonBritish": 18000
+  },
+  {
+    "year": 2013,
+    "borough": "Hillingdon",
+    "areaCode": "E09000017",
+    "total": 284000,
+    "british": 236000,
+    "nonBritish": 48000
+  },
+  {
+    "year": 2013,
+    "borough": "Hounslow",
+    "areaCode": "E09000018",
+    "total": 262000,
+    "british": 183000,
+    "nonBritish": 79000
+  },
+  {
+    "year": 2013,
+    "borough": "Islington",
+    "areaCode": "E09000019",
+    "total": 213000,
+    "british": 171000,
+    "nonBritish": 43000
+  },
+  {
+    "year": 2013,
+    "borough": "Kensington and Chelsea",
+    "areaCode": "E09000020",
+    "total": 152000,
+    "british": 94000,
+    "nonBritish": 58000
+  },
+  {
+    "year": 2013,
+    "borough": "Kingston upon Thames",
+    "areaCode": "E09000021",
+    "total": 165000,
+    "british": 134000,
+    "nonBritish": 31000
+  },
+  {
+    "year": 2013,
+    "borough": "Lambeth",
+    "areaCode": "E09000022",
+    "total": 313000,
+    "british": 228000,
+    "nonBritish": 85000
+  },
+  {
+    "year": 2013,
+    "borough": "Lewisham",
+    "areaCode": "E09000023",
+    "total": 284000,
+    "british": 229000,
+    "nonBritish": 55000
+  },
+  {
+    "year": 2013,
+    "borough": "Merton",
+    "areaCode": "E09000024",
+    "total": 202000,
+    "british": 152000,
+    "nonBritish": 50000
+  },
+  {
+    "year": 2013,
+    "borough": "Newham",
+    "areaCode": "E09000025",
+    "total": 320000,
+    "british": 214000,
+    "nonBritish": 105000
+  },
+  {
+    "year": 2013,
+    "borough": "Redbridge",
+    "areaCode": "E09000026",
+    "total": 287000,
+    "british": 233000,
+    "nonBritish": 54000
+  },
+  {
+    "year": 2013,
+    "borough": "Richmond upon Thames",
+    "areaCode": "E09000027",
+    "total": 188000,
+    "british": 160000,
+    "nonBritish": 29000
+  },
+  {
+    "year": 2013,
+    "borough": "Southwark",
+    "areaCode": "E09000028",
+    "total": 295000,
+    "british": 230000,
+    "nonBritish": 64000
+  },
+  {
+    "year": 2013,
+    "borough": "Sutton",
+    "areaCode": "E09000029",
+    "total": 194000,
+    "british": 170000,
+    "nonBritish": 24000
+  },
+  {
+    "year": 2013,
+    "borough": "Tower Hamlets",
+    "areaCode": "E09000030",
+    "total": 269000,
+    "british": 203000,
+    "nonBritish": 66000
+  },
+  {
+    "year": 2013,
+    "borough": "Waltham Forest",
+    "areaCode": "E09000031",
+    "total": 265000,
+    "british": 192000,
+    "nonBritish": 73000
+  },
+  {
+    "year": 2013,
+    "borough": "Wandsworth",
+    "areaCode": "E09000032",
+    "total": 307000,
+    "british": 251000,
+    "nonBritish": 54000
+  },
+  {
+    "year": 2013,
+    "borough": "Westminster",
+    "areaCode": "E09000033",
+    "total": 230000,
+    "british": 154000,
+    "nonBritish": 76000
+  },
+  {
+    "year": 2012,
+    "borough": "Barking and Dagenham",
+    "areaCode": "E09000002",
+    "total": 190000,
+    "british": 157000,
+    "nonBritish": 32000
+  },
+  {
+    "year": 2012,
+    "borough": "Barnet",
+    "areaCode": "E09000003",
+    "total": 361000,
+    "british": 279000,
+    "nonBritish": 81000
+  },
+  {
+    "year": 2012,
+    "borough": "Bexley",
+    "areaCode": "E09000004",
+    "total": 233000,
+    "british": 213000,
+    "nonBritish": 20000
+  },
+  {
+    "year": 2012,
+    "borough": "Brent",
+    "areaCode": "E09000005",
+    "total": 313000,
+    "british": 199000,
+    "nonBritish": 113000
+  },
+  {
+    "year": 2012,
+    "borough": "Bromley",
+    "areaCode": "E09000006",
+    "total": 312000,
+    "british": 278000,
+    "nonBritish": 34000
+  },
+  {
+    "year": 2012,
+    "borough": "Camden",
+    "areaCode": "E09000007",
+    "total": 223000,
+    "british": 167000,
+    "nonBritish": 56000
+  },
+  {
+    "year": 2012,
+    "borough": "Croydon",
+    "areaCode": "E09000008",
+    "total": 366000,
+    "british": 312000,
+    "nonBritish": 54000
+  },
+  {
+    "year": 2012,
+    "borough": "Ealing",
+    "areaCode": "E09000009",
+    "total": 337000,
+    "british": 248000,
+    "nonBritish": 90000
+  },
+  {
+    "year": 2012,
+    "borough": "Enfield",
+    "areaCode": "E09000010",
+    "total": 315000,
+    "british": 265000,
+    "nonBritish": 50000
+  },
+  {
+    "year": 2012,
+    "borough": "Greenwich",
+    "areaCode": "E09000011",
+    "total": 258000,
+    "british": 200000,
+    "nonBritish": 57000
+  },
+  {
+    "year": 2012,
+    "borough": "Hackney",
+    "areaCode": "E09000012",
+    "total": 251000,
+    "british": 198000,
+    "nonBritish": 52000
+  },
+  {
+    "year": 2012,
+    "borough": "Hammersmith and Fulham",
+    "areaCode": "E09000013",
+    "total": 178000,
+    "british": 133000,
+    "nonBritish": 45000
+  },
+  {
+    "year": 2012,
+    "borough": "Haringey",
+    "areaCode": "E09000014",
+    "total": 258000,
+    "british": 195000,
+    "nonBritish": 62000
+  },
+  {
+    "year": 2012,
+    "borough": "Harrow",
+    "areaCode": "E09000015",
+    "total": 240000,
+    "british": 181000,
+    "nonBritish": 59000
+  },
+  {
+    "year": 2012,
+    "borough": "Havering",
+    "areaCode": "E09000016",
+    "total": 238000,
+    "british": 220000,
+    "nonBritish": 18000
+  },
+  {
+    "year": 2012,
+    "borough": "Hillingdon",
+    "areaCode": "E09000017",
+    "total": 279000,
+    "british": 218000,
+    "nonBritish": 59000
+  },
+  {
+    "year": 2012,
+    "borough": "Hounslow",
+    "areaCode": "E09000018",
+    "total": 258000,
+    "british": 183000,
+    "nonBritish": 74000
+  },
+  {
+    "year": 2012,
+    "borough": "Islington",
+    "areaCode": "E09000019",
+    "total": 209000,
+    "british": 159000,
+    "nonBritish": 49000
+  },
+  {
+    "year": 2012,
+    "borough": "Kensington and Chelsea",
+    "areaCode": "E09000020",
+    "total": 154000,
+    "british": 99000,
+    "nonBritish": 55000
+  },
+  {
+    "year": 2012,
+    "borough": "Kingston upon Thames",
+    "areaCode": "E09000021",
+    "total": 162000,
+    "british": 130000,
+    "nonBritish": 32000
+  },
+  {
+    "year": 2012,
+    "borough": "Lambeth",
+    "areaCode": "E09000022",
+    "total": 308000,
+    "british": 217000,
+    "nonBritish": 91000
+  },
+  {
+    "year": 2012,
+    "borough": "Lewisham",
+    "areaCode": "E09000023",
+    "total": 280000,
+    "british": 222000,
+    "nonBritish": 58000
+  },
+  {
+    "year": 2012,
+    "borough": "Merton",
+    "areaCode": "E09000024",
+    "total": 201000,
+    "british": 145000,
+    "nonBritish": 56000
+  },
+  {
+    "year": 2012,
+    "borough": "Newham",
+    "areaCode": "E09000025",
+    "total": 313000,
+    "british": 218000,
+    "nonBritish": 94000
+  },
+  {
+    "year": 2012,
+    "borough": "Redbridge",
+    "areaCode": "E09000026",
+    "total": 283000,
+    "british": 224000,
+    "nonBritish": 59000
+  },
+  {
+    "year": 2012,
+    "borough": "Richmond upon Thames",
+    "areaCode": "E09000027",
+    "total": 187000,
+    "british": 158000,
+    "nonBritish": 29000
+  },
+  {
+    "year": 2012,
+    "borough": "Southwark",
+    "areaCode": "E09000028",
+    "total": 291000,
+    "british": 226000,
+    "nonBritish": 65000
+  },
+  {
+    "year": 2012,
+    "borough": "Sutton",
+    "areaCode": "E09000029",
+    "total": 192000,
+    "british": 168000,
+    "nonBritish": 24000
+  },
+  {
+    "year": 2012,
+    "borough": "Tower Hamlets",
+    "areaCode": "E09000030",
+    "total": 262000,
+    "british": 187000,
+    "nonBritish": 74000
+  },
+  {
+    "year": 2012,
+    "borough": "Waltham Forest",
+    "areaCode": "E09000031",
+    "total": 261000,
+    "british": 195000,
+    "nonBritish": 66000
+  },
+  {
+    "year": 2012,
+    "borough": "Wandsworth",
+    "areaCode": "E09000032",
+    "total": 305000,
+    "british": 235000,
+    "nonBritish": 70000
+  },
+  {
+    "year": 2012,
+    "borough": "Westminster",
+    "areaCode": "E09000033",
+    "total": 227000,
+    "british": 158000,
+    "nonBritish": 69000
+  },
+  {
+    "year": 2011,
+    "borough": "Barking and Dagenham",
+    "areaCode": "E09000002",
+    "total": 186000,
+    "british": 137000,
+    "nonBritish": 49000
+  },
+  {
+    "year": 2011,
+    "borough": "Barnet",
+    "areaCode": "E09000003",
+    "total": 355000,
+    "british": 285000,
+    "nonBritish": 68000
+  },
+  {
+    "year": 2011,
+    "borough": "Bexley",
+    "areaCode": "E09000004",
+    "total": 232000,
+    "british": 211000,
+    "nonBritish": 21000
+  },
+  {
+    "year": 2011,
+    "borough": "Brent",
+    "areaCode": "E09000005",
+    "total": 310000,
+    "british": 216000,
+    "nonBritish": 94000
+  },
+  {
+    "year": 2011,
+    "borough": "Bromley",
+    "areaCode": "E09000006",
+    "total": 308000,
+    "british": 282000,
+    "nonBritish": 26000
+  },
+  {
+    "year": 2011,
+    "borough": "Camden",
+    "areaCode": "E09000007",
+    "total": 218000,
+    "british": 169000,
+    "nonBritish": 47000
+  },
+  {
+    "year": 2011,
+    "borough": "Croydon",
+    "areaCode": "E09000008",
+    "total": 362000,
+    "british": 309000,
+    "nonBritish": 53000
+  },
+  {
+    "year": 2011,
+    "borough": "Ealing",
+    "areaCode": "E09000009",
+    "total": 336000,
+    "british": 250000,
+    "nonBritish": 86000
+  },
+  {
+    "year": 2011,
+    "borough": "Enfield",
+    "areaCode": "E09000010",
+    "total": 312000,
+    "british": 251000,
+    "nonBritish": 60000
+  },
+  {
+    "year": 2011,
+    "borough": "Greenwich",
+    "areaCode": "E09000011",
+    "total": 253000,
+    "british": 192000,
+    "nonBritish": 61000
+  },
+  {
+    "year": 2011,
+    "borough": "Hackney",
+    "areaCode": "E09000012",
+    "total": 246000,
+    "british": 196000,
+    "nonBritish": 50000
+  },
+  {
+    "year": 2011,
+    "borough": "Hammersmith and Fulham",
+    "areaCode": "E09000013",
+    "total": 181000,
+    "british": 131000,
+    "nonBritish": 50000
+  },
+  {
+    "year": 2011,
+    "borough": "Haringey",
+    "areaCode": "E09000014",
+    "total": 254000,
+    "british": 183000,
+    "nonBritish": 71000
+  },
+  {
+    "year": 2011,
+    "borough": "Harrow",
+    "areaCode": "E09000015",
+    "total": 238000,
+    "british": 179000,
+    "nonBritish": 59000
+  },
+  {
+    "year": 2011,
+    "borough": "Havering",
+    "areaCode": "E09000016",
+    "total": 236000,
+    "british": 222000,
+    "nonBritish": 14000
+  },
+  {
+    "year": 2011,
+    "borough": "Hillingdon",
+    "areaCode": "E09000017",
+    "total": 273000,
+    "british": 227000,
+    "nonBritish": 46000
+  },
+  {
+    "year": 2011,
+    "borough": "Hounslow",
+    "areaCode": "E09000018",
+    "total": 254000,
+    "british": 190000,
+    "nonBritish": 63000
+  },
+  {
+    "year": 2011,
+    "borough": "Islington",
+    "areaCode": "E09000019",
+    "total": 204000,
+    "british": 156000,
+    "nonBritish": 48000
+  },
+  {
+    "year": 2011,
+    "borough": "Kensington and Chelsea",
+    "areaCode": "E09000020",
+    "total": 156000,
+    "british": 103000,
+    "nonBritish": 53000
+  },
+  {
+    "year": 2011,
+    "borough": "Kingston upon Thames",
+    "areaCode": "E09000021",
+    "total": 159000,
+    "british": 126000,
+    "nonBritish": 33000
+  },
+  {
+    "year": 2011,
+    "borough": "Lambeth",
+    "areaCode": "E09000022",
+    "total": 302000,
+    "british": 229000,
+    "nonBritish": 72000
+  },
+  {
+    "year": 2011,
+    "borough": "Lewisham",
+    "areaCode": "E09000023",
+    "total": 275000,
+    "british": 215000,
+    "nonBritish": 59000
+  },
+  {
+    "year": 2011,
+    "borough": "Merton",
+    "areaCode": "E09000024",
+    "total": 199000,
+    "british": 144000,
+    "nonBritish": 55000
+  },
+  {
+    "year": 2011,
+    "borough": "Newham",
+    "areaCode": "E09000025",
+    "total": 309000,
+    "british": 199000,
+    "nonBritish": 109000
+  },
+  {
+    "year": 2011,
+    "borough": "Redbridge",
+    "areaCode": "E09000026",
+    "total": 280000,
+    "british": 216000,
+    "nonBritish": 64000
+  },
+  {
+    "year": 2011,
+    "borough": "Richmond upon Thames",
+    "areaCode": "E09000027",
+    "total": 186000,
+    "british": 157000,
+    "nonBritish": 29000
+  },
+  {
+    "year": 2011,
+    "borough": "Southwark",
+    "areaCode": "E09000028",
+    "total": 287000,
+    "british": 211000,
+    "nonBritish": 75000
+  },
+  {
+    "year": 2011,
+    "borough": "Sutton",
+    "areaCode": "E09000029",
+    "total": 190000,
+    "british": 162000,
+    "nonBritish": 27000
+  },
+  {
+    "year": 2011,
+    "borough": "Tower Hamlets",
+    "areaCode": "E09000030",
+    "total": 255000,
+    "british": 187000,
+    "nonBritish": 67000
+  },
+  {
+    "year": 2011,
+    "borough": "Waltham Forest",
+    "areaCode": "E09000031",
+    "total": 258000,
+    "british": 191000,
+    "nonBritish": 66000
+  },
+  {
+    "year": 2011,
+    "borough": "Wandsworth",
+    "areaCode": "E09000032",
+    "total": 304000,
+    "british": 212000,
+    "nonBritish": 92000
+  },
+  {
+    "year": 2011,
+    "borough": "Westminster",
+    "areaCode": "E09000033",
+    "total": 223000,
+    "british": 141000,
+    "nonBritish": 82000
+  },
+  {
+    "year": 2010,
+    "borough": "Barking and Dagenham",
+    "areaCode": "E09000002",
+    "total": 182000,
+    "british": 144000,
+    "nonBritish": 38000
+  },
+  {
+    "year": 2010,
+    "borough": "Barnet",
+    "areaCode": "E09000003",
+    "total": 348000,
+    "british": 279000,
+    "nonBritish": 69000
+  },
+  {
+    "year": 2010,
+    "borough": "Bexley",
+    "areaCode": "E09000004",
+    "total": 230000,
+    "british": 211000,
+    "nonBritish": 18000
+  },
+  {
+    "year": 2010,
+    "borough": "Brent",
+    "areaCode": "E09000005",
+    "total": 303000,
+    "british": 213000,
+    "nonBritish": 90000
+  },
+  {
+    "year": 2010,
+    "borough": "Bromley",
+    "areaCode": "E09000006",
+    "total": 306000,
+    "british": 288000,
+    "nonBritish": 19000
+  },
+  {
+    "year": 2010,
+    "borough": "Camden",
+    "areaCode": "E09000007",
+    "total": 212000,
+    "british": 158000,
+    "nonBritish": 54000
+  },
+  {
+    "year": 2010,
+    "borough": "Croydon",
+    "areaCode": "E09000008",
+    "total": 355000,
+    "british": 305000,
+    "nonBritish": 49000
+  },
+  {
+    "year": 2010,
+    "borough": "Ealing",
+    "areaCode": "E09000009",
+    "total": 331000,
+    "british": 247000,
+    "nonBritish": 84000
+  },
+  {
+    "year": 2010,
+    "borough": "Enfield",
+    "areaCode": "E09000010",
+    "total": 305000,
+    "british": 253000,
+    "nonBritish": 51000
+  },
+  {
+    "year": 2010,
+    "borough": "Greenwich",
+    "areaCode": "E09000011",
+    "total": 247000,
+    "british": 189000,
+    "nonBritish": 57000
+  },
+  {
+    "year": 2010,
+    "borough": "Hackney",
+    "areaCode": "E09000012",
+    "total": 241000,
+    "british": 195000,
+    "nonBritish": 45000
+  },
+  {
+    "year": 2010,
+    "borough": "Hammersmith and Fulham",
+    "areaCode": "E09000013",
+    "total": 179000,
+    "british": 140000,
+    "nonBritish": 38000
+  },
+  {
+    "year": 2010,
+    "borough": "Haringey",
+    "areaCode": "E09000014",
+    "total": 251000,
+    "british": 184000,
+    "nonBritish": 66000
+  },
+  {
+    "year": 2010,
+    "borough": "Harrow",
+    "areaCode": "E09000015",
+    "total": 235000,
+    "british": 184000,
+    "nonBritish": 51000
+  },
+  {
+    "year": 2010,
+    "borough": "Havering",
+    "areaCode": "E09000016",
+    "total": 235000,
+    "british": 225000,
+    "nonBritish": 10000
+  },
+  {
+    "year": 2010,
+    "borough": "Hillingdon",
+    "areaCode": "E09000017",
+    "total": 267000,
+    "british": 221000,
+    "nonBritish": 46000
+  },
+  {
+    "year": 2010,
+    "borough": "Hounslow",
+    "areaCode": "E09000018",
+    "total": 248000,
+    "british": 183000,
+    "nonBritish": 65000
+  },
+  {
+    "year": 2010,
+    "borough": "Islington",
+    "areaCode": "E09000019",
+    "total": 198000,
+    "british": 160000,
+    "nonBritish": 38000
+  },
+  {
+    "year": 2010,
+    "borough": "Kensington and Chelsea",
+    "areaCode": "E09000020",
+    "total": 159000,
+    "british": 111000,
+    "nonBritish": 47000
+  },
+  {
+    "year": 2010,
+    "borough": "Kingston upon Thames",
+    "areaCode": "E09000021",
+    "total": 157000,
+    "british": 126000,
+    "nonBritish": 31000
+  },
+  {
+    "year": 2010,
+    "borough": "Lambeth",
+    "areaCode": "E09000022",
+    "total": 295000,
+    "british": 227000,
+    "nonBritish": 68000
+  },
+  {
+    "year": 2010,
+    "borough": "Lewisham",
+    "areaCode": "E09000023",
+    "total": 271000,
+    "british": 201000,
+    "nonBritish": 70000
+  },
+  {
+    "year": 2010,
+    "borough": "Merton",
+    "areaCode": "E09000024",
+    "total": 198000,
+    "british": 144000,
+    "nonBritish": 53000
+  },
+  {
+    "year": 2010,
+    "borough": "Newham",
+    "areaCode": "E09000025",
+    "total": 298000,
+    "british": 202000,
+    "nonBritish": 94000
+  },
+  {
+    "year": 2010,
+    "borough": "Redbridge",
+    "areaCode": "E09000026",
+    "total": 273000,
+    "british": 223000,
+    "nonBritish": 50000
+  },
+  {
+    "year": 2010,
+    "borough": "Richmond upon Thames",
+    "areaCode": "E09000027",
+    "total": 185000,
+    "british": 158000,
+    "nonBritish": 27000
+  },
+  {
+    "year": 2010,
+    "borough": "Southwark",
+    "areaCode": "E09000028",
+    "total": 282000,
+    "british": 212000,
+    "nonBritish": 70000
+  },
+  {
+    "year": 2010,
+    "borough": "Sutton",
+    "areaCode": "E09000029",
+    "total": 188000,
+    "british": 167000,
+    "nonBritish": 21000
+  },
+  {
+    "year": 2010,
+    "borough": "Tower Hamlets",
+    "areaCode": "E09000030",
+    "total": 247000,
+    "british": 188000,
+    "nonBritish": 58000
+  },
+  {
+    "year": 2010,
+    "borough": "Waltham Forest",
+    "areaCode": "E09000031",
+    "total": 252000,
+    "british": 193000,
+    "nonBritish": 58000
+  },
+  {
+    "year": 2010,
+    "borough": "Wandsworth",
+    "areaCode": "E09000032",
+    "total": 299000,
+    "british": 217000,
+    "nonBritish": 81000
+  },
+  {
+    "year": 2010,
+    "borough": "Westminster",
+    "areaCode": "E09000033",
+    "total": 221000,
+    "british": 145000,
+    "nonBritish": 74000
+  },
+  {
+    "year": 2009,
+    "borough": "Barking and Dagenham",
+    "areaCode": "E09000002",
+    "total": 177000,
+    "british": 140000,
+    "nonBritish": 36000
+  },
+  {
+    "year": 2009,
+    "borough": "Barnet",
+    "areaCode": "E09000003",
+    "total": 343000,
+    "british": 269000,
+    "nonBritish": 73000
+  },
+  {
+    "year": 2009,
+    "borough": "Bexley",
+    "areaCode": "E09000004",
+    "total": 227000,
+    "british": 213000,
+    "nonBritish": 14000
+  },
+  {
+    "year": 2009,
+    "borough": "Brent",
+    "areaCode": "E09000005",
+    "total": 296000,
+    "british": 208000,
+    "nonBritish": 88000
+  },
+  {
+    "year": 2009,
+    "borough": "Bromley",
+    "areaCode": "E09000006",
+    "total": 304000,
+    "british": 279000,
+    "nonBritish": 26000
+  },
+  {
+    "year": 2009,
+    "borough": "Camden",
+    "areaCode": "E09000007",
+    "total": 210000,
+    "british": 151000,
+    "nonBritish": 58000
+  },
+  {
+    "year": 2009,
+    "borough": "Croydon",
+    "areaCode": "E09000008",
+    "total": 350000,
+    "british": 293000,
+    "nonBritish": 56000
+  },
+  {
+    "year": 2009,
+    "borough": "Ealing",
+    "areaCode": "E09000009",
+    "total": 327000,
+    "british": 245000,
+    "nonBritish": 82000
+  },
+  {
+    "year": 2009,
+    "borough": "Enfield",
+    "areaCode": "E09000010",
+    "total": 300000,
+    "british": 240000,
+    "nonBritish": 60000
+  },
+  {
+    "year": 2009,
+    "borough": "Greenwich",
+    "areaCode": "E09000011",
+    "total": 241000,
+    "british": 191000,
+    "nonBritish": 50000
+  },
+  {
+    "year": 2009,
+    "borough": "Hackney",
+    "areaCode": "E09000012",
+    "total": 236000,
+    "british": 181000,
+    "nonBritish": 54000
+  },
+  {
+    "year": 2009,
+    "borough": "Hammersmith and Fulham",
+    "areaCode": "E09000013",
+    "total": 178000,
+    "british": 131000,
+    "nonBritish": 47000
+  },
+  {
+    "year": 2009,
+    "borough": "Haringey",
+    "areaCode": "E09000014",
+    "total": 248000,
+    "british": 188000,
+    "nonBritish": 60000
+  },
+  {
+    "year": 2009,
+    "borough": "Harrow",
+    "areaCode": "E09000015",
+    "total": 231000,
+    "british": 180000,
+    "nonBritish": 51000
+  },
+  {
+    "year": 2009,
+    "borough": "Havering",
+    "areaCode": "E09000016",
+    "total": 233000,
+    "british": 224000,
+    "nonBritish": 9000
+  },
+  {
+    "year": 2009,
+    "borough": "Hillingdon",
+    "areaCode": "E09000017",
+    "total": 263000,
+    "british": 220000,
+    "nonBritish": 44000
+  },
+  {
+    "year": 2009,
+    "borough": "Hounslow",
+    "areaCode": "E09000018",
+    "total": 242000,
+    "british": 181000,
+    "nonBritish": 61000
+  },
+  {
+    "year": 2009,
+    "borough": "Islington",
+    "areaCode": "E09000019",
+    "total": 195000,
+    "british": 158000,
+    "nonBritish": 37000
+  },
+  {
+    "year": 2009,
+    "borough": "Kensington and Chelsea",
+    "areaCode": "E09000020",
+    "total": 160000,
+    "british": 108000,
+    "nonBritish": 52000
+  },
+  {
+    "year": 2009,
+    "borough": "Kingston upon Thames",
+    "areaCode": "E09000021",
+    "total": 156000,
+    "british": 132000,
+    "nonBritish": 24000
+  },
+  {
+    "year": 2009,
+    "borough": "Lambeth",
+    "areaCode": "E09000022",
+    "total": 292000,
+    "british": 219000,
+    "nonBritish": 73000
+  },
+  {
+    "year": 2009,
+    "borough": "Lewisham",
+    "areaCode": "E09000023",
+    "total": 269000,
+    "british": 217000,
+    "nonBritish": 52000
+  },
+  {
+    "year": 2009,
+    "borough": "Merton",
+    "areaCode": "E09000024",
+    "total": 197000,
+    "british": 144000,
+    "nonBritish": 53000
+  },
+  {
+    "year": 2009,
+    "borough": "Newham",
+    "areaCode": "E09000025",
+    "total": 285000,
+    "british": 177000,
+    "nonBritish": 108000
+  },
+  {
+    "year": 2009,
+    "borough": "Redbridge",
+    "areaCode": "E09000026",
+    "total": 269000,
+    "british": 217000,
+    "nonBritish": 50000
+  },
+  {
+    "year": 2009,
+    "borough": "Richmond upon Thames",
+    "areaCode": "E09000027",
+    "total": 183000,
+    "british": 154000,
+    "nonBritish": 29000
+  },
+  {
+    "year": 2009,
+    "borough": "Southwark",
+    "areaCode": "E09000028",
+    "total": 279000,
+    "british": 213000,
+    "nonBritish": 65000
+  },
+  {
+    "year": 2009,
+    "borough": "Sutton",
+    "areaCode": "E09000029",
+    "total": 187000,
+    "british": 167000,
+    "nonBritish": 20000
+  },
+  {
+    "year": 2009,
+    "borough": "Tower Hamlets",
+    "areaCode": "E09000030",
+    "total": 239000,
+    "british": 195000,
+    "nonBritish": 45000
+  },
+  {
+    "year": 2009,
+    "borough": "Waltham Forest",
+    "areaCode": "E09000031",
+    "total": 247000,
+    "british": 203000,
+    "nonBritish": 43000
+  },
+  {
+    "year": 2009,
+    "borough": "Wandsworth",
+    "areaCode": "E09000032",
+    "total": 296000,
+    "british": 227000,
+    "nonBritish": 69000
+  },
+  {
+    "year": 2009,
+    "borough": "Westminster",
+    "areaCode": "E09000033",
+    "total": 220000,
+    "british": 144000,
+    "nonBritish": 76000
+  },
+  {
+    "year": 2008,
+    "borough": "Barking and Dagenham",
+    "areaCode": "E09000002",
+    "total": 171000,
+    "british": 138000,
+    "nonBritish": 33000
+  },
+  {
+    "year": 2008,
+    "borough": "Barnet",
+    "areaCode": "E09000003",
+    "total": 336000,
+    "british": 270000,
+    "nonBritish": 65000
+  },
+  {
+    "year": 2008,
+    "borough": "Bexley",
+    "areaCode": "E09000004",
+    "total": 226000,
+    "british": 208000,
+    "nonBritish": 17000
+  },
+  {
+    "year": 2008,
+    "borough": "Brent",
+    "areaCode": "E09000005",
+    "total": 289000,
+    "british": 197000,
+    "nonBritish": 93000
+  },
+  {
+    "year": 2008,
+    "borough": "Bromley",
+    "areaCode": "E09000006",
+    "total": 303000,
+    "british": 275000,
+    "nonBritish": 27000
+  },
+  {
+    "year": 2008,
+    "borough": "Camden",
+    "areaCode": "E09000007",
+    "total": 207000,
+    "british": 149000,
+    "nonBritish": 58000
+  },
+  {
+    "year": 2008,
+    "borough": "Croydon",
+    "areaCode": "E09000008",
+    "total": 346000,
+    "british": 294000,
+    "nonBritish": 52000
+  },
+  {
+    "year": 2008,
+    "borough": "Ealing",
+    "areaCode": "E09000009",
+    "total": 321000,
+    "british": 243000,
+    "nonBritish": 78000
+  },
+  {
+    "year": 2008,
+    "borough": "Enfield",
+    "areaCode": "E09000010",
+    "total": 295000,
+    "british": 229000,
+    "nonBritish": 65000
+  },
+  {
+    "year": 2008,
+    "borough": "Greenwich",
+    "areaCode": "E09000011",
+    "total": 237000,
+    "british": 191000,
+    "nonBritish": 47000
+  },
+  {
+    "year": 2008,
+    "borough": "Hackney",
+    "areaCode": "E09000012",
+    "total": 230000,
+    "british": 178000,
+    "nonBritish": 52000
+  },
+  {
+    "year": 2008,
+    "borough": "Hammersmith and Fulham",
+    "areaCode": "E09000013",
+    "total": 175000,
+    "british": 132000,
+    "nonBritish": 43000
+  },
+  {
+    "year": 2008,
+    "borough": "Haringey",
+    "areaCode": "E09000014",
+    "total": 243000,
+    "british": 188000,
+    "nonBritish": 55000
+  },
+  {
+    "year": 2008,
+    "borough": "Harrow",
+    "areaCode": "E09000015",
+    "total": 228000,
+    "british": 180000,
+    "nonBritish": 47000
+  },
+  {
+    "year": 2008,
+    "borough": "Havering",
+    "areaCode": "E09000016",
+    "total": 230000,
+    "british": 219000,
+    "nonBritish": 11000
+  },
+  {
+    "year": 2008,
+    "borough": "Hillingdon",
+    "areaCode": "E09000017",
+    "total": 259000,
+    "british": 220000,
+    "nonBritish": 38000
+  },
+  {
+    "year": 2008,
+    "borough": "Hounslow",
+    "areaCode": "E09000018",
+    "total": 237000,
+    "british": 182000,
+    "nonBritish": 55000
+  },
+  {
+    "year": 2008,
+    "borough": "Islington",
+    "areaCode": "E09000019",
+    "total": 190000,
+    "british": 146000,
+    "nonBritish": 44000
+  },
+  {
+    "year": 2008,
+    "borough": "Kensington and Chelsea",
+    "areaCode": "E09000020",
+    "total": 161000,
+    "british": 103000,
+    "nonBritish": 57000
+  },
+  {
+    "year": 2008,
+    "borough": "Kingston upon Thames",
+    "areaCode": "E09000021",
+    "total": 155000,
+    "british": 131000,
+    "nonBritish": 24000
+  },
+  {
+    "year": 2008,
+    "borough": "Lambeth",
+    "areaCode": "E09000022",
+    "total": 286000,
+    "british": 219000,
+    "nonBritish": 67000
+  },
+  {
+    "year": 2008,
+    "borough": "Lewisham",
+    "areaCode": "E09000023",
+    "total": 265000,
+    "british": 208000,
+    "nonBritish": 57000
+  },
+  {
+    "year": 2008,
+    "borough": "Merton",
+    "areaCode": "E09000024",
+    "total": 195000,
+    "british": 154000,
+    "nonBritish": 40000
+  },
+  {
+    "year": 2008,
+    "borough": "Newham",
+    "areaCode": "E09000025",
+    "total": 275000,
+    "british": 187000,
+    "nonBritish": 88000
+  },
+  {
+    "year": 2008,
+    "borough": "Redbridge",
+    "areaCode": "E09000026",
+    "total": 264000,
+    "british": 211000,
+    "nonBritish": 53000
+  },
+  {
+    "year": 2008,
+    "borough": "Richmond upon Thames",
+    "areaCode": "E09000027",
+    "total": 181000,
+    "british": 154000,
+    "nonBritish": 27000
+  },
+  {
+    "year": 2008,
+    "borough": "Southwark",
+    "areaCode": "E09000028",
+    "total": 275000,
+    "british": 208000,
+    "nonBritish": 66000
+  },
+  {
+    "year": 2008,
+    "borough": "Sutton",
+    "areaCode": "E09000029",
+    "total": 184000,
+    "british": 173000,
+    "nonBritish": 12000
+  },
+  {
+    "year": 2008,
+    "borough": "Tower Hamlets",
+    "areaCode": "E09000030",
+    "total": 231000,
+    "british": 181000,
+    "nonBritish": 49000
+  },
+  {
+    "year": 2008,
+    "borough": "Waltham Forest",
+    "areaCode": "E09000031",
+    "total": 240000,
+    "british": 201000,
+    "nonBritish": 39000
+  },
+  {
+    "year": 2008,
+    "borough": "Wandsworth",
+    "areaCode": "E09000032",
+    "total": 291000,
+    "british": 222000,
+    "nonBritish": 69000
+  },
+  {
+    "year": 2008,
+    "borough": "Westminster",
+    "areaCode": "E09000033",
+    "total": 222000,
+    "british": 145000,
+    "nonBritish": 77000
+  },
+  {
+    "year": 2007,
+    "borough": "Barking and Dagenham",
+    "areaCode": "E09000002",
+    "total": 168000,
+    "british": 143000,
+    "nonBritish": 25000
+  },
+  {
+    "year": 2007,
+    "borough": "Barnet",
+    "areaCode": "E09000003",
+    "total": 331000,
+    "british": 265000,
+    "nonBritish": 67000
+  },
+  {
+    "year": 2007,
+    "borough": "Bexley",
+    "areaCode": "E09000004",
+    "total": 223000,
+    "british": 209000,
+    "nonBritish": 14000
+  },
+  {
+    "year": 2007,
+    "borough": "Brent",
+    "areaCode": "E09000005",
+    "total": 282000,
+    "british": 196000,
+    "nonBritish": 86000
+  },
+  {
+    "year": 2007,
+    "borough": "Bromley",
+    "areaCode": "E09000006",
+    "total": 300000,
+    "british": 279000,
+    "nonBritish": 21000
+  },
+  {
+    "year": 2007,
+    "borough": "Camden",
+    "areaCode": "E09000007",
+    "total": 208000,
+    "british": 150000,
+    "nonBritish": 58000
+  },
+  {
+    "year": 2007,
+    "borough": "Croydon",
+    "areaCode": "E09000008",
+    "total": 341000,
+    "british": 293000,
+    "nonBritish": 48000
+  },
+  {
+    "year": 2007,
+    "borough": "Ealing",
+    "areaCode": "E09000009",
+    "total": 316000,
+    "british": 226000,
+    "nonBritish": 90000
+  },
+  {
+    "year": 2007,
+    "borough": "Enfield",
+    "areaCode": "E09000010",
+    "total": 289000,
+    "british": 232000,
+    "nonBritish": 57000
+  },
+  {
+    "year": 2007,
+    "borough": "Greenwich",
+    "areaCode": "E09000011",
+    "total": 234000,
+    "british": 194000,
+    "nonBritish": 40000
+  },
+  {
+    "year": 2007,
+    "borough": "Hackney",
+    "areaCode": "E09000012",
+    "total": 223000,
+    "british": 165000,
+    "nonBritish": 57000
+  },
+  {
+    "year": 2007,
+    "borough": "Hammersmith and Fulham",
+    "areaCode": "E09000013",
+    "total": 175000,
+    "british": 134000,
+    "nonBritish": 41000
+  },
+  {
+    "year": 2007,
+    "borough": "Haringey",
+    "areaCode": "E09000014",
+    "total": 235000,
+    "british": 175000,
+    "nonBritish": 61000
+  },
+  {
+    "year": 2007,
+    "borough": "Harrow",
+    "areaCode": "E09000015",
+    "total": 225000,
+    "british": 190000,
+    "nonBritish": 34000
+  },
+  {
+    "year": 2007,
+    "borough": "Havering",
+    "areaCode": "E09000016",
+    "total": 228000,
+    "british": 217000,
+    "nonBritish": 11000
+  },
+  {
+    "year": 2007,
+    "borough": "Hillingdon",
+    "areaCode": "E09000017",
+    "total": 255000,
+    "british": 220000,
+    "nonBritish": 35000
+  },
+  {
+    "year": 2007,
+    "borough": "Hounslow",
+    "areaCode": "E09000018",
+    "total": 232000,
+    "british": 177000,
+    "nonBritish": 55000
+  },
+  {
+    "year": 2007,
+    "borough": "Islington",
+    "areaCode": "E09000019",
+    "total": 187000,
+    "british": 149000,
+    "nonBritish": 37000
+  },
+  {
+    "year": 2007,
+    "borough": "Kensington and Chelsea",
+    "areaCode": "E09000020",
+    "total": 161000,
+    "british": 112000,
+    "nonBritish": 48000
+  },
+  {
+    "year": 2007,
+    "borough": "Kingston upon Thames",
+    "areaCode": "E09000021",
+    "total": 153000,
+    "british": 128000,
+    "nonBritish": 25000
+  },
+  {
+    "year": 2007,
+    "borough": "Lambeth",
+    "areaCode": "E09000022",
+    "total": 282000,
+    "british": 210000,
+    "nonBritish": 73000
+  },
+  {
+    "year": 2007,
+    "borough": "Lewisham",
+    "areaCode": "E09000023",
+    "total": 259000,
+    "british": 207000,
+    "nonBritish": 52000
+  },
+  {
+    "year": 2007,
+    "borough": "Merton",
+    "areaCode": "E09000024",
+    "total": 193000,
+    "british": 153000,
+    "nonBritish": 40000
+  },
+  {
+    "year": 2007,
+    "borough": "Newham",
+    "areaCode": "E09000025",
+    "total": 265000,
+    "british": 185000,
+    "nonBritish": 80000
+  },
+  {
+    "year": 2007,
+    "borough": "Redbridge",
+    "areaCode": "E09000026",
+    "total": 258000,
+    "british": 211000,
+    "nonBritish": 48000
+  },
+  {
+    "year": 2007,
+    "borough": "Richmond upon Thames",
+    "areaCode": "E09000027",
+    "total": 181000,
+    "british": 152000,
+    "nonBritish": 28000
+  },
+  {
+    "year": 2007,
+    "borough": "Southwark",
+    "areaCode": "E09000028",
+    "total": 271000,
+    "british": 209000,
+    "nonBritish": 62000
+  },
+  {
+    "year": 2007,
+    "borough": "Sutton",
+    "areaCode": "E09000029",
+    "total": 183000,
+    "british": 164000,
+    "nonBritish": 19000
+  },
+  {
+    "year": 2007,
+    "borough": "Tower Hamlets",
+    "areaCode": "E09000030",
+    "total": 224000,
+    "british": 161000,
+    "nonBritish": 62000
+  },
+  {
+    "year": 2007,
+    "borough": "Waltham Forest",
+    "areaCode": "E09000031",
+    "total": 234000,
+    "british": 193000,
+    "nonBritish": 41000
+  },
+  {
+    "year": 2007,
+    "borough": "Wandsworth",
+    "areaCode": "E09000032",
+    "total": 288000,
+    "british": 215000,
+    "nonBritish": 73000
+  },
+  {
+    "year": 2007,
+    "borough": "Westminster",
+    "areaCode": "E09000033",
+    "total": 224000,
+    "british": 140000,
+    "nonBritish": 83000
+  },
+  {
+    "year": 2006,
+    "borough": "Barking and Dagenham",
+    "areaCode": "E09000002",
+    "total": 166000,
+    "british": 144000,
+    "nonBritish": 22000
+  },
+  {
+    "year": 2006,
+    "borough": "Barnet",
+    "areaCode": "E09000003",
+    "total": 329000,
+    "british": 263000,
+    "nonBritish": 65000
+  },
+  {
+    "year": 2006,
+    "borough": "Bexley",
+    "areaCode": "E09000004",
+    "total": 222000,
+    "british": 208000,
+    "nonBritish": 15000
+  },
+  {
+    "year": 2006,
+    "borough": "Brent",
+    "areaCode": "E09000005",
+    "total": 275000,
+    "british": 208000,
+    "nonBritish": 67000
+  },
+  {
+    "year": 2006,
+    "borough": "Bromley",
+    "areaCode": "E09000006",
+    "total": 299000,
+    "british": 277000,
+    "nonBritish": 22000
+  },
+  {
+    "year": 2006,
+    "borough": "Camden",
+    "areaCode": "E09000007",
+    "total": 207000,
+    "british": 151000,
+    "nonBritish": 56000
+  },
+  {
+    "year": 2006,
+    "borough": "Croydon",
+    "areaCode": "E09000008",
+    "total": 337000,
+    "british": 294000,
+    "nonBritish": 44000
+  },
+  {
+    "year": 2006,
+    "borough": "Ealing",
+    "areaCode": "E09000009",
+    "total": 312000,
+    "british": 233000,
+    "nonBritish": 79000
+  },
+  {
+    "year": 2006,
+    "borough": "Enfield",
+    "areaCode": "E09000010",
+    "total": 284000,
+    "british": 235000,
+    "nonBritish": 48000
+  },
+  {
+    "year": 2006,
+    "borough": "Greenwich",
+    "areaCode": "E09000011",
+    "total": 232000,
+    "british": 199000,
+    "nonBritish": 32000
+  },
+  {
+    "year": 2006,
+    "borough": "Hackney",
+    "areaCode": "E09000012",
+    "total": 219000,
+    "british": 159000,
+    "nonBritish": 60000
+  },
+  {
+    "year": 2006,
+    "borough": "Hammersmith and Fulham",
+    "areaCode": "E09000013",
+    "total": 173000,
+    "british": 132000,
+    "nonBritish": 41000
+  },
+  {
+    "year": 2006,
+    "borough": "Haringey",
+    "areaCode": "E09000014",
+    "total": 232000,
+    "british": 178000,
+    "nonBritish": 54000
+  },
+  {
+    "year": 2006,
+    "borough": "Harrow",
+    "areaCode": "E09000015",
+    "total": 222000,
+    "british": 182000,
+    "nonBritish": 40000
+  },
+  {
+    "year": 2006,
+    "borough": "Havering",
+    "areaCode": "E09000016",
+    "total": 227000,
+    "british": 215000,
+    "nonBritish": 11000
+  },
+  {
+    "year": 2006,
+    "borough": "Hillingdon",
+    "areaCode": "E09000017",
+    "total": 252000,
+    "british": 218000,
+    "nonBritish": 34000
+  },
+  {
+    "year": 2006,
+    "borough": "Hounslow",
+    "areaCode": "E09000018",
+    "total": 227000,
+    "british": 185000,
+    "nonBritish": 42000
+  },
+  {
+    "year": 2006,
+    "borough": "Islington",
+    "areaCode": "E09000019",
+    "total": 183000,
+    "british": 139000,
+    "nonBritish": 44000
+  },
+  {
+    "year": 2006,
+    "borough": "Kensington and Chelsea",
+    "areaCode": "E09000020",
+    "total": 163000,
+    "british": 108000,
+    "nonBritish": 54000
+  },
+  {
+    "year": 2006,
+    "borough": "Kingston upon Thames",
+    "areaCode": "E09000021",
+    "total": 152000,
+    "british": 128000,
+    "nonBritish": 23000
+  },
+  {
+    "year": 2006,
+    "borough": "Lambeth",
+    "areaCode": "E09000022",
+    "total": 277000,
+    "british": 207000,
+    "nonBritish": 70000
+  },
+  {
+    "year": 2006,
+    "borough": "Lewisham",
+    "areaCode": "E09000023",
+    "total": 255000,
+    "british": 199000,
+    "nonBritish": 55000
+  },
+  {
+    "year": 2006,
+    "borough": "Merton",
+    "areaCode": "E09000024",
+    "total": 191000,
+    "british": 151000,
+    "nonBritish": 40000
+  },
+  {
+    "year": 2006,
+    "borough": "Newham",
+    "areaCode": "E09000025",
+    "total": 257000,
+    "british": 176000,
+    "nonBritish": 81000
+  },
+  {
+    "year": 2006,
+    "borough": "Redbridge",
+    "areaCode": "E09000026",
+    "total": 254000,
+    "british": 218000,
+    "nonBritish": 36000
+  },
+  {
+    "year": 2006,
+    "borough": "Richmond upon Thames",
+    "areaCode": "E09000027",
+    "total": 181000,
+    "british": 161000,
+    "nonBritish": 20000
+  },
+  {
+    "year": 2006,
+    "borough": "Southwark",
+    "areaCode": "E09000028",
+    "total": 266000,
+    "british": 201000,
+    "nonBritish": 65000
+  },
+  {
+    "year": 2006,
+    "borough": "Sutton",
+    "areaCode": "E09000029",
+    "total": 181000,
+    "british": 166000,
+    "nonBritish": 16000
+  },
+  {
+    "year": 2006,
+    "borough": "Tower Hamlets",
+    "areaCode": "E09000030",
+    "total": 216000,
+    "british": 164000,
+    "nonBritish": 52000
+  },
+  {
+    "year": 2006,
+    "borough": "Waltham Forest",
+    "areaCode": "E09000031",
+    "total": 229000,
+    "british": 192000,
+    "nonBritish": 37000
+  },
+  {
+    "year": 2006,
+    "borough": "Wandsworth",
+    "areaCode": "E09000032",
+    "total": 284000,
+    "british": 218000,
+    "nonBritish": 66000
+  },
+  {
+    "year": 2006,
+    "borough": "Westminster",
+    "areaCode": "E09000033",
+    "total": 225000,
+    "british": 143000,
+    "nonBritish": 82000
+  },
+  {
+    "year": 2005,
+    "borough": "Barking and Dagenham",
+    "areaCode": "E09000002",
+    "total": 165000,
+    "british": 144000,
+    "nonBritish": 21000
+  },
+  {
+    "year": 2005,
+    "borough": "Barnet",
+    "areaCode": "E09000003",
+    "total": 324000,
+    "british": 264000,
+    "nonBritish": 60000
+  },
+  {
+    "year": 2005,
+    "borough": "Bexley",
+    "areaCode": "E09000004",
+    "total": 221000,
+    "british": 211000,
+    "nonBritish": 10000
+  },
+  {
+    "year": 2005,
+    "borough": "Brent",
+    "areaCode": "E09000005",
+    "total": 269000,
+    "british": 206000,
+    "nonBritish": 63000
+  },
+  {
+    "year": 2005,
+    "borough": "Bromley",
+    "areaCode": "E09000006",
+    "total": 297000,
+    "british": 277000,
+    "nonBritish": 20000
+  },
+  {
+    "year": 2005,
+    "borough": "Camden",
+    "areaCode": "E09000007",
+    "total": 207000,
+    "british": 160000,
+    "nonBritish": 46000
+  },
+  {
+    "year": 2005,
+    "borough": "Croydon",
+    "areaCode": "E09000008",
+    "total": 336000,
+    "british": 295000,
+    "nonBritish": 41000
+  },
+  {
+    "year": 2005,
+    "borough": "Ealing",
+    "areaCode": "E09000009",
+    "total": 310000,
+    "british": 235000,
+    "nonBritish": 75000
+  },
+  {
+    "year": 2005,
+    "borough": "Enfield",
+    "areaCode": "E09000010",
+    "total": 282000,
+    "british": 249000,
+    "nonBritish": 33000
+  },
+  {
+    "year": 2005,
+    "borough": "Greenwich",
+    "areaCode": "E09000011",
+    "total": 228000,
+    "british": 195000,
+    "nonBritish": 33000
+  },
+  {
+    "year": 2005,
+    "borough": "Hackney",
+    "areaCode": "E09000012",
+    "total": 215000,
+    "british": 164000,
+    "nonBritish": 52000
+  },
+  {
+    "year": 2005,
+    "borough": "Hammersmith and Fulham",
+    "areaCode": "E09000013",
+    "total": 172000,
+    "british": 126000,
+    "nonBritish": 46000
+  },
+  {
+    "year": 2005,
+    "borough": "Haringey",
+    "areaCode": "E09000014",
+    "total": 228000,
+    "british": 176000,
+    "nonBritish": 52000
+  },
+  {
+    "year": 2005,
+    "borough": "Harrow",
+    "areaCode": "E09000015",
+    "total": 219000,
+    "british": 185000,
+    "nonBritish": 34000
+  },
+  {
+    "year": 2005,
+    "borough": "Havering",
+    "areaCode": "E09000016",
+    "total": 225000,
+    "british": 219000,
+    "nonBritish": 7000
+  },
+  {
+    "year": 2005,
+    "borough": "Hillingdon",
+    "areaCode": "E09000017",
+    "total": 249000,
+    "british": 209000,
+    "nonBritish": 40000
+  },
+  {
+    "year": 2005,
+    "borough": "Hounslow",
+    "areaCode": "E09000018",
+    "total": 222000,
+    "british": 174000,
+    "nonBritish": 48000
+  },
+  {
+    "year": 2005,
+    "borough": "Islington",
+    "areaCode": "E09000019",
+    "total": 182000,
+    "british": 144000,
+    "nonBritish": 37000
+  },
+  {
+    "year": 2005,
+    "borough": "Kensington and Chelsea",
+    "areaCode": "E09000020",
+    "total": 166000,
+    "british": 110000,
+    "nonBritish": 56000
+  },
+  {
+    "year": 2005,
+    "borough": "Kingston upon Thames",
+    "areaCode": "E09000021",
+    "total": 151000,
+    "british": 128000,
+    "nonBritish": 23000
+  },
+  {
+    "year": 2005,
+    "borough": "Lambeth",
+    "areaCode": "E09000022",
+    "total": 275000,
+    "british": 203000,
+    "nonBritish": 72000
+  },
+  {
+    "year": 2005,
+    "borough": "Lewisham",
+    "areaCode": "E09000023",
+    "total": 253000,
+    "british": 208000,
+    "nonBritish": 45000
+  },
+  {
+    "year": 2005,
+    "borough": "Merton",
+    "areaCode": "E09000024",
+    "total": 189000,
+    "british": 152000,
+    "nonBritish": 38000
+  },
+  {
+    "year": 2005,
+    "borough": "Newham",
+    "areaCode": "E09000025",
+    "total": 253000,
+    "british": 185000,
+    "nonBritish": 67000
+  },
+  {
+    "year": 2005,
+    "borough": "Redbridge",
+    "areaCode": "E09000026",
+    "total": 250000,
+    "british": 216000,
+    "nonBritish": 33000
+  },
+  {
+    "year": 2005,
+    "borough": "Richmond upon Thames",
+    "areaCode": "E09000027",
+    "total": 180000,
+    "british": 157000,
+    "nonBritish": 22000
+  },
+  {
+    "year": 2005,
+    "borough": "Southwark",
+    "areaCode": "E09000028",
+    "total": 260000,
+    "british": 194000,
+    "nonBritish": 66000
+  },
+  {
+    "year": 2005,
+    "borough": "Sutton",
+    "areaCode": "E09000029",
+    "total": 180000,
+    "british": 163000,
+    "nonBritish": 18000
+  },
+  {
+    "year": 2005,
+    "borough": "Tower Hamlets",
+    "areaCode": "E09000030",
+    "total": 212000,
+    "british": 163000,
+    "nonBritish": 49000
+  },
+  {
+    "year": 2005,
+    "borough": "Waltham Forest",
+    "areaCode": "E09000031",
+    "total": 225000,
+    "british": 182000,
+    "nonBritish": 43000
+  },
+  {
+    "year": 2005,
+    "borough": "Wandsworth",
+    "areaCode": "E09000032",
+    "total": 280000,
+    "british": 218000,
+    "nonBritish": 62000
+  },
+  {
+    "year": 2005,
+    "borough": "Westminster",
+    "areaCode": "E09000033",
+    "total": 225000,
+    "british": 140000,
+    "nonBritish": 85000
+  },
+  {
+    "year": 2004,
+    "borough": "Barking and Dagenham",
+    "areaCode": "E09000002",
+    "total": 165000,
+    "british": 142000,
+    "nonBritish": 23000
+  },
+  {
+    "year": 2004,
+    "borough": "Barnet",
+    "areaCode": "E09000003",
+    "total": 320000,
+    "british": 266000,
+    "nonBritish": 54000
+  },
+  {
+    "year": 2004,
+    "borough": "Bexley",
+    "areaCode": "E09000004",
+    "total": 220000,
+    "british": 210000,
+    "nonBritish": 10000
+  },
+  {
+    "year": 2004,
+    "borough": "Brent",
+    "areaCode": "E09000005",
+    "total": 267000,
+    "british": 194000,
+    "nonBritish": 73000
+  },
+  {
+    "year": 2004,
+    "borough": "Bromley",
+    "areaCode": "E09000006",
+    "total": 295000,
+    "british": 281000,
+    "nonBritish": 14000
+  },
+  {
+    "year": 2004,
+    "borough": "Camden",
+    "areaCode": "E09000007",
+    "total": 203000,
+    "british": 157000,
+    "nonBritish": 45000
+  },
+  {
+    "year": 2004,
+    "borough": "Croydon",
+    "areaCode": "E09000008",
+    "total": 334000,
+    "british": 293000,
+    "nonBritish": 42000
+  },
+  {
+    "year": 2004,
+    "borough": "Ealing",
+    "areaCode": "E09000009",
+    "total": 307000,
+    "british": 242000,
+    "nonBritish": 65000
+  },
+  {
+    "year": 2004,
+    "borough": "Enfield",
+    "areaCode": "E09000010",
+    "total": 280000,
+    "british": 247000,
+    "nonBritish": 33000
+  },
+  {
+    "year": 2004,
+    "borough": "Greenwich",
+    "areaCode": "E09000011",
+    "total": 225000,
+    "british": 192000,
+    "nonBritish": 33000
+  },
+  {
+    "year": 2004,
+    "borough": "Hackney",
+    "areaCode": "E09000012",
+    "total": 212000,
+    "british": 175000,
+    "nonBritish": 37000
+  },
+  {
+    "year": 2004,
+    "borough": "Hammersmith and Fulham",
+    "areaCode": "E09000013",
+    "total": 170000,
+    "british": 121000,
+    "nonBritish": 49000
+  },
+  {
+    "year": 2004,
+    "borough": "Haringey",
+    "areaCode": "E09000014",
+    "total": 225000,
+    "british": 172000,
+    "nonBritish": 53000
+  },
+  {
+    "year": 2004,
+    "borough": "Harrow",
+    "areaCode": "E09000015",
+    "total": 215000,
+    "british": 175000,
+    "nonBritish": 40000
+  },
+  {
+    "year": 2004,
+    "borough": "Havering",
+    "areaCode": "E09000016",
+    "total": 224000,
+    "british": 217000,
+    "nonBritish": 7000
+  },
+  {
+    "year": 2004,
+    "borough": "Hillingdon",
+    "areaCode": "E09000017",
+    "total": 246000,
+    "british": 210000,
+    "nonBritish": 36000
+  },
+  {
+    "year": 2004,
+    "borough": "Hounslow",
+    "areaCode": "E09000018",
+    "total": 218000,
+    "british": 182000,
+    "nonBritish": 36000
+  },
+  {
+    "year": 2004,
+    "borough": "Islington",
+    "areaCode": "E09000019",
+    "total": 179000,
+    "british": 143000,
+    "nonBritish": 36000
+  },
+  {
+    "year": 2004,
+    "borough": "Kensington and Chelsea",
+    "areaCode": "E09000020",
+    "total": 163000,
+    "british": 107000,
+    "nonBritish": 56000
+  },
+  {
+    "year": 2004,
+    "borough": "Kingston upon Thames",
+    "areaCode": "E09000021",
+    "total": 150000,
+    "british": 128000,
+    "nonBritish": 22000
+  },
+  {
+    "year": 2004,
+    "borough": "Lambeth",
+    "areaCode": "E09000022",
+    "total": 272000,
+    "british": 205000,
+    "nonBritish": 66000
+  },
+  {
+    "year": 2004,
+    "borough": "Lewisham",
+    "areaCode": "E09000023",
+    "total": 250000,
+    "british": 206000,
+    "nonBritish": 44000
+  },
+  {
+    "year": 2004,
+    "borough": "Merton",
+    "areaCode": "E09000024",
+    "total": 188000,
+    "british": 151000,
+    "nonBritish": 36000
+  },
+  {
+    "year": 2004,
+    "borough": "Newham",
+    "areaCode": "E09000025",
+    "total": 253000,
+    "british": 194000,
+    "nonBritish": 59000
+  },
+  {
+    "year": 2004,
+    "borough": "Redbridge",
+    "areaCode": "E09000026",
+    "total": 247000,
+    "british": 220000,
+    "nonBritish": 26000
+  },
+  {
+    "year": 2004,
+    "borough": "Richmond upon Thames",
+    "areaCode": "E09000027",
+    "total": 177000,
+    "british": 156000,
+    "nonBritish": 22000
+  },
+  {
+    "year": 2004,
+    "borough": "Southwark",
+    "areaCode": "E09000028",
+    "total": 255000,
+    "british": 198000,
+    "nonBritish": 57000
+  },
+  {
+    "year": 2004,
+    "borough": "Sutton",
+    "areaCode": "E09000029",
+    "total": 180000,
+    "british": 166000,
+    "nonBritish": 14000
+  },
+  {
+    "year": 2004,
+    "borough": "Tower Hamlets",
+    "areaCode": "E09000030",
+    "total": 210000,
+    "british": 169000,
+    "nonBritish": 41000
+  },
+  {
+    "year": 2004,
+    "borough": "Waltham Forest",
+    "areaCode": "E09000031",
+    "total": 223000,
+    "british": 189000,
+    "nonBritish": 34000
+  },
+  {
+    "year": 2004,
+    "borough": "Wandsworth",
+    "areaCode": "E09000032",
+    "total": 276000,
+    "british": 218000,
+    "nonBritish": 58000
+  },
+  {
+    "year": 2004,
+    "borough": "Westminster",
+    "areaCode": "E09000033",
+    "total": 217000,
+    "british": 137000,
+    "nonBritish": 79000
+  }
+]

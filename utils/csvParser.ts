@@ -12,6 +12,26 @@ export interface PopulationData {
   isPredicted?: boolean
 }
 
+export interface NationalityData {
+  year: number
+  borough: string
+  areaCode: string
+  total: number | null
+  british: number | null
+  nonBritish: number | null
+}
+
+export interface EthnicityData {
+  year: number
+  borough: string
+  areaCode: string
+  white: number | null
+  asian: number | null
+  black: number | null
+  mixedOther: number | null
+  total: number | null
+}
+
 // Chart data interfaces (compatible with existing chart components)
 export interface ChartData {
   chartPoints: ChartDataPoint[]
@@ -556,4 +576,34 @@ export function loadCsvFromFile(file: File): Promise<string> {
     reader.onerror = () => reject(new Error('Failed to read file'))
     reader.readAsText(file)
   })
+}
+
+// Load nationality data from public directory (British vs Non-British)
+export async function loadNationalityDataFromPublic(): Promise<NationalityData[]> {
+  try {
+    const response = await fetch('/nationality-borough.json')
+    if (!response.ok) {
+      throw new Error(`Failed to load nationality JSON: ${response.statusText}`)
+    }
+    const data = await response.json()
+    return data as NationalityData[]
+  } catch (error) {
+    console.error('Error loading nationality JSON:', error)
+    throw error
+  }
+}
+
+// Load ethnicity data from public directory (White, Asian, Black, Mixed/Other)
+export async function loadEthnicityDataFromPublic(): Promise<EthnicityData[]> {
+  try {
+    const response = await fetch('/ethnicity-borough.json')
+    if (!response.ok) {
+      throw new Error(`Failed to load ethnicity JSON: ${response.statusText}`)
+    }
+    const data = await response.json()
+    return data as EthnicityData[]
+  } catch (error) {
+    console.error('Error loading ethnicity JSON:', error)
+    throw error
+  }
 } 

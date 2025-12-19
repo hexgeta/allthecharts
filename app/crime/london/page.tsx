@@ -3,7 +3,9 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import MpsCrimeChart from '@/components/MpsCrimeChart'
 import PopulationChart from '@/components/PopulationChart'
-import { loadCrimeDataFromPublic, loadPopulationDataFromPublic, processCrimeData, CrimeData, PopulationData } from '@/utils/csvParser'
+import NationalityChart from '@/components/NationalityChart'
+import EthnicityChart from '@/components/EthnicityChart'
+import { loadCrimeDataFromPublic, loadPopulationDataFromPublic, loadNationalityDataFromPublic, loadEthnicityDataFromPublic, processCrimeData, CrimeData, PopulationData, NationalityData, EthnicityData } from '@/utils/csvParser'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -15,6 +17,8 @@ import { Loader2, Upload, BarChart3 } from 'lucide-react'
 export default function CrimeAnalysisPage() {
   const [crimeData, setCrimeData] = useState<CrimeData[]>([])
   const [populationData, setPopulationData] = useState<PopulationData[]>([])
+  const [nationalityData, setNationalityData] = useState<NationalityData[]>([])
+  const [ethnicityData, setEthnicityData] = useState<EthnicityData[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   
@@ -32,14 +36,18 @@ export default function CrimeAnalysisPage() {
         setLoading(true)
         setError(null)
         
-        // Load crime data and population data in parallel
-        const [crime, population] = await Promise.all([
+        // Load crime data, population data, nationality data, and ethnicity data in parallel
+        const [crime, population, nationality, ethnicity] = await Promise.all([
           loadCrimeDataFromPublic(),
-          loadPopulationDataFromPublic()
+          loadPopulationDataFromPublic(),
+          loadNationalityDataFromPublic(),
+          loadEthnicityDataFromPublic()
         ])
         
         setCrimeData(crime)
         setPopulationData(population)
+        setNationalityData(nationality)
+        setEthnicityData(ethnicity)
       } catch (err) {
         console.error('Error loading data:', err)
         setError(err instanceof Error ? err.message : 'Failed to load data')
@@ -203,6 +211,14 @@ export default function CrimeAnalysisPage() {
             selectedBorough={selectedBorough}
             timeRange={timeRange}
           />
+          <NationalityChart 
+            nationalityData={nationalityData}
+            selectedBorough={selectedBorough}
+          />
+          <EthnicityChart 
+            ethnicityData={ethnicityData}
+            selectedBorough={selectedBorough}
+          />
         </div>
 
         {/* Data Sources */}
@@ -235,6 +251,28 @@ export default function CrimeAnalysisPage() {
                   className="text-blue-400 hover:text-blue-300 text-sm underline transition-colors"
                 >
                   ONS Population Estimates by Borough - London Datastore
+                </a>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-sm font-medium text-gray-300">Nationality Data:</span>
+                <a 
+                  href="https://data.london.gov.uk/dataset/nationality" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:text-blue-300 text-sm underline transition-colors"
+                >
+                  Population by Nationality, Borough - London Datastore
+                </a>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-sm font-medium text-gray-300">Ethnicity Data:</span>
+                <a 
+                  href="https://data.london.gov.uk/dataset/ethnic-groups-borough" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:text-blue-300 text-sm underline transition-colors"
+                >
+                  Population by Ethnic Group, Borough - London Datastore
                 </a>
               </div>
             </div>
