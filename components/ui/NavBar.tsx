@@ -12,13 +12,14 @@ export const revalidate = 2592000; // 30 days in seconds
 
 // Navigation links configuration
 const NAV_LINKS = [
-  { 
-    href: '/crime/london', 
-    label: 'Crime', 
-    mobileLabel: 'Crime',
+  {
+    href: '/social-trends',
+    label: 'Global Trends',
+    mobileLabel: 'Global',
     hasDropdown: true,
     dropdownItems: [
-      { href: '/crime/london', label: 'London' }
+      { href: '/social-trends', label: 'Social Trends', subtitle: 'Financial, Crime, Immigration & Tax Data' },
+      { href: '/crime/london', label: 'London Crime', subtitle: 'Metropolitan Police Crime Data' },
     ]
   },
 ];
@@ -157,7 +158,7 @@ const NavBar = () => {
                                 onClick={() => setActiveDropdown(null)}
                               >
                                 <div className="font-medium">{item.label}</div>
-                                <div className="text-sm text-gray-500">Metropolitan Police Crime Data</div>
+                                {(item as any).subtitle && <div className="text-sm text-gray-500">{(item as any).subtitle}</div>}
                               </Link>
                             ))}
                           </div>
@@ -229,7 +230,7 @@ const NavBar = () => {
                           onClick={() => setIsMenuOpen(false)}
                         >
                           <div className="font-medium">{item.label}</div>
-                          <div className="text-xs text-white/40">Metropolitan Police Crime Data</div>
+                          {(item as any).subtitle && <div className="text-xs text-white/40">{(item as any).subtitle}</div>}
                         </Link>
                       ))}
                     </div>
