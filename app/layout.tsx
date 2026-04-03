@@ -177,6 +177,7 @@ export default function RootLayout({
     <html lang="en" className="font-sans scrollbar-hide">
       <head>
         <script defer data-domain="allthecharts.xyz" src="https://plausible.io/js/script.js"></script>
+        <script defer data-domain="allthecharts.xyz" src="https://analytics.lookintomaxi.com/js/script.js"></script>
         {/* Prevent mobile browser UI bars from resizing content */}
         <meta name="format-detection" content="telephone=no" />
         <meta name="theme-color" content="#000000" />
