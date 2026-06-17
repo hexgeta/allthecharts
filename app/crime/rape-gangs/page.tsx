@@ -75,12 +75,6 @@ const sentencing = [
   { name: 'Proposed: ringleader', value: 50, color: C.emerald },
 ]
 
-// Geographic footprint
-const footprint = [
-  { name: 'Districts affected', value: 40, color: C.red },
-  { name: 'Not recorded', value: 60, color: C.slate },
-]
-
 // Notable quotations reproduced verbatim from the report
 const quotes = [
   {
@@ -424,6 +418,11 @@ export default function RapeGangsPage() {
             source="Quilliam Foundation, Group-Based Child Sexual Exploitation (2017) — as cited in the report"
           >
             <DonutChart data={quilliam} unit="%" height={320} centerValue="84%" centerLabel="South Asian" />
+            <p className="mt-3 text-xs text-gray-500 leading-relaxed">
+              The report does not break offenders down by country, but describes the South Asian share as
+              &ldquo;the vast majority Pakistani Muslim.&rdquo; Its only by-country figures are for forced
+              marriage (right).
+            </p>
           </ChartCard>
 
           <ChartCard
@@ -451,16 +450,6 @@ export default function RapeGangsPage() {
           </p>
         </ChartCard>
 
-        {/* ---------------- Geographic footprint ---------------- */}
-        <ChartCard
-          title="Geographic footprint"
-          description="Local-authority districts where the same pattern of abuse was found."
-          tag="report"
-          source="Rape Gang Inquiry Report — 149 of ~373 UK districts"
-        >
-          <DonutChart data={footprint} unit="%" height={320} centerValue="149" centerLabel="districts (~40%)" />
-        </ChartCard>
-
         {/* ---------------- Map ---------------- */}
         <div id="map" className="scroll-mt-24">
         <ChartCard
@@ -470,6 +459,16 @@ export default function RapeGangsPage() {
           source="Digitised from the report’s map (p.14); markers from locations named in the report and public court records"
           sourceUrl="/rape-gangs/report-map.png"
         >
+          <div className="flex items-center justify-center gap-10 mb-5">
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-red-400 tabular-nums">149</div>
+              <div className="text-xs text-gray-400 mt-1">districts affected</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-amber-400 tabular-nums">~40%</div>
+              <div className="text-xs text-gray-400 mt-1">of all UK districts</div>
+            </div>
+          </div>
           <UkChoropleth locations={mapLocations} />
           <p className="mt-3 text-xs text-gray-500 leading-relaxed">
             District shading is digitised from the report’s own map on p.14 (

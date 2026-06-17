@@ -114,9 +114,11 @@ export default function UkChoropleth({ locations }: { locations: MapLoc[] }) {
           const r = loc.major ? 4.5 : 3
           return (
             <g key={i}>
-              <circle cx={x} cy={y} r={r + 5} fill="#fff" opacity={hoverM === i ? 0.3 : 0} pointerEvents="none" />
-              <circle cx={x} cy={y} r={r + 1.6} fill="#fff" opacity={0.95} data-mi={i} />
-              <circle cx={x} cy={y} r={r} fill={hoverM === i ? '#450a0a' : '#b91c1c'} data-mi={i} />
+              {/* single hit area, larger than the visible glow so hover never falls into a dead ring */}
+              <circle cx={x} cy={y} r={r + 4.5} fill="transparent" pointerEvents="all" data-mi={i} />
+              <circle cx={x} cy={y} r={r + 4} fill="#fff" opacity={hoverM === i ? 0.28 : 0} pointerEvents="none" />
+              <circle cx={x} cy={y} r={r + 1.6} fill="#fff" opacity={0.95} pointerEvents="none" />
+              <circle cx={x} cy={y} r={r} fill={hoverM === i ? '#450a0a' : '#b91c1c'} pointerEvents="none" />
             </g>
           )
         })}
