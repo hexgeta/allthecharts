@@ -7,6 +7,7 @@ import { FileText, ExternalLink, AlertTriangle } from 'lucide-react'
 import {
   C, ChartCard, StatCard, HBarChart, GroupedBarChart, DonutChart, QuoteWall, ProfileWall,
 } from '@/components/rape-gangs/ChartKit'
+import UkMap from '@/components/rape-gangs/UkMap'
 
 const REPORT_URL =
   'https://static1.squarespace.com/static/6810978a41bbc42489eafa81/t/6a314bb1151e511944bd4421/1781615537601/The+Rape+Gang+Inquiry+Report.pdf'
@@ -286,6 +287,43 @@ const recommendations = [
   'A referendum on the death penalty for the worst cases, called for by Rupert Lowe and others.',
 ]
 
+// Locations named in the report, plotted on the interactive map
+const mapLocations = [
+  { name: 'Rotherham', lng: -1.357, lat: 53.43, major: true, detail: 'Jay Report: at least 1,400 children abused, 1997–2013.' },
+  { name: 'Rochdale', lng: -2.155, lat: 53.614, major: true, detail: 'Operation Span — British-Pakistani & Afghan gang; 47 girls identified.' },
+  { name: 'Telford', lng: -2.443, lat: 52.678, major: true, detail: 'Telford Inquiry (2022): more than 1,000 victims over decades.' },
+  { name: 'Oxford', lng: -1.257, lat: 51.752, major: true, detail: 'Operation Bullfinch — around 370 victims identified.' },
+  { name: 'Newcastle', lng: -1.617, lat: 54.978, major: true, detail: 'Operation Sanctuary — 18 convicted (17 men, 1 woman).' },
+  { name: 'London', lng: -0.118, lat: 51.509, major: true, detail: 'Met Police review of 9,000 CSE cases; trafficking hub.' },
+  { name: 'Derby', lng: -1.476, lat: 52.921, detail: 'Operation Retriever (2010) — 27 victims.' },
+  { name: 'Bristol', lng: -2.587, lat: 51.454, detail: 'Two Somali-origin gangs (Operation Brooke).' },
+  { name: 'Huddersfield', lng: -1.785, lat: 53.645, detail: '20+ men convicted (2018).' },
+  { name: 'Bradford', lng: -1.753, lat: 53.795, detail: 'First recorded case (1955); later convictions.' },
+  { name: 'Banbury', lng: -1.34, lat: 52.061, detail: 'A mainly African-heritage gang.' },
+  { name: 'Chelmsford', lng: 0.479, lat: 51.736, detail: 'Three Iranian men convicted.' },
+  { name: 'Bridgwater (Somerset)', lng: -3.004, lat: 51.128, detail: 'Two Turkish men convicted.' },
+  { name: 'Burnley', lng: -2.243, lat: 53.789, detail: 'Named among the affected towns.' },
+  { name: 'Peterborough', lng: -0.241, lat: 52.573, detail: 'Operation Erle — named among affected towns.' },
+  { name: 'Aylesbury', lng: -0.81, lat: 51.816, detail: '6 men convicted (2015).' },
+  { name: 'Middlesbrough', lng: -1.234, lat: 54.574, detail: 'Home of the 15-year-old in the 1955 case.' },
+  { name: 'Birmingham', lng: -1.898, lat: 52.486, detail: 'Cited as part of trafficking networks.' },
+  { name: 'Sheffield', lng: -1.47, lat: 53.383, detail: 'Named among the affected areas.' },
+  { name: 'Manchester', lng: -2.244, lat: 53.483, detail: 'Named among the affected areas.' },
+]
+
+// Major named operations and inquiries (public court records + the report)
+const operations = [
+  ['Rotherham', 'Jay Report · Op. Stovewood', '1997–2013', '20+ (ongoing)', '≥1,400', 'Mainly British-Pakistani'],
+  ['Telford', 'Telford Inquiry · Op. Chalice', '1980s–2010s', '7+ (Chalice)', '1,000+', 'Mainly British-Pakistani'],
+  ['Oxford', 'Operation Bullfinch', '2004–2013', '7 (2013)', '~370 identified', 'Pakistani, N. & E. African'],
+  ['Newcastle', 'Op. Sanctuary / Shelter', '2014–2017', '18 (incl. 1 woman)', '~278 (700+ potential)', 'Diverse Muslim backgrounds'],
+  ['Rochdale', 'Operation Span', '2008–2012', '9 (2012)', '47', 'British-Pakistani & Afghan'],
+  ['Derby', 'Operation Retriever', '2008–2010', '13', '27', 'Mainly British-Pakistani'],
+  ['Bristol', 'Operation Brooke', '2012–2014', '13 (2014)', '7+', 'Somali-origin'],
+  ['Huddersfield', 'West Yorkshire trials', '2011–2018', '20+', '15+', 'British-Asian'],
+  ['Aylesbury', 'Thames Valley trial', '2006–2015', '6 (2015)', '2+', 'British-Asian'],
+]
+
 export default function RapeGangsPage() {
   return (
     <div className="min-h-screen bg-black text-white">
@@ -448,6 +486,35 @@ export default function RapeGangsPage() {
           <DonutChart data={footprint} unit="%" height={320} centerValue="149" centerLabel="districts (~40%)" />
         </ChartCard>
 
+        {/* ---------------- Map ---------------- */}
+        <ChartCard
+          title="Where it happened"
+          description="The report maps at least 149 local-authority districts. Left: the report’s own map (p.14). Right: an interactive map of the locations named in the report’s text — hover or tap a marker."
+          tag="report"
+          source="Rape Gang Inquiry Report, p.14; place markers from locations named in the report and public court records"
+        >
+          <div className="grid md:grid-cols-2 gap-6 items-start">
+            <figure className="space-y-2">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/rape-gangs/report-map.png"
+                alt="The report's map of affected districts (suspected and confirmed)"
+                className="w-full max-w-[420px] mx-auto rounded-lg border border-white/15"
+              />
+              <figcaption className="text-center text-xs text-gray-500">
+                The report’s original map — light = suspected, dark = confirmed districts.
+              </figcaption>
+            </figure>
+            <div className="space-y-2">
+              <UkMap locations={mapLocations} />
+              <p className="text-center text-xs text-gray-500">
+                Markers = locations named in the report (a subset of the 149 districts). Larger dots are
+                major inquiries or operations.
+              </p>
+            </div>
+          </div>
+        </ChartCard>
+
         {/* ---------------- Quotes ---------------- */}
         <div className="space-y-5 pt-4">
           <div className="text-center space-y-2">
@@ -546,6 +613,49 @@ export default function RapeGangsPage() {
                   </li>
                 ))}
               </ol>
+            </CardContent>
+          </Card>
+
+          {/* Named operations table */}
+          <Card className="bg-black border-white/20">
+            <CardHeader>
+              <CardTitle className="text-white text-xl">Major operations &amp; inquiries</CardTitle>
+              <CardDescription className="text-gray-400">
+                The principal named police operations and public inquiries, with their reported scale.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border-collapse min-w-[640px]">
+                  <thead>
+                    <tr className="text-left text-gray-400 border-b border-white/15">
+                      <th className="py-2 pr-4 font-medium">Town</th>
+                      <th className="py-2 pr-4 font-medium">Operation / inquiry</th>
+                      <th className="py-2 pr-4 font-medium">Years</th>
+                      <th className="py-2 pr-4 font-medium">Convicted</th>
+                      <th className="py-2 pr-4 font-medium">Known victims</th>
+                      <th className="py-2 font-medium">Perpetrators</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {operations.map((row, i) => (
+                      <tr key={i} className="border-b border-white/[0.07]">
+                        <td className="py-2.5 pr-4 text-white font-medium whitespace-nowrap">{row[0]}</td>
+                        <td className="py-2.5 pr-4 text-gray-300 whitespace-nowrap">{row[1]}</td>
+                        <td className="py-2.5 pr-4 text-gray-400 tabular-nums whitespace-nowrap">{row[2]}</td>
+                        <td className="py-2.5 pr-4 text-gray-300 tabular-nums whitespace-nowrap">{row[3]}</td>
+                        <td className="py-2.5 pr-4 text-red-300 tabular-nums whitespace-nowrap">{row[4]}</td>
+                        <td className="py-2.5 text-gray-400">{row[5]}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="mt-4 text-xs text-gray-500 leading-relaxed">
+                Convictions reflect the principal trials; several investigations (e.g. Rotherham’s
+                Operation Stovewood) remain ongoing. Figures from public court records, the named inquiries
+                and the report.
+              </p>
             </CardContent>
           </Card>
 
