@@ -150,7 +150,7 @@ const quotes = [
 // Survivor profiles, reconstructed faithfully from the report's testimony sections
 const profiles = [
   {
-    alias: '‘Chloe’',
+    alias: 'Chloe',
     meta: 'Abuse began at 10 · stepfather, then Pakistani taxi drivers and a man posing as her boyfriend',
     paragraphs: [
       'After her father died just before her tenth birthday, Chloe moved in with her mother and a stepfather she describes as a “paedophile.” He supplied her with alcohol and cigarettes “to keep her quiet” and raped her repeatedly. Her mother caught him in the shower with Chloe and “closed the door and walked out.”',
@@ -161,7 +161,7 @@ const profiles = [
     failure: 'Police accused her of lying when her uncle’s assault was reported, leaving a child with no adult left to trust.',
   },
   {
-    alias: '‘Jane’',
+    alias: 'Jane',
     meta: 'Groomed at 13 by her mother’s drug dealer · later sold to a group of men at 16',
     paragraphs: [
       'Jane’s mother’s drug dealer groomed her over Facebook after learning she was self-harming. He arrived at her father’s house with a kosh, told the 13-year-old to strip, said “you may be 13, but you’ve got the body of a woman,” and raped her. He then abused her “every day apart from the weekends” for months, plying her with valium and cannabis.',
@@ -171,7 +171,7 @@ const profiles = [
     failure: 'Teachers forced her out of the school where she hid from her abuser; police demanded a 13-year-old face her rapist alone, so he walked free.',
   },
   {
-    alias: '‘Kate’',
+    alias: 'Kate',
     meta: 'Raped at 12 · blackmailed into “jobs” — webcam abuse, “parties,” “red rooms”',
     paragraphs: [
       'After her rape was filmed at age 12, Kate was blackmailed: comply, or the video goes to her family. Told she now “worked” for the gang, she was forced into webcam abuse that earned them money, and punished if a livestream didn’t make enough.',
@@ -181,7 +181,7 @@ const profiles = [
     failure: 'Police pressured a traumatised 12-year-old into withdrawing her rape report, then recorded a 13-year-old’s abuse by adult men as “consensual.”',
   },
   {
-    alias: '‘Jen’',
+    alias: 'Jen',
     meta: 'Targeted online at 13 · trafficked at 17 by an Iraqi Kurdish gang of illegal migrants',
     paragraphs: [
       'Neglected and bullied — once made to sit in soiled clothes all day after a teacher refused her the toilet — Jen came to believe she was “not worth protecting.” At 13, adult men contacted her online; one encouraged her to insert a knife into her vagina.',
@@ -191,7 +191,7 @@ const profiles = [
     failure: 'Her disclosures were reframed as “relationship issues” or “cultural matters” and dismissed; the threat to take her child abroad was called a civil matter.',
   },
   {
-    alias: '‘Fiona’',
+    alias: 'Fiona',
     meta: 'In care at 13 · groomed by Pakistani men aged 24–45 · “party houses” of 10–20 men',
     paragraphs: [
       'Fiona entered care at 13, placed in a children’s home already flagged as high-risk for exploitation in a TV documentary. Her abusers — men she estimates were 24 to 45 — sat in cars outside, chatted openly with staff, and phoned the home to ask about the girls.',
@@ -202,7 +202,7 @@ const profiles = [
     failure: 'A care worker was told logging the abusers’ number plates was “above her pay grade”; police returned Fiona to her abusers and told them to “have fun with her.”',
   },
   {
-    alias: '‘Anna’',
+    alias: 'Anna',
     meta: 'Children’s home, Bradford, 2002 · raped from 13 · forced into a sharia marriage at 15',
     paragraphs: [
       'Anna was raped and abused from the age of 13 in a Bradford children’s home. At 15 she was forced into a sharia marriage — and her own social worker attended the ceremony.',
@@ -211,7 +211,7 @@ const profiles = [
     failure: 'A social worker attended the forced marriage of a 15-year-old to her abuser, then signed off on the abuser’s family fostering her for state money.',
   },
   {
-    alias: '‘Sarah’',
+    alias: 'Sarah',
     meta: 'Kidnapped · forced to learn the Quran and cook for her abusers',
     paragraphs: [
       'Sarah was made to learn the Quran in Arabic, permitted to speak only Urdu and Punjabi, and forced to cook and clean for the gang members who abused her.',
@@ -220,7 +220,7 @@ const profiles = [
     failure: 'The officer who took her report turned off the recorder and told her to drop it — and was later jailed for child sex offences himself.',
   },
   {
-    alias: '‘Michelle’',
+    alias: 'Michelle',
     meta: 'Pregnant four times as a child · says she was raped by 600–700 men',
     paragraphs: [
       'Michelle became pregnant four times as a child as a result of rape, leading to miscarriages, one abortion and one surviving child. She says she was raped by between six and seven hundred different men.',
