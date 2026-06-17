@@ -7,7 +7,7 @@ import { FileText, ExternalLink, AlertTriangle } from 'lucide-react'
 import {
   C, ChartCard, StatCard, HBarChart, GroupedBarChart, DonutChart, QuoteWall, ProfileWall,
 } from '@/components/rape-gangs/ChartKit'
-import UkMap from '@/components/rape-gangs/UkMap'
+import UkChoropleth from '@/components/rape-gangs/UkChoropleth'
 
 const REPORT_URL =
   'https://static1.squarespace.com/static/6810978a41bbc42489eafa81/t/6a314bb1151e511944bd4421/1781615537601/The+Rape+Gang+Inquiry+Report.pdf'
@@ -16,12 +16,6 @@ const REPORT_URL =
 /*  Data — every figure below is reproduced as presented in            */
 /*  "The Rape Gang Inquiry Report" (Rupert Lowe MP, 2025).             */
 /* =================================================================== */
-
-// UK reported rape offences — endpoints only (ONS / police recorded crime)
-const ukRape = [
-  { name: '2000', value: 8593 },
-  { name: '2025', value: 70000 },
-]
 
 // Reported rape offences, UK vs Poland (2000 → latest)
 const ukVsPoland = [
@@ -421,25 +415,6 @@ export default function RapeGangsPage() {
           </ChartCard>
         </div>
 
-        {/* ---------------- UK rape trend endpoints ---------------- */}
-        <ChartCard
-          title="UK reported rape offences, 2000 → 2025"
-          description="Police recorded rape offences in England & Wales, start and end points."
-          tag="official"
-          source="ONS, Sexual offences in England & Wales (YE March 2025) — as cited in the report"
-        >
-          <GroupedBarChart
-            data={ukRape.map((d) => ({ name: d.name, Offences: d.value }))}
-            series={[{ key: 'Offences', name: 'Recorded rape offences', color: C.rose }]}
-            legend={false}
-            height={300}
-          />
-          <p className="mt-3 text-xs text-gray-500">
-            A rise exceeding 800%, even after accounting for ~15% population growth over the period. Only
-            the two endpoints are given in the report; intermediate years are not shown.
-          </p>
-        </ChartCard>
-
         {/* ---------------- Offender ethnicity + Forced marriage ---------------- */}
         <div className="grid md:grid-cols-2 gap-6">
           <ChartCard
@@ -489,30 +464,17 @@ export default function RapeGangsPage() {
         {/* ---------------- Map ---------------- */}
         <ChartCard
           title="Where it happened"
-          description="The report maps at least 149 local-authority districts. Left: the report’s own map (p.14). Right: an interactive map of the locations named in the report’s text — hover or tap a marker."
+          description="Every local-authority district the report shades as confirmed or suspected, with the locations it names by case. Hover a district or marker for detail."
           tag="report"
-          source="Rape Gang Inquiry Report, p.14; place markers from locations named in the report and public court records"
+          source="Digitised from the report’s map (p.14); markers from locations named in the report and public court records"
+          sourceUrl="/rape-gangs/report-map.png"
         >
-          <div className="grid md:grid-cols-2 gap-6 items-start">
-            <figure className="space-y-2">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/rape-gangs/report-map.png"
-                alt="The report's map of affected districts (suspected and confirmed)"
-                className="w-full max-w-[420px] mx-auto rounded-lg border border-white/15"
-              />
-              <figcaption className="text-center text-xs text-gray-500">
-                The report’s original map — light = suspected, dark = confirmed districts.
-              </figcaption>
-            </figure>
-            <div className="space-y-2">
-              <UkMap locations={mapLocations} />
-              <p className="text-center text-xs text-gray-500">
-                Markers = locations named in the report (a subset of the 149 districts). Larger dots are
-                major inquiries or operations.
-              </p>
-            </div>
-          </div>
+          <UkChoropleth locations={mapLocations} />
+          <p className="mt-3 text-xs text-gray-500 leading-relaxed">
+            District shading is digitised from the report’s own map on p.14 (
+            <a href="/rape-gangs/report-map.png" target="_blank" rel="noopener noreferrer" className="text-blue-400/80 hover:text-blue-300 underline">view the original</a>
+            ) and is approximate. The report states abuse occurred in <span className="text-gray-300">at least 149 districts</span>.
+          </p>
         </ChartCard>
 
         {/* ---------------- Quotes ---------------- */}
