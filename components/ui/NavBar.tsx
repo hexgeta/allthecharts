@@ -20,6 +20,7 @@ const NAV_LINKS = [
     dropdownItems: [
       { href: '/social-trends', label: 'Social Trends', subtitle: 'Financial, Crime, Immigration & Tax Data' },
       { href: '/crime/london', label: 'London Crime', subtitle: 'Metropolitan Police Crime Data' },
+      { href: '/crime/rape-gangs', label: 'Rape Gang Inquiry', subtitle: 'Group-based CSE statistics' },
     ]
   },
 ];
