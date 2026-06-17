@@ -86,10 +86,9 @@ export default function UkChoropleth({ locations }: { locations: MapLoc[] }) {
       const p = paths[+ds.i]
       if (p && (!hoverD || hoverD.name !== p.name)) setHoverD({ name: p.name, status: p.status, d: p.d })
       if (hoverM !== null) setHoverM(null)
-    } else {
-      if (hoverD) setHoverD(null)
-      if (hoverM !== null) setHoverM(null)
     }
+    // else: cursor is over a sub-pixel gap between simplified polygons —
+    // keep the current popup rather than blanking it (prevents flashing).
   }
 
   const clear = () => { setHoverD(null); setHoverM(null) }
