@@ -3,9 +3,9 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { FileText, ExternalLink } from 'lucide-react'
+import { FileText, ExternalLink, AlertTriangle } from 'lucide-react'
 import {
-  C, ChartCard, StatCard, HBarChart, GroupedBarChart, DonutChart, QuoteWall,
+  C, ChartCard, StatCard, HBarChart, GroupedBarChart, DonutChart, QuoteWall, ProfileWall,
 } from '@/components/rape-gangs/ChartKit'
 
 const REPORT_URL =
@@ -144,6 +144,146 @@ const quotes = [
     text: 'If I can save just even one more child, girl or boy, from going through any of this, then I’ve done my job.',
     source: '‘Chloe’, survivor',
   },
+]
+
+// Survivor profiles, reconstructed faithfully from the report's testimony sections
+const profiles = [
+  {
+    alias: '‘Chloe’',
+    meta: 'Abuse began at 10 · stepfather, then Pakistani taxi drivers and a man posing as her boyfriend',
+    paragraphs: [
+      'After her father died just before her tenth birthday, Chloe moved in with her mother and a stepfather she describes as a “paedophile.” He supplied her with alcohol and cigarettes “to keep her quiet” and raped her repeatedly. Her mother caught him in the shower with Chloe and “closed the door and walked out.”',
+      'Truanting in the town centre, she was approached by groups of Muslim men — mostly Pakistani taxi drivers aged 20 to over 50 — who bought the girls alcohol and “mapped out” whether they were vulnerable. An uncle she trusted also sexually assaulted her; when her mother reported it, police accused Chloe of lying. With no adult left to turn to, she was drawn deeper in: drugged and taken “house after house” and raped by “guy after guy after guy.”',
+      'Her photograph was once shown on TV as a missing child; her abusers taunted her with it. She eventually escaped her home town and, years later, rebuilt her life.',
+    ],
+    quote: 'If I can save just even one more child, girl or boy, from going through any of this, then I’ve done my job.',
+    failure: 'Police accused her of lying when her uncle’s assault was reported, leaving a child with no adult left to trust.',
+  },
+  {
+    alias: '‘Jane’',
+    meta: 'Groomed at 13 by her mother’s drug dealer · later sold to a group of men at 16',
+    paragraphs: [
+      'Jane’s mother’s drug dealer groomed her over Facebook after learning she was self-harming. He arrived at her father’s house with a kosh, told the 13-year-old to strip, said “you may be 13, but you’ve got the body of a woman,” and raped her. He then abused her “every day apart from the weekends” for months, plying her with valium and cannabis.',
+      'When she finally disclosed — telling her drunk mother “because I am being fucked by a 50-year-old man and nobody has noticed” — police insisted the 13-year-old testify alone against him. Too frightened, she didn’t, and he was never prosecuted. Her father called her a “whore,” said he “wished she would just hurry up and kill herself,” and when she attempted suicide told her to “try harder next time.”',
+      'Left homeless and moved through foster and residential care, Jane was later taken to a flat in Hounslow by a coercive peer and told she was being sold for sex to six or seven Somali men.',
+    ],
+    failure: 'Teachers forced her out of the school where she hid from her abuser; police demanded a 13-year-old face her rapist alone, so he walked free.',
+  },
+  {
+    alias: '‘Kate’',
+    meta: 'Raped at 12 · blackmailed into “jobs” — webcam abuse, “parties,” “red rooms”',
+    paragraphs: [
+      'After her rape was filmed at age 12, Kate was blackmailed: comply, or the video goes to her family. Told she now “worked” for the gang, she was forced into webcam abuse that earned them money, and punished if a livestream didn’t make enough.',
+      'When she reported the assault, police took the 12-year-old into an interview room without her mother and told her this was her “last chance” to say it wasn’t true, warning she would be arrested if any detail couldn’t be proved. Overwhelmed, she recanted; it was logged as a withdrawn complaint. Later, explicit messages between Kate and adult men were found — police concluded the 13-year-old was engaging “consensually.”',
+      'She was raped multiple times a week, sometimes two to four times a day, in what the gang called “jobs,” “parties,” “cop nights,” and “red rooms.” She once watched another girl being “broken in” and offered to take the “jobs” instead; the men beat and raped her for it. Kate attempted suicide more than once.',
+    ],
+    failure: 'Police pressured a traumatised 12-year-old into withdrawing her rape report, then recorded a 13-year-old’s abuse by adult men as “consensual.”',
+  },
+  {
+    alias: '‘Jen’',
+    meta: 'Targeted online at 13 · trafficked at 17 by an Iraqi Kurdish gang of illegal migrants',
+    paragraphs: [
+      'Neglected and bullied — once made to sit in soiled clothes all day after a teacher refused her the toilet — Jen came to believe she was “not worth protecting.” At 13, adult men contacted her online; one encouraged her to insert a knife into her vagina.',
+      'At 17 she was introduced to a gang of Iraqi Kurdish Muslim men, all illegal migrants, who trafficked her across the Midlands and raped her at “parties.” On one occasion she was anally raped in a park. The men called white Britons “white trash” and white girls “English pig-dogs,” boasted of “free money” from the British state, and forced her to fill in their asylum benefit applications.',
+      'Pregnant at 18 by rape, she was forcibly converted to Islam and married by an imam — without her consent — in a flat converted into a mosque. The father, an Iraqi illegal migrant who had claimed asylum on the basis that he could not safely return, repeatedly took their daughter to Iraq, where she was exposed to AK-47s. When Jen reported it, police called it a “civil matter.”',
+    ],
+    failure: 'Her disclosures were reframed as “relationship issues” or “cultural matters” and dismissed; the threat to take her child abroad was called a civil matter.',
+  },
+  {
+    alias: '‘Fiona’',
+    meta: 'In care at 13 · groomed by Pakistani men aged 24–45 · “party houses” of 10–20 men',
+    paragraphs: [
+      'Fiona entered care at 13, placed in a children’s home already flagged as high-risk for exploitation in a TV documentary. Her abusers — men she estimates were 24 to 45 — sat in cars outside, chatted openly with staff, and phoned the home to ask about the girls.',
+      'She was repeatedly raped in a “party house” where 10 to 20 men gathered at a time; the girls were called “white slags” while Pakistani girls were kept “pure” for marriage. The gang tried to traffic her to Kashmir, foiled only because she had no passport. The home was paid £5,000 a week to care for her.',
+      'When her mother reported her missing and mentioned abuse by Asian men, a police call handler replied: “You can’t describe them as Asian men because that’s racist. You should just be glad your child is being taught a different culture.” An officer once returned Fiona to the abusers’ house and told the men to “have fun with her.”',
+    ],
+    quote: 'You should just be glad your child is being taught a different culture.',
+    failure: 'A care worker was told logging the abusers’ number plates was “above her pay grade”; police returned Fiona to her abusers and told them to “have fun with her.”',
+  },
+  {
+    alias: '‘Anna’',
+    meta: 'Children’s home, Bradford, 2002 · raped from 13 · forced into a sharia marriage at 15',
+    paragraphs: [
+      'Anna was raped and abused from the age of 13 in a Bradford children’s home. At 15 she was forced into a sharia marriage — and her own social worker attended the ceremony.',
+      'After she became pregnant, the same social worker allowed her husband’s parents to foster her, with the family collecting a state fostering allowance. Anna described “domestic slavery,” treated “like a maid” and sexually abused by dozens of men.',
+    ],
+    failure: 'A social worker attended the forced marriage of a 15-year-old to her abuser, then signed off on the abuser’s family fostering her for state money.',
+  },
+  {
+    alias: '‘Sarah’',
+    meta: 'Kidnapped · forced to learn the Quran and cook for her abusers',
+    paragraphs: [
+      'Sarah was made to learn the Quran in Arabic, permitted to speak only Urdu and Punjabi, and forced to cook and clean for the gang members who abused her.',
+      'After she reported her kidnapping, a Muslim police officer switched off the tape recorder and told her to drop the allegations for “lack of evidence.” She later learned that officer had himself been imprisoned for child sex offences.',
+    ],
+    failure: 'The officer who took her report turned off the recorder and told her to drop it — and was later jailed for child sex offences himself.',
+  },
+  {
+    alias: '‘Michelle’',
+    meta: 'Pregnant four times as a child · says she was raped by 600–700 men',
+    paragraphs: [
+      'Michelle became pregnant four times as a child as a result of rape, leading to miscarriages, one abortion and one surviving child. She says she was raped by between six and seven hundred different men.',
+      'She describes a nationwide network — “industrial” in scale, a central hub with smaller connected groups in each locality — that she believes stayed untouchable because authorities feared being called racist.',
+    ],
+    quote: '98% of them were Pakistani Muslim. If not, they were Iraqi Muslim or Kurdish.',
+    failure: 'Fear of being labelled racist meant a network operating across the entire country went unchallenged for years.',
+  },
+]
+
+// The standardised grooming method described across testimonies
+const playbook = [
+  ['Target & love-bomb', 'Befriend a vulnerable child — often in care, truanting, or already abused — treat her “like an adult,” and shower her with attention, gifts and compliments.'],
+  ['Hook with substances', 'Supply alcohol, cigarettes, cannabis and harder drugs to build dependency and, in the abusers’ words, “keep her quiet.”'],
+  ['Isolate & move', 'Collect her by taxi from school gates, care homes and streets; cut her off from family and anyone who might intervene.'],
+  ['Rape & degrade', 'Pass her between groups of men at houses, flats, restaurants and hotels; rape her repeatedly — often several times a day.'],
+  ['Trap with blackmail', 'Film the abuse and threaten to share it; tell her she now “works” for the gang and must stay contactable.'],
+  ['Traffic & control', 'Move her between towns and cities; in many cases force conversion to Islam, “marriage,” and pregnancy or coerced abortion.'],
+]
+
+// Documented institutional failures
+const failures = [
+  'Police told a mother she “can’t describe them as Asian men because that’s racist.”',
+  'An officer returned a girl to her abusers and told the men to “have fun with her.”',
+  'Child victims were threatened with arrest and pressured into withdrawing rape reports.',
+  'Abuse of children by adult men was logged as “consensual.”',
+  'Cases were dropped on the day of trial with no written explanation given.',
+  'Ethnicity and group offending went unrecorded to protect “community cohesion.”',
+  'Records were concealed or destroyed — in places for nearly 40 years.',
+  'A social worker attended a 15-year-old’s forced marriage to her abuser.',
+]
+
+// A 70-year pattern
+const timeline = [
+  ['1948', 'British Nationality Act opens large-scale Commonwealth immigration.'],
+  ['1955', 'First recorded Pakistani rape-gang case: four Bradford men charged with raping a 15-year-old.'],
+  ['1997', 'Tony Blair’s government begins an era of mass immigration; the report says abuse escalates.'],
+  ['1997–2013', 'At least 1,400 children abused in Rotherham — later exposed by the 2014 Jay Report.'],
+  ['2022', 'Telford Inquiry confirms more than 1,000 victims over decades.'],
+  ['2025', 'Rupert Lowe’s independent inquiry receives 20,000+ submissions.'],
+  ['2026', 'Survivors testify that the abuse is still going on.'],
+]
+
+// Convictions beyond Pakistani-heritage networks
+const otherGangs = [
+  ['Bristol', 'Two Somali-origin gangs'],
+  ['Banbury', 'A mainly African-heritage gang'],
+  ['Chelmsford', 'Three Iranians'],
+  ['Newcastle', 'Three Syrians and one Kuwaiti'],
+  ['Somerset', 'Two Turkish men'],
+  ['Rotherham', 'A Romanian rape gang'],
+  ['Newcastle — “Operation Sanctuary”', '17 men and one woman of Albanian, Kurdish, Bangladeshi, Indian, Turkish, Iranian, Iraqi, Pakistani and Eastern European heritage'],
+]
+
+// What the report demands
+const recommendations = [
+  'Life sentences for group-based CSE — a minimum of 50 years for ringleaders, 25 for participants.',
+  'Racial/religious motivation, multiple victims, trafficking, rape-pregnancy and filming made statutory aggravating factors.',
+  'Deport every foreign national convicted; strip convicted dual nationals of citizenship automatically.',
+  'A dedicated national CPS unit; charging no longer influenced by “community impact” or fear of racism.',
+  'Visa bans on nationals of countries over-represented in rape-gang convictions.',
+  'Pre-recorded evidence and screens as default for child witnesses; an end to re-traumatising cross-examination.',
+  'Investigate — and, if complicit, close — mosques and organisations that harboured offenders.',
+  'A referendum on the death penalty for the worst cases, called for by Rupert Lowe and others.',
 ]
 
 export default function RapeGangsPage() {
@@ -318,6 +458,160 @@ export default function RapeGangsPage() {
             </p>
           </div>
           <QuoteWall quotes={quotes} />
+        </div>
+
+        {/* ---------------- Survivor profiles ---------------- */}
+        <div className="space-y-5 pt-4">
+          <div className="text-center space-y-2">
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight">The survivors</h2>
+            <p className="text-gray-400 text-sm max-w-2xl mx-auto leading-relaxed">
+              Eight accounts reconstructed from testimony in the report. Names are the report&rsquo;s
+              pseudonyms.
+            </p>
+          </div>
+          <div className="rounded-lg border border-red-500/30 bg-red-500/[0.06] p-4 flex items-start gap-3 max-w-2xl mx-auto">
+            <AlertTriangle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
+            <p className="text-sm text-gray-200 leading-relaxed">
+              <span className="font-medium text-red-200">Content warning.</span> These accounts describe
+              the rape, trafficking and torture of children in explicit terms, exactly as documented in
+              the report. They are deeply distressing.
+            </p>
+          </div>
+          <ProfileWall profiles={profiles} />
+        </div>
+
+        {/* ---------------- Patterns & insights ---------------- */}
+        <div className="space-y-6 pt-4">
+          <div className="text-center space-y-2">
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Patterns &amp; insights</h2>
+            <p className="text-gray-400 text-sm max-w-2xl mx-auto leading-relaxed">
+              The recurring method, the institutional failures, the long history, and what the report
+              demands.
+            </p>
+          </div>
+
+          {/* Grooming playbook + Institutional failures */}
+          <div className="grid md:grid-cols-2 gap-6">
+            <Card className="bg-black border-white/20">
+              <CardHeader>
+                <CardTitle className="text-white text-xl">The grooming playbook</CardTitle>
+                <CardDescription className="text-gray-400">The same six-step pattern, town after town.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ol className="space-y-4">
+                  {playbook.map(([step, desc], i) => (
+                    <li key={i} className="flex gap-3">
+                      <span className="shrink-0 w-7 h-7 rounded-full bg-red-500/15 border border-red-500/30 text-red-300 text-sm font-semibold flex items-center justify-center">{i + 1}</span>
+                      <div>
+                        <div className="text-white font-medium text-[15px]">{step}</div>
+                        <div className="text-gray-400 text-sm leading-relaxed mt-0.5">{desc}</div>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-black border-white/20">
+              <CardHeader>
+                <CardTitle className="text-white text-xl">How the system failed</CardTitle>
+                <CardDescription className="text-gray-400">Documented failures of police, councils and care.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3">
+                  {failures.map((f, i) => (
+                    <li key={i} className="flex gap-2.5 text-sm text-gray-300 leading-relaxed">
+                      <span className="text-red-400/80 mt-0.5 shrink-0">✕</span>
+                      <span>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Timeline */}
+          <Card className="bg-black border-white/20">
+            <CardHeader>
+              <CardTitle className="text-white text-xl">A 70-year pattern</CardTitle>
+              <CardDescription className="text-gray-400">From the first recorded case to testimony that it continues today.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ol className="relative border-l border-white/15 ml-2 space-y-5">
+                {timeline.map(([year, event], i) => (
+                  <li key={i} className="ml-5">
+                    <span className="absolute -left-[7px] w-3 h-3 rounded-full bg-red-500 border-2 border-black" />
+                    <div className="text-sm font-semibold text-red-300 tabular-nums">{year}</div>
+                    <div className="text-sm text-gray-300 leading-relaxed mt-0.5">{event}</div>
+                  </li>
+                ))}
+              </ol>
+            </CardContent>
+          </Card>
+
+          {/* Other gangs + Cost */}
+          <div className="grid md:grid-cols-2 gap-6">
+            <Card className="bg-black border-white/20">
+              <CardHeader>
+                <CardTitle className="text-white text-xl">Beyond Pakistani networks</CardTitle>
+                <CardDescription className="text-gray-400">Convictions the report cites involving other backgrounds.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3">
+                  {otherGangs.map(([place, who], i) => (
+                    <li key={i} className="text-sm">
+                      <span className="text-white font-medium">{place}</span>
+                      <span className="text-gray-400"> — {who}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-black border-white/20">
+              <CardHeader>
+                <CardTitle className="text-white text-xl">The cost paradox</CardTitle>
+                <CardDescription className="text-gray-400">What the state spends to house a child in care.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="rounded-lg border border-white/15 bg-white/[0.02] p-4">
+                    <div className="text-3xl font-bold text-red-400 tabular-nums">£318k</div>
+                    <div className="text-sm text-gray-300 mt-1">per year — average care home (National Audit Office)</div>
+                  </div>
+                  <div className="rounded-lg border border-white/15 bg-white/[0.02] p-4">
+                    <div className="text-3xl font-bold text-slate-300 tabular-nums">£63k</div>
+                    <div className="text-sm text-gray-300 mt-1">per year — to send a child to Eton</div>
+                  </div>
+                </div>
+                <p className="text-xs text-gray-500 mt-4 leading-relaxed">
+                  One children&rsquo;s home was paid £5,000 a week for a girl it failed to protect. The report
+                  argues the failures of social care are not about money, but ideology.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Recommendations */}
+          <Card className="bg-black border-white/20">
+            <CardHeader>
+              <CardTitle className="text-white text-xl">What the report demands</CardTitle>
+              <CardDescription className="text-gray-400">
+                The inquiry&rsquo;s recommendations, reproduced as written. Some are highly contested — they are
+                the report&rsquo;s positions, not endorsements.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-3">
+                {recommendations.map((r, i) => (
+                  <li key={i} className="flex gap-2.5 text-sm text-gray-300 leading-relaxed">
+                    <span className="text-emerald-400/80 mt-0.5 shrink-0">→</span>
+                    <span>{r}</span>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
         </div>
 
         {/* ---------------- Sources ---------------- */}

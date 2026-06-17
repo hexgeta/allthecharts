@@ -8,7 +8,7 @@ import {
   ResponsiveContainer, LabelList, PieChart, Pie,
 } from 'recharts'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Info, Quote } from 'lucide-react'
+import { Info, Quote, User, AlertTriangle } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 /* ------------------------------------------------------------------ */
@@ -307,6 +307,59 @@ export function QuoteWall({ quotes }: { quotes: Array<{ text: string; source: st
           </blockquote>
           <figcaption className="mt-3 text-sm text-gray-500">— {q.source}</figcaption>
         </motion.figure>
+      ))}
+    </div>
+  )
+}
+
+/* ------------------------------------------------------------------ */
+/*  Survivor profile card                                             */
+/* ------------------------------------------------------------------ */
+
+export type Profile = {
+  alias: string
+  meta: string
+  paragraphs: string[]
+  quote?: string
+  failure?: string
+}
+
+export function ProfileWall({ profiles }: { profiles: Profile[] }) {
+  return (
+    <div className="columns-1 lg:columns-2 gap-5 [column-fill:_balance]">
+      {profiles.map((p, i) => (
+        <motion.article
+          key={i}
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.4 }}
+          className="mb-5 break-inside-avoid rounded-lg border border-white/15 bg-white/[0.02] p-6"
+        >
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 rounded-full bg-white/[0.06] border border-white/10 flex items-center justify-center text-white/40 shrink-0">
+              <User className="w-5 h-5" />
+            </div>
+            <div>
+              <div className="text-lg font-semibold text-white leading-tight">{p.alias}</div>
+              <div className="text-xs text-gray-500 mt-0.5">{p.meta}</div>
+            </div>
+          </div>
+          {p.paragraphs.map((para, j) => (
+            <p key={j} className="text-[14px] text-gray-300 leading-relaxed mb-2.5">{para}</p>
+          ))}
+          {p.quote && (
+            <blockquote className="border-l-2 border-red-500/50 pl-3 my-3 text-gray-200 italic text-[14px] leading-relaxed">
+              &ldquo;{p.quote}&rdquo;
+            </blockquote>
+          )}
+          {p.failure && (
+            <div className="mt-3 flex items-start gap-2 text-xs text-amber-200/90 bg-amber-500/[0.06] border border-amber-500/20 rounded-md p-2.5">
+              <AlertTriangle className="w-3.5 h-3.5 shrink-0 mt-0.5 text-amber-400" />
+              <span className="leading-relaxed"><span className="font-medium text-amber-300">System failure: </span>{p.failure}</span>
+            </div>
+          )}
+        </motion.article>
       ))}
     </div>
   )
