@@ -309,6 +309,7 @@ const operations = [
 ]
 
 export default function RapeGangsPage() {
+  const SHOW_HIDDEN_CHARTS = false // 'Offenders vs the population' + 'Scale' temporarily hidden
   return (
     <div className="min-h-screen bg-black text-white">
       <div className="max-w-6xl mx-auto px-6 md:px-10 py-10 space-y-8">
@@ -347,32 +348,35 @@ export default function RapeGangsPage() {
           <StatCard value={1955} format={{ useGrouping: false }} label="First recorded case" note="Four Bradford men, a 15-year-old victim" accent="text-slate-300" delay={0.25} />
         </div>
 
-        {/* ---------------- Scale ---------------- */}
-        <ChartCard
-          title="The scale of the phenomenon"
-          description="Confirmed counts from major inquiries and reviews, against the report's national extrapolation."
-          tag="mixed"
-          source="Jay Report (2014); Telford Inquiry (2022); Met Police; The Independent; national estimate per the report"
-        >
-          <HBarChart data={scale} nameWidth={160} height={300} />
-          <p className="mt-3 text-xs text-gray-500">
-            The 250,000 figure originates from a 2019 House of Lords statement and is described in the
-            report itself as &ldquo;not a precise count&rdquo; — an extrapolation, shown here in amber.
-          </p>
-        </ChartCard>
+        {/* ---------------- Scale + Overrepresentation (hidden for now) ---------------- */}
+        {SHOW_HIDDEN_CHARTS && (
+          <>
+            <ChartCard
+              title="The scale of the phenomenon"
+              description="Confirmed counts from major inquiries and reviews, against the report's national extrapolation."
+              tag="mixed"
+              source="Jay Report (2014); Telford Inquiry (2022); Met Police; The Independent; national estimate per the report"
+            >
+              <HBarChart data={scale} nameWidth={160} height={300} />
+              <p className="mt-3 text-xs text-gray-500">
+                The 250,000 figure originates from a 2019 House of Lords statement and is described in the
+                report itself as &ldquo;not a precise count&rdquo; — an extrapolation, shown here in amber.
+              </p>
+            </ChartCard>
 
-        {/* ---------------- Overrepresentation (central claim) ---------------- */}
-        <ChartCard
-          title="Offenders vs the population"
-          description="Estimated share of grooming-gang convictions with distinctively Muslim names, against the Muslim and Pakistani share of the UK population."
-          tag="cited"
-          source="P. McLoughlin, Easy Meat (2016); Dr Taj Hargey; 2021 Census for England & Wales — as cited in the report"
-        >
-          <HBarChart data={overrep} unit="%" nameWidth={200} height={300} domain={[0, 100]} />
-          <p className="mt-3 text-xs text-gray-500">
-            Conviction shares (red) and population baselines (grey) are both as cited in the report.
-          </p>
-        </ChartCard>
+            <ChartCard
+              title="Offenders vs the population"
+              description="Estimated share of grooming-gang convictions with distinctively Muslim names, against the Muslim and Pakistani share of the UK population."
+              tag="cited"
+              source="P. McLoughlin, Easy Meat (2016); Dr Taj Hargey; 2021 Census for England & Wales — as cited in the report"
+            >
+              <HBarChart data={overrep} unit="%" nameWidth={200} height={300} domain={[0, 100]} />
+              <p className="mt-3 text-xs text-gray-500">
+                Conviction shares (red) and population baselines (grey) are both as cited in the report.
+              </p>
+            </ChartCard>
+          </>
+        )}
 
         {/* ---------------- UK vs Poland rape trend ---------------- */}
         <div className="grid md:grid-cols-2 gap-6">
@@ -430,21 +434,6 @@ export default function RapeGangsPage() {
             <HBarChart data={forcedMarriage} unit="%" nameWidth={150} height={320} domain={[0, 50]} />
           </ChartCard>
         </div>
-
-        {/* ---------------- Sentencing ---------------- */}
-        <ChartCard
-          title="Sentencing: what is, and what the report proposes"
-          description="Typical rape-gang tariffs against a comparator case and the report's proposed minimums (years)."
-          tag="mixed"
-          source="Quilliam analysis of 264 convictions; R v Osborne (2018); Rape Gang Inquiry Report recommendations"
-        >
-          <HBarChart data={sentencing} unit=" yrs" nameWidth={170} height={300} />
-          <p className="mt-3 text-xs text-gray-500">
-            Rape-gang sentences (red) typically run 4–12 years, with offenders often serving a third to half.
-            The report proposes life sentences with 50-year (ringleader) and 25-year (participant) minimums (green);
-            the 43-year tariff for the 2017 Finsbury Park van attack is shown for comparison.
-          </p>
-        </ChartCard>
 
         {/* ---------------- Map ---------------- */}
         <div id="map" className="scroll-mt-24">
@@ -660,6 +649,21 @@ export default function RapeGangsPage() {
               </CardContent>
             </Card>
           </div>
+
+          {/* Sentencing */}
+          <ChartCard
+            title="Sentencing: what is, and what the report proposes"
+            description="Typical rape-gang tariffs against a comparator case and the report's proposed minimums (years)."
+            tag="mixed"
+            source="Quilliam analysis of 264 convictions; R v Osborne (2018); Rape Gang Inquiry Report recommendations"
+          >
+            <HBarChart data={sentencing} unit=" yrs" nameWidth={170} height={300} />
+            <p className="mt-3 text-xs text-gray-500">
+              Rape-gang sentences (red) typically run 4–12 years, with offenders often serving a third to half.
+              The report proposes life sentences with 50-year (ringleader) and 25-year (participant) minimums (green);
+              the 43-year tariff for the 2017 Finsbury Park van attack is shown for comparison.
+            </p>
+          </ChartCard>
 
           {/* Recommendations */}
           <Card className="bg-black border-white/20">

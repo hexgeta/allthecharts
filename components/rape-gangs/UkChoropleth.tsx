@@ -69,26 +69,31 @@ export default function UkChoropleth({ locations }: { locations: MapLoc[] }) {
     [paths]
   )
 
-  // Single pointer handler: position the tooltip + resolve what's under the cursor.
-  const onMove = (e: React.MouseEvent) => {
+  // Position the tooltip only — runs every move, never changes React state.
+  const handleMove = (e: React.MouseEvent) => {
     const rect = wrap.current?.getBoundingClientRect()
     if (rect && tip.current) {
       tip.current.style.left = `${e.clientX - rect.left + 14}px`
       tip.current.style.top = `${e.clientY - rect.top + 14}px`
     }
-    const el = e.target as HTMLElement
-    const ds = el?.dataset
-    if (ds && ds.mi != null) {
+  }
+
+  // Resolve the hovered feature only when the cursor ENTERS a new element.
+  // mouseover fires on enter (not on every pixel), so moving within a region
+  // never re-fires — eliminates flicker from gaps/paint-order between the
+  // simplified polygons.
+  const handleOver = (e: React.MouseEvent) => {
+    const ds = (e.target as HTMLElement)?.dataset
+    if (!ds) return
+    if (ds.mi != null) {
       const mi = +ds.mi
       if (hoverM !== mi) setHoverM(mi)
       if (hoverD) setHoverD(null)
-    } else if (ds && ds.i != null) {
+    } else if (ds.i != null) {
       const p = paths[+ds.i]
       if (p && (!hoverD || hoverD.name !== p.name)) setHoverD({ name: p.name, status: p.status, d: p.d })
       if (hoverM !== null) setHoverM(null)
     }
-    // else: cursor is over a sub-pixel gap between simplified polygons —
-    // keep the current popup rather than blanking it (prevents flashing).
   }
 
   const clear = () => { setHoverD(null); setHoverM(null) }
@@ -100,7 +105,7 @@ export default function UkChoropleth({ locations }: { locations: MapLoc[] }) {
   const activeMarker = hoverM != null ? locations[hoverM] : null
 
   return (
-    <div className="relative w-full max-w-[460px] mx-auto" ref={wrap} onMouseMove={onMove} onMouseLeave={clear}>
+    <div className="relative w-full max-w-[460px] mx-auto" ref={wrap} onMouseMove={handleMove} onMouseOver={handleOver} onMouseLeave={clear}>
       <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto block" role="img" aria-label="Map of affected districts">
         {pathEls}
         {/* hovered district highlight */}
