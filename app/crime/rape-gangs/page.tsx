@@ -82,16 +82,12 @@ const quotes = [
     source: 'Lord Pearson of Rannoch, House of Lords (2019) — origin of the 250,000 figure',
   },
   {
-    text: 'It is simply not possible to know the scale — because ethnicity, group offending and historical cases were routinely unrecorded or shelved to protect ‘community cohesion.’',
-    source: 'IICSA & local inquiries (2022–2025), as summarised in the report',
+    text: 'It is simply not possible to know the scale.',
+    source: 'IICSA & local inquiries (2022–2025), quoted in the report — ethnicity, group offending and historical cases went unrecorded',
   },
   {
     text: '98% of them were Pakistani Muslim. If not, they were Iraqi Muslim or Kurdish.',
     source: '‘Michelle’, survivor — on her abusers',
-  },
-  {
-    text: 'She describes an extensive network of abusers operating across the entire country, calling it ‘industrial’ in scale.',
-    source: 'The report, on survivor ‘Michelle’s’ testimony',
   },
   {
     text: 'You can’t describe them as Asian men because that’s racist. You should just be glad your child is being taught a different culture.',
@@ -315,7 +311,7 @@ const operations = [
 export default function RapeGangsPage() {
   return (
     <div className="min-h-screen bg-black text-white">
-      <div className="max-w-6xl mx-auto px-5 md:px-6 py-10 space-y-8">
+      <div className="max-w-6xl mx-auto px-6 md:px-10 py-10 space-y-8">
 
         {/* ---------------- Header ---------------- */}
         <motion.div
