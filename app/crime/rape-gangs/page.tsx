@@ -462,6 +462,7 @@ export default function RapeGangsPage() {
         </ChartCard>
 
         {/* ---------------- Map ---------------- */}
+        <div id="map" className="scroll-mt-24">
         <ChartCard
           title="Where it happened"
           description="Every local-authority district the report shades as confirmed or suspected, with the locations it names by case. Hover a district or marker for detail."
@@ -476,6 +477,7 @@ export default function RapeGangsPage() {
             ) and is approximate. The report states abuse occurred in <span className="text-gray-300">at least 149 districts</span>.
           </p>
         </ChartCard>
+        </div>
 
         {/* ---------------- Quotes ---------------- */}
         <div className="space-y-5 pt-4">
