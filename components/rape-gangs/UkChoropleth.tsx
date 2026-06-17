@@ -53,13 +53,46 @@ export default function UkChoropleth({ locations }: { locations: MapLoc[] }) {
     return { paths, projection }
   }, [geo])
 
+  // District paths never depend on hover state — memoize so hovering never re-renders them.
+  const pathEls = useMemo(
+    () =>
+      paths.map((p: any, i: number) => (
+        <path
+          key={i}
+          data-i={i}
+          d={p.d}
+          fill={FILL[p.status] || FILL.none}
+          stroke="rgba(0,0,0,0.55)"
+          strokeWidth={0.3}
+        />
+      )),
+    [paths]
+  )
+
+  // Single pointer handler: position the tooltip + resolve what's under the cursor.
   const onMove = (e: React.MouseEvent) => {
-    const r = wrap.current?.getBoundingClientRect()
-    if (r && tip.current) {
-      tip.current.style.left = `${e.clientX - r.left + 14}px`
-      tip.current.style.top = `${e.clientY - r.top + 14}px`
+    const rect = wrap.current?.getBoundingClientRect()
+    if (rect && tip.current) {
+      tip.current.style.left = `${e.clientX - rect.left + 14}px`
+      tip.current.style.top = `${e.clientY - rect.top + 14}px`
+    }
+    const el = e.target as HTMLElement
+    const ds = el?.dataset
+    if (ds && ds.mi != null) {
+      const mi = +ds.mi
+      if (hoverM !== mi) setHoverM(mi)
+      if (hoverD) setHoverD(null)
+    } else if (ds && ds.i != null) {
+      const p = paths[+ds.i]
+      if (p && (!hoverD || hoverD.name !== p.name)) setHoverD({ name: p.name, status: p.status, d: p.d })
+      if (hoverM !== null) setHoverM(null)
+    } else {
+      if (hoverD) setHoverD(null)
+      if (hoverM !== null) setHoverM(null)
     }
   }
+
+  const clear = () => { setHoverD(null); setHoverM(null) }
 
   if (!geo) {
     return <div className="h-[520px] flex items-center justify-center text-gray-500 text-sm">Loading map…</div>
@@ -68,21 +101,11 @@ export default function UkChoropleth({ locations }: { locations: MapLoc[] }) {
   const activeMarker = hoverM != null ? locations[hoverM] : null
 
   return (
-    <div className="relative w-full max-w-[460px] mx-auto" ref={wrap} onMouseMove={onMove}>
+    <div className="relative w-full max-w-[460px] mx-auto" ref={wrap} onMouseMove={onMove} onMouseLeave={clear}>
       <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto block" role="img" aria-label="Map of affected districts">
-        {paths.map((p: any, i: number) => (
-          <path
-            key={i}
-            d={p.d}
-            fill={FILL[p.status] || FILL.none}
-            stroke="rgba(0,0,0,0.55)"
-            strokeWidth={0.3}
-            onMouseEnter={() => setHoverD({ name: p.name, status: p.status, d: p.d })}
-            onMouseLeave={() => setHoverD(null)}
-          />
-        ))}
+        {pathEls}
         {/* hovered district highlight */}
-        {hoverD && <path d={hoverD.d} fill="rgba(255,255,255,0.18)" stroke="#fff" strokeWidth={0.8} pointerEvents="none" />}
+        {hoverD && <path d={hoverD.d} fill="rgba(255,255,255,0.16)" stroke="#fff" strokeWidth={0.8} pointerEvents="none" />}
         {/* location markers */}
         {locations.map((loc, i) => {
           const pt = projection([loc.lng, loc.lat])
@@ -90,10 +113,10 @@ export default function UkChoropleth({ locations }: { locations: MapLoc[] }) {
           const [x, y] = pt
           const r = loc.major ? 4.5 : 3
           return (
-            <g key={i} onMouseEnter={() => setHoverM(i)} onMouseLeave={() => setHoverM(null)} className="cursor-pointer">
-              <circle cx={x} cy={y} r={r + 5} fill="#fff" opacity={hoverM === i ? 0.3 : 0} />
-              <circle cx={x} cy={y} r={r + 1.6} fill="#fff" opacity={0.95} />
-              <circle cx={x} cy={y} r={r} fill={hoverM === i ? '#b91c1c' : '#450a0a'} />
+            <g key={i}>
+              <circle cx={x} cy={y} r={r + 5} fill="#fff" opacity={hoverM === i ? 0.3 : 0} pointerEvents="none" />
+              <circle cx={x} cy={y} r={r + 1.6} fill="#fff" opacity={0.95} data-mi={i} />
+              <circle cx={x} cy={y} r={r} fill={hoverM === i ? '#450a0a' : '#b91c1c'} data-mi={i} />
             </g>
           )
         })}
@@ -108,7 +131,7 @@ export default function UkChoropleth({ locations }: { locations: MapLoc[] }) {
           </div>
         ))}
         <div className="flex items-center gap-2 text-[11px] text-gray-300 pt-0.5">
-          <span className="w-3 h-3 rounded-full bg-[#450a0a] border border-white" />
+          <span className="w-3 h-3 rounded-full bg-[#b91c1c] border border-white" />
           Named case
         </div>
       </div>
