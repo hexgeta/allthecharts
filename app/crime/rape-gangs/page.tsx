@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { FileText, ExternalLink } from 'lucide-react'
 import {
-  C, ChartCard, StatCard, HBarChart, GroupedBarChart, DonutChart,
+  C, ChartCard, StatCard, HBarChart, GroupedBarChart, DonutChart, QuoteWall,
 } from '@/components/rape-gangs/ChartKit'
 
 const REPORT_URL =
@@ -84,6 +84,66 @@ const sentencing = [
 const footprint = [
   { name: 'Districts affected', value: 40, color: C.red },
   { name: 'Not recorded', value: 60, color: C.slate },
+]
+
+// Notable quotations reproduced verbatim from the report
+const quotes = [
+  {
+    text: 'If we extrapolate nationally the Jay report on Rotherham and other reports from Telford and Oxford, there appear to have been upwards of 250,000 young white girls raped in this century, very largely by Muslim men, usually several times a day for years.',
+    source: 'Lord Pearson of Rannoch, House of Lords (2019) — origin of the 250,000 figure',
+  },
+  {
+    text: 'It is simply not possible to know the scale — because ethnicity, group offending and historical cases were routinely unrecorded or shelved to protect ‘community cohesion.’',
+    source: 'IICSA & local inquiries (2022–2025), as summarised in the report',
+  },
+  {
+    text: '98% of them were Pakistani Muslim. If not, they were Iraqi Muslim or Kurdish.',
+    source: '‘Michelle’, survivor — on her abusers',
+  },
+  {
+    text: 'She describes an extensive network of abusers operating across the entire country, calling it ‘industrial’ in scale.',
+    source: 'The report, on survivor ‘Michelle’s’ testimony',
+  },
+  {
+    text: 'You can’t describe them as Asian men because that’s racist. You should just be glad your child is being taught a different culture.',
+    source: 'Police call handler, to a missing girl’s mother',
+  },
+  {
+    text: 'White British people were described as ‘white trash,’ and white girls as ‘English pig-dogs.’ They boasted of receiving ‘free money’ from the British state.',
+    source: '‘Jen’, survivor — on the perpetrators’ attitudes',
+  },
+  {
+    text: 'I will never forget being told by police officers that if she carried on as she was, she would end up either dead or raped. Despite saying this, they did not recognise her as a victim.',
+    source: 'Parent of a survivor',
+  },
+  {
+    text: 'On the day of the trial, we were told the case had been dropped. We were told only that the perpetrator had a very good solicitor. No written explanation was ever provided.',
+    source: 'Parent of a survivor',
+  },
+  {
+    text: 'In 2022, my daughters found their sister deceased in her flat. She was 33 years old. She died alone. I believe that the grooming, rape, institutional failures and collapse of the justice process directly contributed to my daughter’s death.',
+    source: 'Parent of a survivor',
+  },
+  {
+    text: 'The FMU does not record data on religion; no major faith in the UK advocates forced marriage.',
+    source: 'Forced Marriage Unit statement — quoted, and challenged, in the report',
+  },
+  {
+    text: 'I want the institutions to say: we hold our hands up, we believe you and we’re sorry. I gave up getting justice a long time ago, but just for it to be recognised and believed, that’s all I want.',
+    source: 'Rape gang survivor',
+  },
+  {
+    text: 'I feel sick knowing that it’s still going on — that nobody’s wanting to do anything about it even now in 2026. We’re still having this conversation.',
+    source: 'Rape gang survivor',
+  },
+  {
+    text: 'The worst people that exist in this situation, apart from the perpetrators of that horrendous abuse, are the people that sat in those positions within those authorities that had every opportunity to do something about it and chose not to.',
+    source: 'Rape gang survivor',
+  },
+  {
+    text: 'If I can save just even one more child, girl or boy, from going through any of this, then I’ve done my job.',
+    source: '‘Chloe’, survivor',
+  },
 ]
 
 export default function RapeGangsPage() {
@@ -247,6 +307,18 @@ export default function RapeGangsPage() {
         >
           <DonutChart data={footprint} unit="%" height={320} centerValue="149" centerLabel="districts (~40%)" />
         </ChartCard>
+
+        {/* ---------------- Quotes ---------------- */}
+        <div className="space-y-5 pt-4">
+          <div className="text-center space-y-2">
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight">In their words</h2>
+            <p className="text-gray-400 text-sm max-w-2xl mx-auto leading-relaxed">
+              Quotations reproduced from the report — survivors, their families, officials and the
+              inquiry itself. Some testimony is distressing.
+            </p>
+          </div>
+          <QuoteWall quotes={quotes} />
+        </div>
 
         {/* ---------------- Sources ---------------- */}
         <Card className="bg-black/20 border-gray-800">

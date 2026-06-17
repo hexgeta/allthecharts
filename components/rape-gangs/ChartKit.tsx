@@ -8,7 +8,7 @@ import {
   ResponsiveContainer, LabelList, PieChart, Pie,
 } from 'recharts'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Info } from 'lucide-react'
+import { Info, Quote } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 /* ------------------------------------------------------------------ */
@@ -281,6 +281,33 @@ export function GroupedBarChart({
           ))}
         </BarChart>
       </ResponsiveContainer>
+    </div>
+  )
+}
+
+/* ------------------------------------------------------------------ */
+/*  Quote wall — masonry of pull-quotes from the report               */
+/* ------------------------------------------------------------------ */
+
+export function QuoteWall({ quotes }: { quotes: Array<{ text: string; source: string }> }) {
+  return (
+    <div className="columns-1 md:columns-2 gap-4 [column-fill:_balance]">
+      {quotes.map((q, i) => (
+        <motion.figure
+          key={i}
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.4 }}
+          className="mb-4 break-inside-avoid rounded-lg border border-white/15 bg-white/[0.02] p-5"
+        >
+          <Quote className="w-5 h-5 text-white/25 mb-2" />
+          <blockquote className="text-gray-200 leading-relaxed text-[15px]">
+            &ldquo;{q.text}&rdquo;
+          </blockquote>
+          <figcaption className="mt-3 text-sm text-gray-500">— {q.source}</figcaption>
+        </motion.figure>
+      ))}
     </div>
   )
 }
