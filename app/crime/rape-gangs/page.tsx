@@ -3,7 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { AlertTriangle, FileText, ExternalLink } from 'lucide-react'
+import { FileText, ExternalLink } from 'lucide-react'
 import {
   C, ChartCard, StatCard, HBarChart, GroupedBarChart, DonutChart,
 } from '@/components/rape-gangs/ChartKit'
@@ -19,7 +19,7 @@ const REPORT_URL =
 // UK reported rape offences — endpoints only (ONS / police recorded crime)
 const ukRape = [
   { name: '2000', value: 8593 },
-  { name: 'YE Mar 2025', value: 70000 },
+  { name: '2025', value: 70000 },
 ]
 
 // Reported rape offences, UK vs Poland (2000 → latest)
@@ -115,30 +115,6 @@ export default function RapeGangsPage() {
           </a>
         </motion.div>
 
-        {/* ---------------- Methodology banner ---------------- */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.15 }}
-        >
-          <div className="rounded-lg border border-amber-500/30 bg-amber-500/[0.06] p-4 md:p-5 flex gap-3">
-            <AlertTriangle className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
-            <div className="text-sm text-gray-300 leading-relaxed space-y-2">
-              <p className="text-amber-200 font-medium">How to read this page</p>
-              <p>
-                Every figure is reproduced <span className="text-gray-100">as presented in the report</span>,
-                an independent inquiry chaired by Rupert Lowe MP (2025). The report blends{' '}
-                <span className="text-emerald-300">official statistics</span> (ONS, police recorded crime,
-                the 2021 Census, the Forced Marriage Unit) with{' '}
-                <span className="text-amber-300">estimates and national extrapolations</span> drawn from
-                individual inquiries. Each chart is tagged with its data quality. Figures marked
-                &ldquo;Estimate&rdquo; are the report&rsquo;s own interpretation, not a verified count, and
-                are not independently checked here — consult the primary sources linked at the foot of the page.
-              </p>
-            </div>
-          </div>
-        </motion.div>
-
         {/* ---------------- Headline stat cards ---------------- */}
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
           <StatCard value={250000} suffix="+" accent="text-red-400" label="Estimated victims" note="National minimum extrapolation" delay={0} />
@@ -154,7 +130,7 @@ export default function RapeGangsPage() {
           title="The scale of the phenomenon"
           description="Confirmed counts from major inquiries and reviews, against the report's national extrapolation."
           tag="mixed"
-          source="Jay Report (2014), Telford Inquiry (2022), Met Police, The Independent, Rape Gang Inquiry Report"
+          source="Jay Report (2014); Telford Inquiry (2022); Met Police; The Independent; national estimate per the report"
         >
           <HBarChart data={scale} nameWidth={160} height={300} />
           <p className="mt-3 text-xs text-gray-500">
@@ -167,13 +143,12 @@ export default function RapeGangsPage() {
         <ChartCard
           title="Offenders vs the population"
           description="Estimated share of grooming-gang convictions with distinctively Muslim names, against the Muslim and Pakistani share of the UK population."
-          tag="mixed"
-          source="P. McLoughlin, Easy Meat (2016); Dr Taj Hargey; 2021 Census for England & Wales"
+          tag="cited"
+          source="P. McLoughlin, Easy Meat (2016); Dr Taj Hargey; 2021 Census for England & Wales — as cited in the report"
         >
           <HBarChart data={overrep} unit="%" nameWidth={200} height={300} domain={[0, 100]} />
           <p className="mt-3 text-xs text-gray-500">
-            Conviction shares (red) are estimates derived from name analysis and expert opinion; the
-            population baselines (grey) are from the 2021 Census.
+            Conviction shares (red) and population baselines (grey) are both as cited in the report.
           </p>
         </ChartCard>
 
@@ -183,7 +158,7 @@ export default function RapeGangsPage() {
             title="Reported rape offences: UK vs Poland"
             description="Recorded offences in 2000 and the latest available year."
             tag="official"
-            source="ONS (UK); Statista / Polish national police (Poland)"
+            source="ONS (UK); Polish national police / Statista (Poland) — as cited in the report"
           >
             <GroupedBarChart
               data={ukVsPoland}
@@ -199,12 +174,11 @@ export default function RapeGangsPage() {
             title="Rapes per 100,000 residents"
             description="Approximate recent per-capita rate, as cited in the report."
             tag="official"
-            source="ONS (UK); Polish national police, ~38m population"
+            source="ONS (UK); Polish national police, ~38m population — as cited in the report"
           >
             <HBarChart data={perCapita} nameWidth={140} height={300} />
             <p className="mt-3 text-xs text-gray-500">
-              The report attributes the UK&rsquo;s divergence to immigration patterns since 1997 — a causal
-              claim of the report, not of the ONS.
+              The report attributes the UK&rsquo;s divergence to immigration patterns since 1997.
             </p>
           </ChartCard>
         </div>
@@ -214,7 +188,7 @@ export default function RapeGangsPage() {
           title="UK reported rape offences, 2000 → 2025"
           description="Police recorded rape offences in England & Wales, start and end points."
           tag="official"
-          source="ONS, Sexual offences in England and Wales (YE March 2025)"
+          source="ONS, Sexual offences in England & Wales (YE March 2025) — as cited in the report"
         >
           <GroupedBarChart
             data={ukRape.map((d) => ({ name: d.name, Offences: d.value }))}
@@ -233,8 +207,8 @@ export default function RapeGangsPage() {
           <ChartCard
             title="Offender ethnicity"
             description="Quilliam Foundation analysis of 264 grooming-gang convictions, 2005–2017."
-            tag="estimate"
-            source="Quilliam Foundation, Group-Based Child Sexual Exploitation (2017)"
+            tag="cited"
+            source="Quilliam Foundation, Group-Based Child Sexual Exploitation (2017) — as cited in the report"
           >
             <DonutChart data={quilliam} unit="%" height={320} centerValue="84%" centerLabel="South Asian" />
           </ChartCard>
@@ -243,7 +217,7 @@ export default function RapeGangsPage() {
             title="Forced marriage by focus country (2023)"
             description="Share of the 280 Forced Marriage Unit cases where a focus country was recorded."
             tag="official"
-            source="Forced Marriage Unit statistics (Home Office / FCDO), 2023"
+            source="Forced Marriage Unit statistics (Home Office / FCDO), 2023 — as cited in the report"
           >
             <HBarChart data={forcedMarriage} unit="%" nameWidth={150} height={320} domain={[0, 50]} />
           </ChartCard>
@@ -268,7 +242,7 @@ export default function RapeGangsPage() {
         <ChartCard
           title="Geographic footprint"
           description="Local-authority districts where the same pattern of abuse was found."
-          tag="estimate"
+          tag="report"
           source="Rape Gang Inquiry Report — 149 of ~373 UK districts"
         >
           <DonutChart data={footprint} unit="%" height={320} centerValue="149" centerLabel="districts (~40%)" />

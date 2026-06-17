@@ -8,6 +8,7 @@ import {
   ResponsiveContainer, LabelList, PieChart, Pie,
 } from 'recharts'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Info } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 /* ------------------------------------------------------------------ */
@@ -60,20 +61,29 @@ function KitTooltip({ active, payload, label, unit = '' }: any) {
 /*  Card wrapper with a data-quality tag + source line                */
 /* ------------------------------------------------------------------ */
 
-type Tag = 'official' | 'estimate' | 'mixed'
+type Tag = 'official' | 'cited' | 'report' | 'mixed'
 
 const TAG_STYLE: Record<Tag, { label: string; cls: string }> = {
-  official: { label: 'Official data', cls: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30' },
-  estimate: { label: 'Estimate', cls: 'bg-amber-500/15 text-amber-300 border-amber-500/30' },
-  mixed: { label: 'Counts + estimates', cls: 'bg-slate-500/15 text-slate-300 border-slate-500/30' },
+  official: { label: 'Cited official data', cls: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30' },
+  cited: { label: 'Cited research', cls: 'bg-blue-500/15 text-blue-300 border-blue-500/30' },
+  report: { label: 'Report data', cls: 'bg-amber-500/15 text-amber-300 border-amber-500/30' },
+  mixed: { label: 'Report + cited data', cls: 'bg-slate-500/15 text-slate-300 border-slate-500/30' },
+}
+
+const TAG_INFO: Record<Tag, string> = {
+  official: 'Official statistics — ONS, police recorded crime, the 2021 Census, the Forced Marriage Unit — as cited in the report.',
+  cited: 'Third-party research or analysis cited in the report (e.g. the Quilliam Foundation, name-analysis studies), not an official statistic.',
+  report: "The report's own figure, estimate or national extrapolation — not an independently verified count.",
+  mixed: "Combines official or cited data with the report's own estimates. See the source line below the chart.",
 }
 
 export function ChartCard({
-  title, description, tag, source, sourceUrl, children, delay = 0,
+  title, description, tag, tagInfo, source, sourceUrl, children, delay = 0,
 }: {
   title: string
   description?: string
   tag?: Tag
+  tagInfo?: string
   source?: string
   sourceUrl?: string
   children: React.ReactNode
@@ -96,8 +106,14 @@ export function ChartCard({
               )}
             </div>
             {tag && (
-              <span className={cn('shrink-0 text-[11px] font-medium px-2 py-1 rounded-full border', TAG_STYLE[tag].cls)}>
-                {TAG_STYLE[tag].label}
+              <span className="relative group shrink-0">
+                <span className={cn('inline-flex items-center gap-1 text-[11px] font-medium px-2 py-1 rounded-full border cursor-help', TAG_STYLE[tag].cls)}>
+                  {TAG_STYLE[tag].label}
+                  <Info className="w-3 h-3 opacity-70" />
+                </span>
+                <span className="pointer-events-none absolute right-0 top-full mt-2 w-64 z-20 opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-150 rounded-lg border border-white/15 bg-black/95 p-3 text-xs text-gray-300 leading-relaxed shadow-xl text-left normal-case font-normal">
+                  {tagInfo ?? TAG_INFO[tag]}
+                </span>
               </span>
             )}
           </div>
