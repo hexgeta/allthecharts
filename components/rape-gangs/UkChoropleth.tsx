@@ -91,8 +91,9 @@ export default function UkChoropleth({ locations }: { locations: MapLoc[] }) {
           const r = loc.major ? 4.5 : 3
           return (
             <g key={i} onMouseEnter={() => setHoverM(i)} onMouseLeave={() => setHoverM(null)} className="cursor-pointer">
-              <circle cx={x} cy={y} r={r + 4} fill="#450a0a" opacity={hoverM === i ? 0.4 : 0} />
-              <circle cx={x} cy={y} r={r} fill={hoverM === i ? '#dc2626' : '#b91c1c'} stroke="#450a0a" strokeWidth={1.3} />
+              <circle cx={x} cy={y} r={r + 5} fill="#fff" opacity={hoverM === i ? 0.3 : 0} />
+              <circle cx={x} cy={y} r={r + 1.6} fill="#fff" opacity={0.95} />
+              <circle cx={x} cy={y} r={r} fill={hoverM === i ? '#b91c1c' : '#450a0a'} />
             </g>
           )
         })}
@@ -107,7 +108,7 @@ export default function UkChoropleth({ locations }: { locations: MapLoc[] }) {
           </div>
         ))}
         <div className="flex items-center gap-2 text-[11px] text-gray-300 pt-0.5">
-          <span className="w-3 h-3 rounded-full bg-[#b91c1c] border border-[#450a0a]" />
+          <span className="w-3 h-3 rounded-full bg-[#450a0a] border border-white" />
           Named case
         </div>
       </div>
