@@ -28,6 +28,11 @@ const COUNTRIES = {
   NGA: { label: 'Nigeria', color: '#4ADE80' },
   KOR: { label: 'South Korea', color: '#A855F7' },
   BRA: { label: 'Brazil', color: '#22C55E' },
+  // Added for the completed-cohort-fertility exhibit (Human Fertility Database coverage)
+  ITA: { label: 'Italy', color: '#22D3EE' },
+  ESP: { label: 'Spain', color: '#FB7185' },
+  JPN: { label: 'Japan', color: '#F472B6' },
+  DEU: { label: 'Germany', color: '#FBBF24' },
 }
 const WANTED = new Set(Object.keys(COUNTRIES))
 
@@ -71,10 +76,12 @@ async function fetchSeries(slug, minYear) {
   return byCode
 }
 
-const [fertility, birthsOutsideMarriage, marriageRate] = await Promise.all([
+// Note: completedFertility is indexed by the woman's BIRTH COHORT year, not calendar year.
+const [fertility, birthsOutsideMarriage, marriageRate, completedFertility] = await Promise.all([
   fetchSeries('children-born-per-woman', 1950),
   fetchSeries('share-of-births-outside-marriage', 1960),
   fetchSeries('marriage-rate-per-1000-inhabitants', 1950),
+  fetchSeries('cohort-fertility-rate', 1935),
 ])
 
 const payload = {
@@ -85,11 +92,13 @@ const payload = {
       fertility: 'UN World Population Prospects (2024), via Our World in Data',
       birthsOutsideMarriage: 'OECD Family Database / UN, via Our World in Data',
       marriageRate: 'UN / OECD crude marriage rate, via Our World in Data',
+      completedFertility: 'Human Fertility Database (completed cohort fertility), via Our World in Data',
     },
   },
   fertility,
   birthsOutsideMarriage,
   marriageRate,
+  completedFertility,
 }
 
 await mkdir(dirname(OUT), { recursive: true })
@@ -98,5 +107,6 @@ console.log(`✓ wrote ${OUT}`)
 console.log(
   `  fertility: ${Object.keys(fertility).length} · ` +
   `birthsOutsideMarriage: ${Object.keys(birthsOutsideMarriage).length} · ` +
-  `marriageRate: ${Object.keys(marriageRate).length} countries`,
+  `marriageRate: ${Object.keys(marriageRate).length} · ` +
+  `completedFertility: ${Object.keys(completedFertility).length} countries`,
 )

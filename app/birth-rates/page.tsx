@@ -6,7 +6,19 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import CountrySelector from '@/components/social-trends/CountrySelector'
 import FertilityChart from '@/components/birth-rates/FertilityChart'
 import SeriesChart from '@/components/birth-rates/SeriesChart'
+import OverlayChart from '@/components/birth-rates/OverlayChart'
 import { type IndicatorKey } from '@/hooks/useWorldBankData'
+
+// Countries with a crude-marriage-rate series (for the births-vs-marriages overlay).
+const OVERLAY_COUNTRIES = [
+  { code: 'KOR', label: 'South Korea' },
+  { code: 'USA', label: 'United States' },
+  { code: 'GBR', label: 'United Kingdom' },
+  { code: 'FRA', label: 'France' },
+  { code: 'POL', label: 'Poland' },
+  { code: 'MEX', label: 'Mexico' },
+  { code: 'AUS', label: 'Australia' },
+]
 import { Calendar, Baby } from 'lucide-react'
 
 // The set of countries the FT piece walks through, ordered roughly by when
@@ -60,6 +72,7 @@ export default function BirthRatesPage() {
   const [selectedCountries, setSelectedCountries] = useState<string[]>(DEFAULT_COUNTRIES)
   const [yearRange, setYearRange] = useState({ start: 2000, end: 2023 })
   const [metricKey, setMetricKey] = useState<IndicatorKey>('FERTILITY_RATE')
+  const [overlayCode, setOverlayCode] = useState('KOR')
 
   const metric = METRICS.find(m => m.key === metricKey)!
 
@@ -218,6 +231,38 @@ export default function BirthRatesPage() {
           />
         </div>
 
+        {/* Overlay: births vs marriages, per country */}
+        <div className="pt-4 space-y-3">
+          <div>
+            <h2 className="text-xl sm:text-2xl font-semibold text-white">
+              Do births and marriages move together?
+            </h2>
+            <p className="text-sm text-gray-400 mt-1.5 max-w-3xl leading-relaxed">
+              Overlay a country’s fertility rate (purple, left axis) on its crude marriage rate (blue, right).
+              In <span className="text-white">Korea</span> the two fall almost in lockstep — powerful support for
+              “fewer marriages, not fewer kids per marriage.” In the <span className="text-white">US</span> and
+              <span className="text-white"> France</span> the marriage line drops but fertility holds up better,
+              because so many births there now happen outside marriage. Same shift, different plumbing.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {OVERLAY_COUNTRIES.map(c => (
+              <button
+                key={c.code}
+                onClick={() => setOverlayCode(c.code)}
+                className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-all border ${
+                  overlayCode === c.code
+                    ? 'bg-white/10 text-white border-white/20'
+                    : 'text-gray-400 hover:text-white hover:bg-white/5 border-transparent'
+                }`}
+              >
+                {c.label}
+              </button>
+            ))}
+          </div>
+          <OverlayChart code={overlayCode} startYear={1965} endYear={2022} smartphoneBand={{ from: 2007, to: 2015 }} />
+        </div>
+
         {/* Fewer couples: the direct marriage-rate evidence */}
         <div className="pt-4 space-y-3">
           <div>
@@ -272,6 +317,39 @@ export default function BirthRatesPage() {
             Coverage caveat: the marriage-rate and births-outside-marriage series are OECD / rich-country
             weighted — Brazil, Indonesia and Nigeria aren’t covered — so read them as evidence about
             high-income and East-Asian countries, not the whole world.
+          </p>
+        </div>
+
+        {/* Completed cohort fertility: quantum vs composition */}
+        <div className="pt-4 space-y-3">
+          <div>
+            <h2 className="text-xl sm:text-2xl font-semibold text-white">
+              Fewer kids per woman — or just fewer couples?
+            </h2>
+            <p className="text-sm text-gray-400 mt-1.5 max-w-3xl leading-relaxed">
+              The honest test. This is <span className="text-white">completed fertility</span> — the number of
+              children women actually ended up with, plotted by the year they were born (not a single year’s
+              snapshot, which delayed births distort). If the collapse were purely “fewer couples,” women who do
+              have kids should still end up with about as many as before. The answer is split: in the US, UK and
+              France completed fertility held remarkably close to ~2, so the scary single-year figures overstate
+              the real per-woman decline. But in Italy, Spain and Japan women genuinely ended up with far fewer
+              (~1.4). So it’s partly fewer couples, partly a real drop in kids per woman — and it depends where.
+            </p>
+          </div>
+          <SeriesChart
+            metric="completedFertility"
+            codes={['USA', 'GBR', 'FRA', 'ITA', 'ESP', 'JPN']}
+            startYear={1935}
+            endYear={1974}
+            showReplacementLine
+            title="Completed fertility by woman’s birth cohort"
+            description="X-axis = the year the woman was born; the line is how many children she had by the end of her childbearing years. Data ends with women born ~1974."
+          />
+          <p className="text-xs text-gray-500 max-w-3xl leading-relaxed">
+            Caveats: this is per <span className="italic">woman</span>, not per married couple — a true
+            marital-fertility series sits behind the login-walled Human Fertility Database. It also only runs to
+            women born ~1974, so it can’t yet judge the post-2010 dip; and Korea, the cleanest “marriage-collapse”
+            case, isn’t in the cohort database.
           </p>
         </div>
 
@@ -333,6 +411,14 @@ export default function BirthRatesPage() {
                 className="text-blue-400 hover:text-blue-300 underline"
               >
                 Crude marriage rate &amp; share of births outside marriage — UN / OECD, via Our World in Data
+              </a>
+              <a
+                href="https://www.humanfertility.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300 underline"
+              >
+                Completed cohort fertility — Human Fertility Database, via Our World in Data
               </a>
               <a
                 href="https://www.ft.com/content/fba35eca-df3a-4ad6-b42d-eb08eb7c9ad3"
