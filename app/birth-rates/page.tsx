@@ -13,10 +13,14 @@ import { Calendar, Baby } from 'lucide-react'
 const DEFAULT_COUNTRIES = ['US', 'GB', 'AU', 'FR', 'PL', 'MX', 'ID', 'NG']
 
 const YEAR_RANGES = [
-  { label: '1990–2023', start: 1990, end: 2023 },
-  { label: '2000–2023', start: 2000, end: 2023 },
-  { label: '2005–2023', start: 2005, end: 2023 },
+  { label: 'Since 1960', start: 1960, end: 2023 },
+  { label: 'Since 1990', start: 1990, end: 2023 },
+  { label: 'Since 2005', start: 2005, end: 2023 },
 ]
+
+// Curated set for the "long view" exhibit: countries whose fertility fell
+// dramatically — and mostly before smartphones existed.
+const LONGRUN_COUNTRIES = ['KR', 'MX', 'ID', 'BR', 'US', 'NG']
 
 const METRICS: { key: IndicatorKey; label: string; blurb: string; replacement: boolean }[] = [
   {
@@ -189,6 +193,33 @@ export default function BirthRatesPage() {
             />
           </motion.div>
         )}
+
+        {/* Long view: the decline predates smartphones */}
+        <div className="pt-4 space-y-3">
+          <div>
+            <h2 className="text-xl sm:text-2xl font-semibold text-white">
+              The long view: this decline is decades old
+            </h2>
+            <p className="text-sm text-gray-400 mt-1.5 max-w-3xl leading-relaxed">
+              Zoom out to 1960 and the shaded “smartphone era” shrinks to a thin sliver at the right-hand
+              edge. In Korea, Mexico, Indonesia and Brazil, roughly <span className="text-purple-300 font-medium">90%</span> of
+              the total fall in fertility had already happened <span className="text-white">before</span> smartphones existed.
+              Whatever phones did, they arrived late to a decline that was already most of the way done —
+              which is why a single time-series can’t tell you smartphones caused it.
+            </p>
+          </div>
+          <FertilityChart
+            indicatorKey="FERTILITY_RATE"
+            selectedCountries={LONGRUN_COUNTRIES}
+            startYear={1960}
+            endYear={2023}
+            height={440}
+            showReplacementLine
+            smartphoneBand={{ from: 2007, to: 2015 }}
+            title="Fertility rate since 1960"
+            description="High-fertility countries fell toward (or below) replacement decades before the smartphone era began."
+          />
+        </div>
 
         {/* Context */}
         <Card className="bg-black/20 border-gray-800">
