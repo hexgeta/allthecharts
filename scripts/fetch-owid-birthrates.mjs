@@ -3,8 +3,9 @@
 //   node scripts/fetch-owid-birthrates.mjs
 //
 // Sources:
-//  - children-born-per-woman        -> UN World Population Prospects (total fertility rate)
+//  - children-born-per-woman          -> UN World Population Prospects (total fertility rate)
 //  - share-of-births-outside-marriage -> OECD / UN, via OWID
+//  - marriage-rate-per-1000-inhabitants -> UN / OECD crude marriage rate, via OWID
 //
 // Data (facts) are not copyrightable; OWID is CC-BY. Attribution lives on the page.
 
@@ -70,9 +71,10 @@ async function fetchSeries(slug, minYear) {
   return byCode
 }
 
-const [fertility, birthsOutsideMarriage] = await Promise.all([
+const [fertility, birthsOutsideMarriage, marriageRate] = await Promise.all([
   fetchSeries('children-born-per-woman', 1950),
   fetchSeries('share-of-births-outside-marriage', 1960),
+  fetchSeries('marriage-rate-per-1000-inhabitants', 1950),
 ])
 
 const payload = {
@@ -82,15 +84,19 @@ const payload = {
     sources: {
       fertility: 'UN World Population Prospects (2024), via Our World in Data',
       birthsOutsideMarriage: 'OECD Family Database / UN, via Our World in Data',
+      marriageRate: 'UN / OECD crude marriage rate, via Our World in Data',
     },
   },
   fertility,
   birthsOutsideMarriage,
+  marriageRate,
 }
 
 await mkdir(dirname(OUT), { recursive: true })
 await writeFile(OUT, JSON.stringify(payload))
-const fCov = Object.keys(fertility).length
-const bCov = Object.keys(birthsOutsideMarriage).length
 console.log(`✓ wrote ${OUT}`)
-console.log(`  fertility: ${fCov} countries; birthsOutsideMarriage: ${bCov} countries`)
+console.log(
+  `  fertility: ${Object.keys(fertility).length} · ` +
+  `birthsOutsideMarriage: ${Object.keys(birthsOutsideMarriage).length} · ` +
+  `marriageRate: ${Object.keys(marriageRate).length} countries`,
+)

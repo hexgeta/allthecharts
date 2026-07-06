@@ -218,19 +218,44 @@ export default function BirthRatesPage() {
           />
         </div>
 
-        {/* Marriage decoupling: evidence for the norms shift */}
+        {/* Fewer couples: the direct marriage-rate evidence */}
         <div className="pt-4 space-y-3">
           <div>
             <h2 className="text-xl sm:text-2xl font-semibold text-white">
-              What actually changed: marriage stopped gatekeeping childbirth
+              The direct evidence: fewer people are marrying
             </h2>
             <p className="text-sm text-gray-400 mt-1.5 max-w-3xl leading-relaxed">
-              One of the clearest structural shifts is the decoupling of childbearing from marriage. In 1960
-              barely 5% of US births were outside marriage; today it’s around 40%, with similar jumps across
-              much of the rich world. That’s direct evidence for the “fewer / later / weaker partnerships”
-              story — the institution that used to organise childbearing has largely dissolved. Korea is the
-              revealing exception: fertility collapsed there <span className="italic">without</span> births
-              moving outside marriage, a reminder the mechanism differs by culture.
+              Here the “fewer couples” claim stops being an assertion. The crude marriage rate — marriages per
+              1,000 people each year — has fallen across the board. Korea is the clearest case: its rate more
+              than halved (≈9 to under 4), and because births there still overwhelmingly happen inside marriage,
+              its fertility collapse essentially <span className="text-white">is</span> a marriage collapse.
+              People are also marrying much later (US women’s median first-marriage age rose ~25→29, France
+              ~28→33 in just two decades).
+            </p>
+          </div>
+          <SeriesChart
+            metric="marriageRate"
+            codes={['KOR', 'USA', 'GBR', 'AUS', 'FRA', 'POL', 'MEX']}
+            startYear={1965}
+            endYear={2022}
+            smartphoneBand={{ from: 2007, to: 2015 }}
+            title="Crude marriage rate (marriages per 1,000 people)"
+            description="Fewer marriages per year — the partnership-formation channel behind “fewer couples.”"
+          />
+        </div>
+
+        {/* Marriage decoupling: the norms shift */}
+        <div className="pt-4 space-y-3">
+          <div>
+            <h2 className="text-xl sm:text-2xl font-semibold text-white">
+              …and marriage matters less for childbearing anyway
+            </h2>
+            <p className="text-sm text-gray-400 mt-1.5 max-w-3xl leading-relaxed">
+              Alongside fewer marriages, marriage has decoupled from childbearing. In 1960 barely 5% of US
+              births were outside marriage; today it’s around 40%, with similar jumps across much of the rich
+              world — the shift from “marriage, then children” you’d expect. Korea is the revealing exception:
+              births there still overwhelmingly happen inside marriage, which is exactly why its falling
+              marriage rate hits fertility so hard.
             </p>
           </div>
           <SeriesChart
@@ -244,10 +269,9 @@ export default function BirthRatesPage() {
             description="Rising = childbearing increasingly happens outside marriage. Note the shift is decades old and mostly predates smartphones too."
           />
           <p className="text-xs text-gray-500 max-w-3xl leading-relaxed">
-            Honest caveat: this measures childbearing <span className="italic">outside</span> marriage, not the
-            number of couples or partnerships forming — a clean cross-country “marriage rate” or “share never
-            partnered” series wasn’t available from a single open source. So read it as evidence of a norms
-            shift (marriage no longer required for children), not a direct headcount of couples.
+            Coverage caveat: the marriage-rate and births-outside-marriage series are OECD / rich-country
+            weighted — Brazil, Indonesia and Nigeria aren’t covered — so read them as evidence about
+            high-income and East-Asian countries, not the whole world.
           </p>
         </div>
 
@@ -308,7 +332,7 @@ export default function BirthRatesPage() {
                 rel="noopener noreferrer"
                 className="text-blue-400 hover:text-blue-300 underline"
               >
-                Share of births outside marriage — OECD Family Database / UN, via Our World in Data
+                Crude marriage rate &amp; share of births outside marriage — UN / OECD, via Our World in Data
               </a>
               <a
                 href="https://www.ft.com/content/fba35eca-df3a-4ad6-b42d-eb08eb7c9ad3"
@@ -323,9 +347,9 @@ export default function BirthRatesPage() {
                 the smartphone-timing thesis. The long-view fertility chart uses UN World Population Prospects;
                 the interactive explorer uses World Bank figures (themselves largely derived from the UN series,
                 so the two are near-identical). The shaded 2007–2015 “smartphone era” band is an illustrative
-                marker, not a data series. A clean cross-country marriage-rate series was not available from a
-                single open source, so the “fewer couples” claim is evidenced by births-outside-marriage rather
-                than a direct partnership count.
+                marker, not a data series. The marriage-rate and births-outside-marriage series cover mainly
+                OECD and East-Asian countries, so they evidence the “fewer couples” story for high-income
+                nations rather than the whole world.
               </p>
             </div>
           </CardContent>
