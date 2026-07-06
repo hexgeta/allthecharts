@@ -17,6 +17,11 @@ export const INDICATORS = {
   // Crime & Safety
   HOMICIDE_RATE: { code: 'VC.IHR.PSRC.P5', name: 'Intentional Homicides (per 100k)', unit: '', category: 'crime' },
 
+  // Demographics
+  FERTILITY_RATE: { code: 'SP.DYN.TFRT.IN', name: 'Fertility Rate (Births per Woman)', unit: '', category: 'demographics' },
+  BIRTH_RATE: { code: 'SP.DYN.CBRT.IN', name: 'Birth Rate (per 1,000 People)', unit: '', category: 'demographics' },
+  ADOLESCENT_FERTILITY: { code: 'SP.ADO.TFRT', name: 'Adolescent Fertility (births per 1,000 women 15-19)', unit: '', category: 'demographics' },
+
   // Immigration
   NET_MIGRATION: { code: 'SM.POP.NETM', name: 'Net Migration', unit: '', category: 'immigration' },
   REFUGEE_ORIGIN: { code: 'SM.POP.REFG.OR', name: 'Refugees by Origin', unit: '', category: 'immigration' },
@@ -106,6 +111,8 @@ export const COUNTRIES: Country[] = [
   { code: 'EG', name: 'Egypt', region: 'Middle East & Africa' },
   { code: 'NG', name: 'Nigeria', region: 'Middle East & Africa' },
   { code: 'KE', name: 'Kenya', region: 'Middle East & Africa' },
+  { code: 'GH', name: 'Ghana', region: 'Middle East & Africa' },
+  { code: 'SN', name: 'Senegal', region: 'Middle East & Africa' },
   // Eastern Europe & Central Asia
   { code: 'RU', name: 'Russia', region: 'Eastern Europe & Central Asia' },
   { code: 'UA', name: 'Ukraine', region: 'Eastern Europe & Central Asia' },
@@ -126,7 +133,7 @@ export const COUNTRY_COLORS: Record<string, string> = {
   MY: '#2DD4BF', PH: '#F472B6', VN: '#FCA5A5', AR: '#93C5FD', CL: '#86EFAC',
   CO: '#FDE68A', PE: '#C4B5FD', VE: '#67E8F9', SA: '#34D399', AE: '#818CF8',
   IL: '#60A5FA', TR: '#FB923C', EG: '#FCD34D', NG: '#4ADE80', KE: '#F87171',
-  UA: '#38BDF8',
+  UA: '#38BDF8', GH: '#FDBA74', SN: '#A3E635',
 }
 
 // Fallback color for unknown countries

@@ -19,6 +19,7 @@ const NAV_LINKS = [
     hasDropdown: true,
     dropdownItems: [
       { href: '/social-trends', label: 'Social Trends', subtitle: 'Financial, Crime, Immigration & Tax Data' },
+      { href: '/birth-rates', label: 'Birth Rates', subtitle: 'Global fertility decline & the smartphone theory' },
       { href: '/crime/london', label: 'London Crime', subtitle: 'Metropolitan Police Crime Data' },
       { href: '/crime/rape-gangs', label: 'Rape Gang Inquiry', subtitle: 'Group-based CSE statistics' },
     ]
