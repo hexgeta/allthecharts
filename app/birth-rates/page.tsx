@@ -353,6 +353,38 @@ export default function BirthRatesPage() {
           </p>
         </div>
 
+        {/* Isolation: living alone */}
+        <div className="pt-4 space-y-3">
+          <div>
+            <h2 className="text-xl sm:text-2xl font-semibold text-white">
+              Are people more isolated? Living alone became the norm
+            </h2>
+            <p className="text-sm text-gray-400 mt-1.5 max-w-3xl leading-relaxed">
+              Yes — the drift toward living alone is real and nearly universal. The share of one-person
+              households roughly doubled across the rich world (US 13% → 28%, Japan 16% → 35%, Sweden past 40%).
+              Fewer people share a home, which fits the picture of fewer and later partnerships. On top of this,
+              US time-use data shows people — <span className="text-white">especially the young</span> — spending
+              more hours alone since around 2010, and surveys record a “sexual recession”: younger cohorts
+              report less sex and fewer partners than earlier generations, not more.
+            </p>
+          </div>
+          <SeriesChart
+            metric="onePersonHouseholds"
+            codes={['SWE', 'JPN', 'DEU', 'GBR', 'USA', 'KOR']}
+            startYear={1960}
+            endYear={2018}
+            unit="%"
+            title="Share of one-person households"
+            description="More people living alone — consistent with fewer partnerships forming."
+          />
+          <p className="text-xs text-gray-500 max-w-3xl leading-relaxed">
+            Honest caveat: living-alone rates are also pushed up by ageing populations (elderly people, often
+            widowed, living alone) and by rising wealth (people can afford their own place). So this is
+            suggestive of a retreat from partnership, not proof of it — read it alongside the marriage-rate
+            fall, not on its own.
+          </p>
+        </div>
+
         {/* Context */}
         <Card className="bg-black/20 border-gray-800">
           <CardHeader>

@@ -33,6 +33,7 @@ const COUNTRIES = {
   ESP: { label: 'Spain', color: '#FB7185' },
   JPN: { label: 'Japan', color: '#F472B6' },
   DEU: { label: 'Germany', color: '#FBBF24' },
+  SWE: { label: 'Sweden', color: '#A3E635' },
 }
 const WANTED = new Set(Object.keys(COUNTRIES))
 
@@ -77,11 +78,12 @@ async function fetchSeries(slug, minYear) {
 }
 
 // Note: completedFertility is indexed by the woman's BIRTH COHORT year, not calendar year.
-const [fertility, birthsOutsideMarriage, marriageRate, completedFertility] = await Promise.all([
+const [fertility, birthsOutsideMarriage, marriageRate, completedFertility, onePersonHouseholds] = await Promise.all([
   fetchSeries('children-born-per-woman', 1950),
   fetchSeries('share-of-births-outside-marriage', 1960),
   fetchSeries('marriage-rate-per-1000-inhabitants', 1950),
   fetchSeries('cohort-fertility-rate', 1935),
+  fetchSeries('one-person-households', 1960),
 ])
 
 const payload = {
@@ -93,12 +95,14 @@ const payload = {
       birthsOutsideMarriage: 'OECD Family Database / UN, via Our World in Data',
       marriageRate: 'UN / OECD crude marriage rate, via Our World in Data',
       completedFertility: 'Human Fertility Database (completed cohort fertility), via Our World in Data',
+      onePersonHouseholds: 'UN / national censuses (share of one-person households), via Our World in Data',
     },
   },
   fertility,
   birthsOutsideMarriage,
   marriageRate,
   completedFertility,
+  onePersonHouseholds,
 }
 
 await mkdir(dirname(OUT), { recursive: true })
@@ -108,5 +112,6 @@ console.log(
   `  fertility: ${Object.keys(fertility).length} · ` +
   `birthsOutsideMarriage: ${Object.keys(birthsOutsideMarriage).length} · ` +
   `marriageRate: ${Object.keys(marriageRate).length} · ` +
-  `completedFertility: ${Object.keys(completedFertility).length} countries`,
+  `completedFertility: ${Object.keys(completedFertility).length} · ` +
+  `onePersonHouseholds: ${Object.keys(onePersonHouseholds).length} countries`,
 )

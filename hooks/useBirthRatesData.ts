@@ -11,6 +11,7 @@ export interface BirthRatesData {
   birthsOutsideMarriage: Record<string, [number, number][]>
   marriageRate: Record<string, [number, number][]>
   completedFertility: Record<string, [number, number][]>
+  onePersonHouseholds: Record<string, [number, number][]>
 }
 
 export type BirthRatesMetric =
@@ -18,6 +19,7 @@ export type BirthRatesMetric =
   | 'birthsOutsideMarriage'
   | 'marriageRate'
   | 'completedFertility'
+  | 'onePersonHouseholds'
 
 const fetcher = (url: string) =>
   fetch(url).then(r => {
