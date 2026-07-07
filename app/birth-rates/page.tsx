@@ -505,15 +505,18 @@ export default function BirthRatesPage() {
         <div className="pt-4 space-y-3">
           <div>
             <h2 className="text-xl sm:text-2xl font-semibold text-white">
-              The car-seat theory — clever, but US-only
+              The car-seat theory — clever, but far from global
             </h2>
             <p className="text-sm text-gray-400 mt-1.5 max-w-3xl leading-relaxed">
               One much-shared paper (Nickerson &amp; Solomon, 2020) argues US car-seat laws — now requiring seats
               up to age ~8 — quietly act as contraception: a third seat won’t fit across a normal back seat, so
-              some families stop at two. It’s a real, cited US natural experiment and might explain a
-              <span className="italic"> sliver</span> of the US third-birth decline. But it can’t be the global
-              driver, because fertility collapsed just as hard in places where the mechanism barely applies — no
-              comparable law, transit-heavy cities, or low car ownership:
+              some families stop at two. The <span className="italic">study</span> is US-only, but the
+              <span className="italic"> mechanism</span> plausibly extends across the car-dependent Anglosphere —
+              the <span className="text-white">UK</span> (restraints to age 12 / 135cm), <span className="text-white">Australia</span>,
+              Canada and New Zealand all pair strict car-seat rules with heavy car use, so it may bite there too.
+              What it <span className="text-white">can’t</span> be is the <span className="text-white">global</span> driver
+              — fertility collapsed just as hard where the mechanism barely applies: no comparable law,
+              transit-heavy cities, or low car ownership.
             </p>
           </div>
           <CarSeatMismatch />
