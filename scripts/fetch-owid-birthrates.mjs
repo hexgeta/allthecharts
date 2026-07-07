@@ -37,6 +37,11 @@ const COUNTRIES = {
   DEU: { label: 'Germany', color: '#64748B' }, // slate
   SWE: { label: 'Sweden', color: '#A855F7' }, // purple
   CHN: { label: 'China', color: '#DC2626' }, // crimson
+  // EU countries with a computable marital-fertility series (Eurostat)
+  FIN: { label: 'Finland', color: '#38BDF8' }, // sky
+  NOR: { label: 'Norway', color: '#FB923C' }, // orange
+  NLD: { label: 'Netherlands', color: '#34D399' }, // green
+  CZE: { label: 'Czechia', color: '#FACC15' }, // yellow
 }
 const WANTED = new Set(Object.keys(COUNTRIES))
 
@@ -111,6 +116,56 @@ async function fetchFredAnnual(seriesId, minYear) {
     .sort((a, b) => a[0] - b[0])
 }
 
+// ---- Eurostat marital fertility (general marital fertility rate) ------------
+// GMFR = 1000 * (live births in marriage, ages 15-49) / (married women 15-49).
+// A direct "births per married woman" measure; EU-only, open API (no login).
+const EU_MARITAL = { SWE: 'SE', DEU: 'DE', FIN: 'FI', NOR: 'NO', NLD: 'NL', CZE: 'CZ' }
+const MF_BANDS = ['Y15-19', 'Y20-24', 'Y25-29', 'Y30-34', 'Y35-39', 'Y40-44', 'Y45-49']
+const MF_AGES1 = new Set(Array.from({ length: 35 }, (_, i) => `Y${15 + i}`)) // Y15..Y49
+
+async function fetchEurostat(dataset, params) {
+  const q = params.map(([k, v]) => `${k}=${v}`).join('&')
+  const res = await fetch(`https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/${dataset}?format=JSON&${q}`)
+  if (!res.ok) throw new Error(`Eurostat ${dataset}: HTTP ${res.status}`)
+  return res.json()
+}
+
+// Yield [coords, value] for every present cell in a Eurostat JSON-stat response.
+function* eurostatCells(d) {
+  const ids = d.id, sizes = d.size
+  const inv = {}
+  for (const dim of ids) {
+    const index = d.dimension[dim].category.index
+    inv[dim] = {}
+    for (const code in index) inv[dim][index[code]] = code
+  }
+  const strides = new Array(sizes.length).fill(1)
+  for (let i = sizes.length - 2; i >= 0; i--) strides[i] = strides[i + 1] * sizes[i + 1]
+  for (const k in d.value) {
+    let rem = parseInt(k, 10)
+    const coords = {}
+    for (let i = 0; i < ids.length; i++) {
+      coords[ids[i]] = inv[ids[i]][Math.floor(rem / strides[i])]
+      rem %= strides[i]
+    }
+    yield [coords, d.value[k]]
+  }
+}
+
+async function maritalFertilityFor(geo) {
+  const b = await fetchEurostat('demo_fagec', [['indic_de', 'MAR'], ['geo', geo], ...MF_BANDS.map(a => ['age', a])])
+  const births = {}
+  for (const [c, v] of eurostatCells(b)) if (MF_BANDS.includes(c.age)) births[c.time] = (births[c.time] || 0) + v
+  const p = await fetchEurostat('demo_pjanmarsta', [['sex', 'F'], ['marsta', 'MAR'], ['geo', geo]])
+  const women = {}
+  for (const [c, v] of eurostatCells(p)) if (MF_AGES1.has(c.age)) women[c.time] = (women[c.time] || 0) + v
+  const out = []
+  for (const y of Object.keys(births)) {
+    if (women[y]) out.push([parseInt(y, 10), Math.round((1000 * births[y]) / women[y] * 10) / 10])
+  }
+  return out.sort((a, b) => a[0] - b[0])
+}
+
 // Note: completedFertility is indexed by the woman's BIRTH COHORT year, not calendar year.
 const [
   fertility, birthsOutsideMarriage, marriageRate, completedFertility,
@@ -138,6 +193,18 @@ await Promise.all(
   }),
 )
 
+// Direct marital fertility (births per 1,000 married women 15-49), EU countries.
+const maritalFertility = {}
+await Promise.all(
+  Object.entries(EU_MARITAL).map(async ([iso3, geo]) => {
+    try {
+      maritalFertility[iso3] = await maritalFertilityFor(geo)
+    } catch (e) {
+      console.error(`  marital fertility fail ${iso3}: ${e.message}`)
+    }
+  }),
+)
+
 const payload = {
   meta: {
     generated: '(run scripts/fetch-owid-birthrates.mjs to refresh)',
@@ -151,6 +218,7 @@ const payload = {
       realHousePrices: 'BIS real residential property prices (index, 2010=100), via FRED',
       churchAttendance: 'World Values Survey / EVS (frequent religious attendance), via Our World in Data',
       shareWomenMarried: 'UN World Marriage Data (women 15-49 married or in a union), via Our World in Data',
+      maritalFertility: 'Eurostat demo_fagec + demo_pjanmarsta (births per 1,000 married women 15-49), computed',
     },
   },
   fertility,
@@ -161,6 +229,7 @@ const payload = {
   realHousePrices,
   churchAttendance,
   shareWomenMarried,
+  maritalFertility,
 }
 
 await mkdir(dirname(OUT), { recursive: true })
@@ -174,5 +243,6 @@ console.log(
   `onePersonHouseholds: ${Object.keys(onePersonHouseholds).length} · ` +
   `realHousePrices: ${Object.keys(realHousePrices).length} · ` +
   `churchAttendance: ${Object.keys(churchAttendance).length} · ` +
-  `shareWomenMarried: ${Object.keys(shareWomenMarried).length} countries`,
+  `shareWomenMarried: ${Object.keys(shareWomenMarried).length} · ` +
+  `maritalFertility: ${Object.keys(maritalFertility).length} countries`,
 )

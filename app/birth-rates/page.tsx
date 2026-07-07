@@ -391,6 +391,39 @@ export default function BirthRatesPage() {
           </p>
         </div>
 
+        {/* Direct marital fertility (EU, computed from Eurostat) */}
+        <div className="pt-4 space-y-3">
+          <div>
+            <h2 className="text-xl sm:text-2xl font-semibold text-white">
+              The direct measure: births per married woman (EU)
+            </h2>
+            <p className="text-sm text-gray-400 mt-1.5 max-w-3xl leading-relaxed">
+              And here’s the thing we couldn’t get before — a <span className="text-white">real</span> marital
+              fertility rate, computed from Eurostat (births in marriage ÷ married women aged 15–49). The answer
+              is striking: among married women, fertility is <span className="text-white">flat or even rising</span> (Netherlands
+              78 → 90, Germany 54 → 68 per 1,000) even as total fertility fell. So the birth-rate collapse is
+              almost entirely about <span className="text-white">fewer people marrying</span> — not married
+              couples choosing fewer kids.
+            </p>
+          </div>
+          <SmallMultiples
+            metric="maritalFertility"
+            codes={['NLD', 'DEU', 'SWE', 'NOR', 'FIN', 'CZE']}
+            startYear={1992}
+            endYear={2024}
+            unit="index"
+            title="Marital fertility — births per 1,000 married women aged 15–49"
+            description="Computed from Eurostat. Roughly flat-to-rising while total fertility fell — i.e. the decline is compositional."
+          />
+          <p className="text-xs text-gray-500 max-w-3xl leading-relaxed">
+            The big caveat — <span className="italic">selection</span>: as marriage becomes rarer and more
+            deliberate, the women who still marry are increasingly those who want children. So married-women
+            fertility holding up (or rising) doesn’t mean “couples are fine” — it partly means only the
+            baby-inclined now marry. A real, direct measure, but not a clean counterfactual. EU-only (Eurostat
+            coverage; the US isn’t in this series).
+          </p>
+        </div>
+
         {/* Isolation: living alone */}
         <div className="pt-4 space-y-3">
           <div>
@@ -574,6 +607,14 @@ export default function BirthRatesPage() {
                 className="text-blue-400 hover:text-blue-300 underline"
               >
                 Religious attendance &amp; women married/in-union — World Values Survey &amp; UN World Marriage Data, via Our World in Data
+              </a>
+              <a
+                href="https://ec.europa.eu/eurostat/web/population-demography/demography-population-stock-balance/database"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300 underline"
+              >
+                Marital fertility (EU) — computed from Eurostat births by marital status (demo_fagec) &amp; married women (demo_pjanmarsta)
               </a>
               <a
                 href="https://www.ft.com/content/fba35eca-df3a-4ad6-b42d-eb08eb7c9ad3"
