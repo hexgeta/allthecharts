@@ -1,58 +1,15 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import CountrySelector from '@/components/social-trends/CountrySelector'
-import FertilityChart from '@/components/birth-rates/FertilityChart'
 import SmallMultiples from '@/components/birth-rates/SmallMultiples'
-import OverlayChart from '@/components/birth-rates/OverlayChart'
+import OverlayMultiples from '@/components/birth-rates/OverlayMultiples'
 import CarSeatMismatch from '@/components/birth-rates/CarSeatMismatch'
-import { type IndicatorKey } from '@/hooks/useWorldBankData'
+import { Baby } from 'lucide-react'
 
 // Countries with a crude-marriage-rate series (for the births-vs-marriages overlay).
-const OVERLAY_COUNTRIES = [
-  { code: 'KOR', label: 'South Korea' },
-  { code: 'USA', label: 'United States' },
-  { code: 'GBR', label: 'United Kingdom' },
-  { code: 'FRA', label: 'France' },
-  { code: 'POL', label: 'Poland' },
-  { code: 'MEX', label: 'Mexico' },
-  { code: 'AUS', label: 'Australia' },
-]
-import { Calendar, Baby } from 'lucide-react'
-
-// The set of countries the FT piece walks through, ordered roughly by when
-// their birth rates started to slide. Legible as a default; users can change it.
-const DEFAULT_COUNTRIES = ['US', 'GB', 'AU', 'FR', 'PL', 'MX', 'ID', 'NG']
-
-const YEAR_RANGES = [
-  { label: 'Since 1960', start: 1960, end: 2023 },
-  { label: 'Since 1990', start: 1990, end: 2023 },
-  { label: 'Since 2005', start: 2005, end: 2023 },
-]
-
-
-const METRICS: { key: IndicatorKey; label: string; blurb: string; replacement: boolean }[] = [
-  {
-    key: 'FERTILITY_RATE',
-    label: 'Fertility rate',
-    blurb: 'Average number of children a woman is expected to have over her lifetime. 2.1 is roughly the level needed to keep a population stable without migration.',
-    replacement: true,
-  },
-  {
-    key: 'BIRTH_RATE',
-    label: 'Birth rate',
-    blurb: 'Live births per 1,000 people per year — the crude birth rate.',
-    replacement: false,
-  },
-  {
-    key: 'ADOLESCENT_FERTILITY',
-    label: 'Teen fertility',
-    blurb: 'Births per 1,000 women aged 15–19. Critics of the smartphone theory note the sharpest, clearest declines show up among teenagers.',
-    replacement: false,
-  },
-]
+const OVERLAY_CODES = ['KOR', 'USA', 'GBR', 'FRA', 'POL', 'MEX', 'AUS']
 
 const KEY_FACTS = [
   {
@@ -70,13 +27,6 @@ const KEY_FACTS = [
 ]
 
 export default function BirthRatesPage() {
-  const [selectedCountries, setSelectedCountries] = useState<string[]>(DEFAULT_COUNTRIES)
-  const [yearRange, setYearRange] = useState({ start: 2000, end: 2023 })
-  const [metricKey, setMetricKey] = useState<IndicatorKey>('FERTILITY_RATE')
-  const [overlayCode, setOverlayCode] = useState('KOR')
-
-  const metric = METRICS.find(m => m.key === metricKey)!
-
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Hero */}
@@ -98,8 +48,8 @@ export default function BirthRatesPage() {
             </h1>
             <p className="text-gray-400 text-lg max-w-3xl mx-auto">
               Across rich and poor countries alike, fertility began sliding within a few years of each
-              other — clustering around the moment smartphones and fast mobile internet arrived. Explore the
-              raw fertility data behind the debate, rebuilt from World Bank figures.
+              other — clustering around the moment smartphones and fast mobile internet arrived. Here’s the
+              data behind the debate, rebuilt from UN, World Bank, Eurostat and other public figures.
             </p>
           </motion.div>
         </div>
@@ -124,87 +74,6 @@ export default function BirthRatesPage() {
             </motion.div>
           ))}
         </div>
-
-        {/* Controls */}
-        <Card className="bg-black/40 border-gray-800 backdrop-blur-sm">
-          <CardHeader className="pb-3">
-            <CardTitle className="text-white flex items-center gap-2">
-              <span>Compare countries</span>
-              <span className="text-xs text-gray-500 font-normal">Up to 12</span>
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <CountrySelector
-              selectedCountries={selectedCountries}
-              onChange={setSelectedCountries}
-              maxSelections={12}
-            />
-          </CardContent>
-        </Card>
-
-        {/* Metric + year range */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div className="flex flex-wrap gap-2">
-            {METRICS.map(m => (
-              <button
-                key={m.key}
-                onClick={() => setMetricKey(m.key)}
-                className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-all border ${
-                  metricKey === m.key
-                    ? 'bg-white/10 text-white border-white/20'
-                    : 'text-gray-400 hover:text-white hover:bg-white/5 border-transparent'
-                }`}
-              >
-                {m.label}
-              </button>
-            ))}
-          </div>
-
-          <div className="flex items-center gap-2">
-            <Calendar className="w-4 h-4 text-gray-500" />
-            {YEAR_RANGES.map(range => (
-              <button
-                key={range.label}
-                onClick={() => setYearRange({ start: range.start, end: range.end })}
-                className={`px-3 py-1.5 rounded text-xs font-medium transition-all ${
-                  yearRange.start === range.start
-                    ? 'bg-white/10 text-white'
-                    : 'text-gray-500 hover:text-gray-300'
-                }`}
-              >
-                {range.label}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div className="text-sm text-gray-500">{metric.blurb}</div>
-
-        {/* Chart */}
-        {selectedCountries.length === 0 ? (
-          <Card className="bg-black/20 border-gray-800">
-            <CardContent className="py-16 text-center">
-              <p className="text-gray-500 text-lg">Select at least one country to view the chart</p>
-            </CardContent>
-          </Card>
-        ) : (
-          <motion.div
-            key={metricKey}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <FertilityChart
-              indicatorKey={metricKey}
-              selectedCountries={selectedCountries}
-              startYear={yearRange.start}
-              endYear={yearRange.end}
-              showReplacementLine={metric.replacement}
-              smartphoneBand={{ from: 2007, to: 2015 }}
-              description="Shaded band marks the rollout of smartphones and fast mobile internet (2007–2015)."
-            />
-          </motion.div>
-        )}
 
         {/* Long view: the decline predates smartphones (UN WPP) */}
         <div className="pt-4 space-y-3">
@@ -239,29 +108,19 @@ export default function BirthRatesPage() {
               Do births and marriages move together?
             </h2>
             <p className="text-sm text-gray-400 mt-1.5 max-w-3xl leading-relaxed">
-              Overlay a country’s fertility rate (purple, left axis) on its crude marriage rate (blue, right).
-              In <span className="text-white">Korea</span> the two fall almost in lockstep — powerful support for
+              Each panel overlays a country’s fertility rate (purple, left axis) on its crude marriage rate
+              (blue, right). In <span className="text-white">Korea</span> the two fall almost in lockstep — powerful support for
               “fewer marriages, not fewer kids per marriage.” In the <span className="text-white">US</span> and
               <span className="text-white"> France</span> the marriage line drops but fertility holds up better,
               because so many births there now happen outside marriage. Same shift, different plumbing.
             </p>
           </div>
-          <div className="flex flex-wrap gap-2">
-            {OVERLAY_COUNTRIES.map(c => (
-              <button
-                key={c.code}
-                onClick={() => setOverlayCode(c.code)}
-                className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-all border ${
-                  overlayCode === c.code
-                    ? 'bg-white/10 text-white border-white/20'
-                    : 'text-gray-400 hover:text-white hover:bg-white/5 border-transparent'
-                }`}
-              >
-                {c.label}
-              </button>
-            ))}
-          </div>
-          <OverlayChart code={overlayCode} startYear={1965} endYear={2022} smartphoneBand={{ from: 2007, to: 2015 }} />
+          <OverlayMultiples
+            codes={OVERLAY_CODES}
+            startYear={1965}
+            endYear={2022}
+            title="Births vs marriages, per country"
+          />
         </div>
 
         {/* Fewer couples: the direct marriage-rate evidence */}
