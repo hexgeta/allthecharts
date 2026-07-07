@@ -347,10 +347,10 @@ export default function BirthRatesPage() {
             description="X-axis = the year the woman was born; the line is how many children she had by the end of her childbearing years. Data ends with women born ~1974."
           />
           <p className="text-xs text-gray-500 max-w-3xl leading-relaxed">
-            Caveats: this is per <span className="italic">woman</span>, not per married couple — a true
-            marital-fertility series sits behind the login-walled Human Fertility Database. It also only runs to
-            women born ~1974, so it can’t yet judge the post-2010 dip; and Korea, the cleanest “marriage-collapse”
-            case, isn’t in the cohort database.
+            Caveats: this is per <span className="italic">woman</span>, not per married couple — no ready-made
+            cross-country marital-fertility series exists (even the Human Fertility Database doesn’t carry it yet).
+            It also only runs to women born ~1974, so it can’t yet judge the post-2010 dip; and Korea, the
+            cleanest “marriage-collapse” case, isn’t in the cohort database.
           </p>
         </div>
 
@@ -361,8 +361,10 @@ export default function BirthRatesPage() {
               Is fertility falling <span className="italic">among married women</span>?
             </h2>
             <p className="text-sm text-gray-400 mt-1.5 max-w-3xl leading-relaxed">
-              The cleanest test — births per married woman — sits behind the login-walled Human Fertility
-              Database, so here’s the honest workaround using what’s open. Two things we <span className="text-white">can</span> measure:
+              The cleanest test — births per married woman — isn’t published as a ready-made cross-country series
+              (even the Human Fertility Database doesn’t carry it yet; it <span className="italic">can</span> be
+              computed for EU countries from Eurostat). So here’s the honest workaround using what’s open — two
+              things we <span className="text-white">can</span> measure directly:
               the share of women aged 15–49 who are married has fallen sharply (US 66% → 52%), while completed
               fertility per woman (chart above) held close to ~2 in the US, UK and France. Together that points to
               <span className="text-white"> fewer married women</span> far more than <span className="text-white">married
@@ -382,9 +384,10 @@ export default function BirthRatesPage() {
           />
           <p className="text-xs text-gray-500 max-w-3xl leading-relaxed">
             Honest note: this is an <span className="italic">indirect</span> answer. A true “births per married
-            woman” rate isn’t openly available (the Human Fertility Database requires an account). Share-married
-            falling, plus roughly flat completed per-woman fertility, is consistent with married-couple fertility
-            being fairly stable in the West — but it doesn’t measure it directly.
+            woman” rate isn’t published as a ready-made cross-country series — though it can be computed for EU
+            countries from Eurostat’s births-by-marital-status data (a possible next step). Share-married falling,
+            plus roughly flat completed per-woman fertility, is consistent with married-couple fertility being
+            fairly stable in the West — but it doesn’t measure it directly.
           </p>
         </div>
 
