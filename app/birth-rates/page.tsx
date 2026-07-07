@@ -5,8 +5,9 @@ import { motion } from 'framer-motion'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import CountrySelector from '@/components/social-trends/CountrySelector'
 import FertilityChart from '@/components/birth-rates/FertilityChart'
-import SeriesChart from '@/components/birth-rates/SeriesChart'
+import SmallMultiples from '@/components/birth-rates/SmallMultiples'
 import OverlayChart from '@/components/birth-rates/OverlayChart'
+import CarSeatMismatch from '@/components/birth-rates/CarSeatMismatch'
 import { type IndicatorKey } from '@/hooks/useWorldBankData'
 
 // Countries with a crude-marriage-rate series (for the births-vs-marriages overlay).
@@ -219,7 +220,7 @@ export default function BirthRatesPage() {
               which is why a single time-series can’t tell you smartphones caused it.
             </p>
           </div>
-          <SeriesChart
+          <SmallMultiples
             metric="fertility"
             codes={['KOR', 'MEX', 'IDN', 'BRA', 'USA', 'NGA']}
             startYear={1950}
@@ -278,7 +279,7 @@ export default function BirthRatesPage() {
               ~28→33 in just two decades).
             </p>
           </div>
-          <SeriesChart
+          <SmallMultiples
             metric="marriageRate"
             codes={['KOR', 'USA', 'GBR', 'AUS', 'FRA', 'POL', 'MEX']}
             startYear={1965}
@@ -303,7 +304,7 @@ export default function BirthRatesPage() {
               marriage rate hits fertility so hard.
             </p>
           </div>
-          <SeriesChart
+          <SmallMultiples
             metric="birthsOutsideMarriage"
             codes={['FRA', 'GBR', 'USA', 'AUS', 'POL', 'MEX', 'KOR']}
             startYear={1960}
@@ -336,7 +337,7 @@ export default function BirthRatesPage() {
               (~1.4). So it’s partly fewer couples, partly a real drop in kids per woman — and it depends where.
             </p>
           </div>
-          <SeriesChart
+          <SmallMultiples
             metric="completedFertility"
             codes={['USA', 'GBR', 'FRA', 'ITA', 'ESP', 'JPN']}
             startYear={1935}
@@ -350,6 +351,40 @@ export default function BirthRatesPage() {
             marital-fertility series sits behind the login-walled Human Fertility Database. It also only runs to
             women born ~1974, so it can’t yet judge the post-2010 dip; and Korea, the cleanest “marriage-collapse”
             case, isn’t in the cohort database.
+          </p>
+        </div>
+
+        {/* Married women: composition vs quantum */}
+        <div className="pt-4 space-y-3">
+          <div>
+            <h2 className="text-xl sm:text-2xl font-semibold text-white">
+              Is fertility falling <span className="italic">among married women</span>?
+            </h2>
+            <p className="text-sm text-gray-400 mt-1.5 max-w-3xl leading-relaxed">
+              The cleanest test — births per married woman — sits behind the login-walled Human Fertility
+              Database, so here’s the honest workaround using what’s open. Two things we <span className="text-white">can</span> measure:
+              the share of women aged 15–49 who are married has fallen sharply (US 66% → 52%), while completed
+              fertility per woman (chart above) held close to ~2 in the US, UK and France. Together that points to
+              <span className="text-white"> fewer married women</span> far more than <span className="text-white">married
+              women choosing fewer kids</span> — the “fewer couples” reading. But where fertility fell hardest
+              (Italy, Spain, Japan), completed fertility <span className="italic">also</span> dropped, so
+              married-couple fertility isn’t perfectly flat there either.
+            </p>
+          </div>
+          <SmallMultiples
+            metric="shareWomenMarried"
+            codes={['USA', 'GBR', 'FRA', 'ITA', 'KOR', 'JPN']}
+            startYear={1970}
+            endYear={2020}
+            unit="%"
+            title="Share of women aged 15–49 who are married or in a union"
+            description="Fewer women are partnered at childbearing age — the compositional side of the decline."
+          />
+          <p className="text-xs text-gray-500 max-w-3xl leading-relaxed">
+            Honest note: this is an <span className="italic">indirect</span> answer. A true “births per married
+            woman” rate isn’t openly available (the Human Fertility Database requires an account). Share-married
+            falling, plus roughly flat completed per-woman fertility, is consistent with married-couple fertility
+            being fairly stable in the West — but it doesn’t measure it directly.
           </p>
         </div>
 
@@ -368,7 +403,7 @@ export default function BirthRatesPage() {
               report less sex and fewer partners than earlier generations, not more.
             </p>
           </div>
-          <SeriesChart
+          <SmallMultiples
             metric="onePersonHouseholds"
             codes={['SWE', 'JPN', 'DEU', 'GBR', 'USA', 'KOR']}
             startYear={1960}
@@ -382,6 +417,75 @@ export default function BirthRatesPage() {
             widowed, living alone) and by rising wealth (people can afford their own place). So this is
             suggestive of a retreat from partnership, not proof of it — read it alongside the marriage-rate
             fall, not on its own.
+          </p>
+        </div>
+
+        {/* Candidate driver: housing costs */}
+        <div className="pt-4 space-y-3">
+          <div>
+            <h2 className="text-xl sm:text-2xl font-semibold text-white">Did housing get too expensive?</h2>
+            <p className="text-sm text-gray-400 mt-1.5 max-w-3xl leading-relaxed">
+              A popular explanation: young people can’t afford the space to raise kids. Real (inflation-adjusted)
+              house prices roughly doubled in the US and rose ~4–5× in the UK and Australia. But this can’t be
+              the universal cause — <span className="text-white">Germany’s real prices barely moved and Italy’s
+              actually fell</span>, yet both have some of the lowest fertility in the world. Housing plausibly
+              contributes where it exploded; it can’t explain the countries where it didn’t.
+            </p>
+          </div>
+          <SmallMultiples
+            metric="realHousePrices"
+            codes={['GBR', 'AUS', 'USA', 'FRA', 'ESP', 'KOR', 'ITA', 'DEU', 'JPN']}
+            startYear={1975}
+            endYear={2024}
+            unit="index"
+            title="Real house prices (index, 2010 = 100)"
+            description="Inflation-adjusted. Note Germany (flat) and Italy (falling) sit alongside equally low fertility."
+          />
+        </div>
+
+        {/* Candidate driver: secularisation */}
+        <div className="pt-4 space-y-3">
+          <div>
+            <h2 className="text-xl sm:text-2xl font-semibold text-white">Did people stop going to church?</h2>
+            <p className="text-sm text-gray-400 mt-1.5 max-w-3xl leading-relaxed">
+              Religiosity tracks fertility loosely — more-religious people and places tend to have more children,
+              and frequent religious attendance has fallen across the West (US ~60% → ~39%). But the fit is loose:
+              Korea and Japan were never highly religious yet have the lowest fertility, and secularisation is
+              gradual while the recent fertility drop is sharp. A contributing current, not the switch.
+            </p>
+          </div>
+          <SmallMultiples
+            metric="churchAttendance"
+            codes={['USA', 'ITA', 'POL', 'FRA', 'GBR', 'KOR']}
+            startYear={1984}
+            endYear={2022}
+            unit="%"
+            title="Share attending religious services frequently"
+            description="World / European Values Survey. Frequent attendance has fallen across most of the West."
+          />
+        </div>
+
+        {/* The car-seat theory — US-only */}
+        <div className="pt-4 space-y-3">
+          <div>
+            <h2 className="text-xl sm:text-2xl font-semibold text-white">
+              The car-seat theory — clever, but US-only
+            </h2>
+            <p className="text-sm text-gray-400 mt-1.5 max-w-3xl leading-relaxed">
+              One much-shared paper (Nickerson &amp; Solomon, 2020) argues US car-seat laws — now requiring seats
+              up to age ~8 — quietly act as contraception: a third seat won’t fit across a normal back seat, so
+              some families stop at two. It’s a real, cited US natural experiment and might explain a
+              <span className="italic"> sliver</span> of the US third-birth decline. But it can’t be the global
+              driver, because fertility collapsed just as hard in places where the mechanism barely applies — no
+              comparable law, transit-heavy cities, or low car ownership:
+            </p>
+          </div>
+          <CarSeatMismatch />
+          <p className="text-xs text-gray-500 max-w-3xl leading-relaxed">
+            Figures are each country’s latest fertility rate. Most rich countries <span className="italic">do</span> regulate
+            car seats — the point isn’t that only the US does, but that the specific “no room for a third seat”
+            mechanism needs car-dependence + strict age limits + small cars, a combination absent across much of
+            the world that saw fertility fall anyway.
           </p>
         </div>
 
@@ -451,6 +555,22 @@ export default function BirthRatesPage() {
                 className="text-blue-400 hover:text-blue-300 underline"
               >
                 Completed cohort fertility — Human Fertility Database, via Our World in Data
+              </a>
+              <a
+                href="https://fred.stlouisfed.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300 underline"
+              >
+                Real house prices — BIS residential property prices (index, 2010=100), via FRED
+              </a>
+              <a
+                href="https://ourworldindata.org/religion"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300 underline"
+              >
+                Religious attendance &amp; women married/in-union — World Values Survey &amp; UN World Marriage Data, via Our World in Data
               </a>
               <a
                 href="https://www.ft.com/content/fba35eca-df3a-4ad6-b42d-eb08eb7c9ad3"

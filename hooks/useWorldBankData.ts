@@ -123,16 +123,16 @@ export const DEFAULT_COUNTRIES = ['US', 'GB', 'DE', 'JP', 'CN', 'BR', 'IN', 'AU'
 
 // Country colors for charts
 export const COUNTRY_COLORS: Record<string, string> = {
-  US: '#3B82F6', GB: '#EF4444', DE: '#F59E0B', FR: '#8B5CF6', JP: '#EC4899',
-  CN: '#EF4444', IN: '#F97316', AU: '#10B981', CA: '#6366F1', BR: '#22C55E',
-  MX: '#14B8A6', IT: '#06B6D4', ES: '#F43F5E', KR: '#A855F7', ZA: '#84CC16',
-  RU: '#64748B', NL: '#FF6B35', SE: '#0EA5E9', NO: '#D946EF', CH: '#F472B6',
-  PL: '#FB923C', AT: '#34D399', BE: '#818CF8', IE: '#2DD4BF', PT: '#FCD34D',
+  US: '#3B82F6', GB: '#EF4444', DE: '#64748B', FR: '#8B5CF6', JP: '#FBBF24',
+  CN: '#DC2626', IN: '#F97316', AU: '#10B981', CA: '#6366F1', BR: '#22C55E',
+  MX: '#14B8A6', IT: '#06B6D4', ES: '#F43F5E', KR: '#EC4899', ZA: '#84CC16',
+  RU: '#64748B', NL: '#FF6B35', SE: '#A855F7', NO: '#D946EF', CH: '#F472B6',
+  PL: '#F97316', AT: '#34D399', BE: '#818CF8', IE: '#2DD4BF', PT: '#FCD34D',
   GR: '#60A5FA', DK: '#C084FC', FI: '#4ADE80', CZ: '#FB7185', RO: '#FBBF24',
-  HU: '#A78BFA', NZ: '#38BDF8', SG: '#F87171', ID: '#FACC15', TH: '#4ADE80',
+  HU: '#A78BFA', NZ: '#38BDF8', SG: '#F87171', ID: '#EAB308', TH: '#4ADE80',
   MY: '#2DD4BF', PH: '#F472B6', VN: '#FCA5A5', AR: '#93C5FD', CL: '#86EFAC',
   CO: '#FDE68A', PE: '#C4B5FD', VE: '#67E8F9', SA: '#34D399', AE: '#818CF8',
-  IL: '#60A5FA', TR: '#FB923C', EG: '#FCD34D', NG: '#4ADE80', KE: '#F87171',
+  IL: '#60A5FA', TR: '#FB923C', EG: '#FCD34D', NG: '#84CC16', KE: '#F87171',
   UA: '#38BDF8', GH: '#FDBA74', SN: '#A3E635',
 }
 
