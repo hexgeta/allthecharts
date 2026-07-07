@@ -254,33 +254,63 @@ export default function BirthRatesPage() {
         <div className="pt-4 space-y-3">
           <div>
             <h2 className="text-xl sm:text-2xl font-semibold text-white">
-              The direct measure: births per married woman (EU)
+              The direct measure: do married women have fewer kids? (EU)
             </h2>
             <p className="text-sm text-gray-400 mt-1.5 max-w-3xl leading-relaxed">
               And here’s the thing we couldn’t get before — a <span className="text-white">real</span> marital
-              fertility rate, computed from Eurostat (births in marriage ÷ married women aged 15–49). The answer
-              is striking: among married women, fertility is <span className="text-white">flat or even rising</span> (Netherlands
-              78 → 90, Germany 54 → 68 per 1,000) even as total fertility fell. So the birth-rate collapse is
+              fertility rate, computed from Eurostat: the share of married women (aged 18–49) who
+              <span className="text-white"> give birth in a given year</span>. The answer is striking — among
+              married women, fertility is <span className="text-white">flat or even rising</span> (Netherlands
+              7.8% → 9.0%, Germany 5.4% → 7.8%) even as total fertility fell. So the birth-rate collapse is
               almost entirely about <span className="text-white">fewer people marrying</span> — not married
               couples choosing fewer kids.
+            </p>
+            <p className="text-xs text-gray-500 mt-2 max-w-3xl leading-relaxed">
+              (Why a % and not “children per married woman”? A lifetime children-per-married-woman figure is
+              badly distorted — young married women are a tiny, self-selected group — so the honest measure is
+              the annual rate. Children-per-woman for the <span className="italic">whole</span> population is the
+              fertility-rate chart near the top.)
             </p>
           </div>
           <SmallMultiples
             metric="maritalFertility"
-            codes={['NLD', 'DEU', 'SWE', 'NOR', 'FIN', 'CZE']}
-            startYear={1992}
+            codes={['NLD', 'DEU', 'CHE', 'HUN', 'SWE', 'NOR', 'FIN', 'DNK', 'BEL', 'CZE', 'SVN', 'SVK', 'LTU', 'LVA']}
+            startYear={1990}
             endYear={2024}
-            unit="index"
-            title="Marital fertility — births per 1,000 married women aged 15–49"
+            unit="pct1"
+            title="% of married women (18–49) who give birth each year"
             description="Computed from Eurostat. Roughly flat-to-rising while total fertility fell — i.e. the decline is compositional."
           />
           <p className="text-xs text-gray-500 max-w-3xl leading-relaxed">
             The big caveat — <span className="italic">selection</span>: as marriage becomes rarer and more
             deliberate, the women who still marry are increasingly those who want children. So married-women
-            fertility holding up (or rising) doesn’t mean “couples are fine” — it partly means only the
-            baby-inclined now marry. A real, direct measure, but not a clean counterfactual. EU-only (Eurostat
-            coverage; the US isn’t in this series).
+            fertility holding up doesn’t mean “couples are fine” — it partly means only the baby-inclined now
+            marry. A real, direct measure, but not a clean counterfactual. EU-only (Eurostat coverage — the US,
+            UK and Japan aren’t in this dataset).
           </p>
+        </div>
+
+        {/* Non-marital fertility */}
+        <div className="pt-4 space-y-3">
+          <div>
+            <h2 className="text-xl sm:text-2xl font-semibold text-white">…and unmarried women?</h2>
+            <p className="text-sm text-gray-400 mt-1.5 max-w-3xl leading-relaxed">
+              The complement: the share of <span className="text-white">unmarried</span> women (18–49) who give
+              birth each year. It’s lower than for married women (unmarried ≈ 3–5% vs married ≈ 5–9%) and, over
+              the years Eurostat covers, roughly flat-to-falling. So the “missing” births aren’t coming from
+              unmarried women having more kids either — it really is mostly that fewer people are partnering up
+              and having children at all.
+            </p>
+          </div>
+          <SmallMultiples
+            metric="nonMaritalFertility"
+            codes={['SWE', 'NOR', 'DNK', 'NLD', 'FIN', 'CZE', 'SVN', 'SVK', 'DEU', 'CHE', 'LVA', 'LTU']}
+            startYear={2011}
+            endYear={2024}
+            unit="pct1"
+            title="% of unmarried women (18–49) who give birth each year"
+            description="Eurostat; unmarried = all women not currently married. Shorter series (most from ~2014). Lower than the married rate, and not rising."
+          />
         </div>
 
         {/* Isolation: living alone */}
@@ -476,7 +506,7 @@ export default function BirthRatesPage() {
                 rel="noopener noreferrer"
                 className="text-blue-400 hover:text-blue-300 underline"
               >
-                Marital fertility (EU) — computed from Eurostat births by marital status (demo_fagec) &amp; married women (demo_pjanmarsta)
+                Marital &amp; non-marital fertility (EU) — computed from Eurostat births by marital status (demo_fagec) &amp; women by marital status (demo_pjanmarsta)
               </a>
               <a
                 href="https://www.ft.com/content/fba35eca-df3a-4ad6-b42d-eb08eb7c9ad3"

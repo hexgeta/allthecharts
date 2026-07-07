@@ -15,7 +15,7 @@ interface SmallMultiplesProps {
   endYear: number
   title: string
   description?: string
-  unit?: '' | '%' | 'index'
+  unit?: '' | '%' | 'index' | 'pct1'
   smartphoneBand?: { from: number; to: number } | null
   showReplacementLine?: boolean
 }
@@ -35,7 +35,10 @@ export default function SmallMultiples({
   const meta = data?.meta.countries ?? {}
 
   const fmt = (v: number) =>
-    unit === '%' ? `${v.toFixed(0)}%` : unit === 'index' ? v.toFixed(0) : v.toFixed(2)
+    unit === '%' ? `${v.toFixed(0)}%`
+    : unit === 'pct1' ? `${v.toFixed(1)}%`
+    : unit === 'index' ? v.toFixed(0)
+    : v.toFixed(2)
 
   const { panels, yDomain } = useMemo(() => {
     if (!data) return { panels: [] as any[], yDomain: [0, 1] as [number, number] }

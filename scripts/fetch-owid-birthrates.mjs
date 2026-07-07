@@ -42,6 +42,14 @@ const COUNTRIES = {
   NOR: { label: 'Norway', color: '#FB923C' }, // orange
   NLD: { label: 'Netherlands', color: '#34D399' }, // green
   CZE: { label: 'Czechia', color: '#FACC15' }, // yellow
+  DNK: { label: 'Denmark', color: '#C084FC' },
+  HUN: { label: 'Hungary', color: '#F472B6' },
+  BEL: { label: 'Belgium', color: '#818CF8' },
+  SVN: { label: 'Slovenia', color: '#2DD4BF' },
+  SVK: { label: 'Slovakia', color: '#FB7185' },
+  LTU: { label: 'Lithuania', color: '#FCD34D' },
+  LVA: { label: 'Latvia', color: '#4ADE80' },
+  CHE: { label: 'Switzerland', color: '#F87171' },
 }
 const WANTED = new Set(Object.keys(COUNTRIES))
 
@@ -116,12 +124,18 @@ async function fetchFredAnnual(seriesId, minYear) {
     .sort((a, b) => a[0] - b[0])
 }
 
-// ---- Eurostat marital fertility (general marital fertility rate) ------------
-// GMFR = 1000 * (live births in marriage, ages 15-49) / (married women 15-49).
-// A direct "births per married woman" measure; EU-only, open API (no login).
-const EU_MARITAL = { SWE: 'SE', DEU: 'DE', FIN: 'FI', NOR: 'NO', NLD: 'NL', CZE: 'CZ' }
-const MF_BANDS = ['Y15-19', 'Y20-24', 'Y25-29', 'Y30-34', 'Y35-39', 'Y40-44', 'Y45-49']
-const MF_AGES1 = new Set(Array.from({ length: 35 }, (_, i) => `Y${15 + i}`)) // Y15..Y49
+// ---- Eurostat marital & non-marital fertility -------------------------------
+// Marital: 100 * (births in marriage, ages 18-49) / (married women 18-49)
+//          = % of married women who give birth each year.
+// Non-marital: 100 * (births outside marriage 18-49) / (unmarried women 18-49),
+//          where unmarried = total women - married women. EU-only, open API.
+// Ages 18-49 (single years) exclude minors and post-fertility ages.
+const EU_MARITAL = {
+  SWE: 'SE', DEU: 'DE', FIN: 'FI', NOR: 'NO', NLD: 'NL', CZE: 'CZ',
+  DNK: 'DK', HUN: 'HU', BEL: 'BE', SVN: 'SI', SVK: 'SK', LTU: 'LT', LVA: 'LV', CHE: 'CH',
+}
+const MF_AGES = Array.from({ length: 32 }, (_, i) => `Y${18 + i}`) // Y18..Y49
+const MF_AGESET = new Set(MF_AGES)
 
 async function fetchEurostat(dataset, params) {
   const q = params.map(([k, v]) => `${k}=${v}`).join('&')
@@ -153,17 +167,30 @@ function* eurostatCells(d) {
 }
 
 async function maritalFertilityFor(geo) {
-  const b = await fetchEurostat('demo_fagec', [['indic_de', 'MAR'], ['geo', geo], ...MF_BANDS.map(a => ['age', a])])
-  const births = {}
-  for (const [c, v] of eurostatCells(b)) if (MF_BANDS.includes(c.age)) births[c.time] = (births[c.time] || 0) + v
-  const p = await fetchEurostat('demo_pjanmarsta', [['sex', 'F'], ['marsta', 'MAR'], ['geo', geo]])
-  const women = {}
-  for (const [c, v] of eurostatCells(p)) if (MF_AGES1.has(c.age)) women[c.time] = (women[c.time] || 0) + v
-  const out = []
-  for (const y of Object.keys(births)) {
-    if (women[y]) out.push([parseInt(y, 10), Math.round((1000 * births[y]) / women[y] * 10) / 10])
+  // Births in / outside marriage, single-year ages 18-49.
+  const b = await fetchEurostat('demo_fagec', [['geo', geo], ['indic_de', 'MAR'], ['indic_de', 'NMAR'], ...MF_AGES.map(a => ['age', a])])
+  const marB = {}, nmB = {}
+  for (const [c, v] of eurostatCells(b)) {
+    if (!MF_AGESET.has(c.age)) continue
+    if (c.indic_de === 'MAR') marB[c.time] = (marB[c.time] || 0) + v
+    else if (c.indic_de === 'NMAR') nmB[c.time] = (nmB[c.time] || 0) + v
   }
-  return out.sort((a, b) => a[0] - b[0])
+  // Married and total women 18-49 (unmarried = total - married).
+  const p = await fetchEurostat('demo_pjanmarsta', [['sex', 'F'], ['geo', geo], ['marsta', 'MAR'], ['marsta', 'TOTAL']])
+  const marW = {}, totW = {}
+  for (const [c, v] of eurostatCells(p)) {
+    if (!MF_AGESET.has(c.age)) continue
+    if (c.marsta === 'MAR') marW[c.time] = (marW[c.time] || 0) + v
+    else if (c.marsta === 'TOTAL') totW[c.time] = (totW[c.time] || 0) + v
+  }
+  const pct = (num, den) => Math.round((100 * num) / den * 100) / 100
+  const marital = [], nonMarital = []
+  for (const y of Object.keys(marB)) if (marW[y]) marital.push([parseInt(y, 10), pct(marB[y], marW[y])])
+  for (const y of Object.keys(nmB)) {
+    const u = (totW[y] || 0) - (marW[y] || 0)
+    if (u > 0) nonMarital.push([parseInt(y, 10), pct(nmB[y], u)])
+  }
+  return { marital: marital.sort((a, b) => a[0] - b[0]), nonMarital: nonMarital.sort((a, b) => a[0] - b[0]) }
 }
 
 // Note: completedFertility is indexed by the woman's BIRTH COHORT year, not calendar year.
@@ -193,12 +220,15 @@ await Promise.all(
   }),
 )
 
-// Direct marital fertility (births per 1,000 married women 15-49), EU countries.
+// Direct marital & non-marital fertility (% of women who give birth/yr), EU countries.
 const maritalFertility = {}
+const nonMaritalFertility = {}
 await Promise.all(
   Object.entries(EU_MARITAL).map(async ([iso3, geo]) => {
     try {
-      maritalFertility[iso3] = await maritalFertilityFor(geo)
+      const { marital, nonMarital } = await maritalFertilityFor(geo)
+      if (marital.length) maritalFertility[iso3] = marital
+      if (nonMarital.length) nonMaritalFertility[iso3] = nonMarital
     } catch (e) {
       console.error(`  marital fertility fail ${iso3}: ${e.message}`)
     }
@@ -218,7 +248,8 @@ const payload = {
       realHousePrices: 'BIS real residential property prices (index, 2010=100), via FRED',
       churchAttendance: 'World Values Survey / EVS (frequent religious attendance), via Our World in Data',
       shareWomenMarried: 'UN World Marriage Data (women 15-49 married or in a union), via Our World in Data',
-      maritalFertility: 'Eurostat demo_fagec + demo_pjanmarsta (births per 1,000 married women 15-49), computed',
+      maritalFertility: 'Eurostat demo_fagec + demo_pjanmarsta (% of married women 18-49 giving birth/yr), computed',
+      nonMaritalFertility: 'Eurostat demo_fagec + demo_pjanmarsta (% of unmarried women 18-49 giving birth/yr), computed',
     },
   },
   fertility,
@@ -230,6 +261,7 @@ const payload = {
   churchAttendance,
   shareWomenMarried,
   maritalFertility,
+  nonMaritalFertility,
 }
 
 await mkdir(dirname(OUT), { recursive: true })
@@ -244,5 +276,6 @@ console.log(
   `realHousePrices: ${Object.keys(realHousePrices).length} · ` +
   `churchAttendance: ${Object.keys(churchAttendance).length} · ` +
   `shareWomenMarried: ${Object.keys(shareWomenMarried).length} · ` +
-  `maritalFertility: ${Object.keys(maritalFertility).length} countries`,
+  `maritalFertility: ${Object.keys(maritalFertility).length} · ` +
+  `nonMaritalFertility: ${Object.keys(nonMaritalFertility).length} countries`,
 )
