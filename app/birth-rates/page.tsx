@@ -147,36 +147,9 @@ export default function BirthRatesPage() {
             title="Crude marriage rate (marriages per 1,000 people)"
             description="Fewer marriages per year — the partnership-formation channel behind “fewer couples.”"
           />
-        </div>
-
-        {/* Marriage decoupling: the norms shift */}
-        <div className="pt-4 space-y-3">
-          <div>
-            <h2 className="text-xl sm:text-2xl font-semibold text-white">
-              …and marriage matters less for childbearing anyway
-            </h2>
-            <p className="text-sm text-gray-400 mt-1.5 max-w-3xl leading-relaxed">
-              Alongside fewer marriages, marriage has decoupled from childbearing. In 1960 barely 5% of US
-              births were outside marriage; today it’s around 40%, with similar jumps across much of the rich
-              world — the shift from “marriage, then children” you’d expect. Korea is the revealing exception:
-              births there still overwhelmingly happen inside marriage, which is exactly why its falling
-              marriage rate hits fertility so hard.
-            </p>
-          </div>
-          <SmallMultiples
-            metric="birthsOutsideMarriage"
-            codes={['FRA', 'GBR', 'USA', 'AUS', 'POL', 'MEX', 'KOR']}
-            startYear={1960}
-            endYear={2021}
-            unit="%"
-            smartphoneBand={{ from: 2007, to: 2015 }}
-            title="Share of births outside marriage"
-            description="Rising = childbearing increasingly happens outside marriage. Note the shift is decades old and mostly predates smartphones too."
-          />
           <p className="text-xs text-gray-500 max-w-3xl leading-relaxed">
-            Coverage caveat: the marriage-rate and births-outside-marriage series are OECD / rich-country
-            weighted — Brazil, Indonesia and Nigeria aren’t covered — so read them as evidence about
-            high-income and East-Asian countries, not the whole world.
+            Coverage caveat: this series is OECD / rich-country weighted — Brazil, Indonesia and Nigeria aren’t
+            covered — so read it as evidence about high-income and East-Asian countries, not the whole world.
           </p>
         </div>
 
@@ -290,16 +263,22 @@ export default function BirthRatesPage() {
           </p>
         </div>
 
-        {/* Non-marital fertility */}
+        {/* Non-marital fertility — the rate, not the ratio */}
         <div className="pt-4 space-y-3">
           <div>
-            <h2 className="text-xl sm:text-2xl font-semibold text-white">…and unmarried women?</h2>
+            <h2 className="text-xl sm:text-2xl font-semibold text-white">
+              …and are unmarried people just having the kids instead?
+            </h2>
             <p className="text-sm text-gray-400 mt-1.5 max-w-3xl leading-relaxed">
-              The complement: the share of <span className="text-white">unmarried</span> women (18–49) who give
-              birth each year. It’s lower than for married women (unmarried ≈ 3–5% vs married ≈ 5–9%) and, over
-              the years Eurostat covers, roughly flat-to-falling. So the “missing” births aren’t coming from
-              unmarried women having more kids either — it really is mostly that fewer people are partnering up
-              and having children at all.
+              No. You’ll often see the “share of births outside marriage” rising and hear that childbearing just
+              moved outside marriage — but that stat is a <span className="text-white">ratio</span>, not a rate:
+              it climbs whenever <span className="italic">married</span> births fall, and says nothing about
+              whether unmarried people have more kids. Here’s the actual rate — the share of
+              <span className="text-white"> unmarried</span> women (18–49) who give birth in a year. It’s
+              <span className="text-white"> low and flat-to-falling</span>: unmarried ≈ 3–5% vs married ≈ 5–9%.
+              So most unmarried people — cohabiting couples very much included — simply <span className="text-white">aren’t
+              having kids</span>. The rise in “births outside marriage” is a composition effect, not unmarried
+              people becoming more fertile.
             </p>
           </div>
           <SmallMultiples
@@ -309,7 +288,7 @@ export default function BirthRatesPage() {
             endYear={2024}
             unit="pct1"
             title="% of unmarried women (18–49) who give birth each year"
-            description="Eurostat; unmarried = all women not currently married. Shorter series (most from ~2014). Lower than the married rate, and not rising."
+            description="Eurostat; unmarried = all women not currently married (cohabiting, single, divorced, widowed). Low, and not rising."
           />
         </div>
 
