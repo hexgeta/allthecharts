@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: 'Why Birth Rates Are Falling Everywhere at Once',
     description:
       'Global fertility began sliding at strikingly similar moments — clustering around the arrival of smartphones. Explore the data.',
-    url: 'https://www.allthecharts.xyz/birth-rates',
+    url: 'https://allthecharts.xyz/birth-rates',
     type: 'article',
   },
 }

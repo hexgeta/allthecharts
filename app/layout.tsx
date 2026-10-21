@@ -22,6 +22,12 @@ export const metadata: Metadata = {
   description: 'Charts and statistics on real social problems!',
   keywords: 'uk statistics, crime, charts, london, crime charts, london crime, uk crime, london crime charts, uk crime charts',
   manifest: '/manifest.json',
+  metadataBase: new URL('https://allthecharts.xyz'),
+  // './' resolves against each page's own path, so every page gets a
+  // self-referencing canonical on the apex host.
+  alternates: {
+    canonical: './',
+  },
   icons: {
     icon: [
       {
@@ -46,11 +52,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'AllTheCharts.xyz',
     description: 'Charts and statistics on real social problems!',
-    url: 'https://www.allthecharts.xyz',
+    url: 'https://allthecharts.xyz',
     siteName: 'AllTheCharts.xyz',
     images: [
       {
-        url: 'https://www.allthecharts.xyz/opengraph-image.png',
+        url: 'https://allthecharts.xyz/opengraph-image.png',
         width: 1200,
         height: 630,
         type: 'image/png',
