@@ -1,18 +1,11 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
-import { createClient } from '@supabase/supabase-js'
+import { cryptoDb } from '@/lib/crypto-db'
 
 // We need dynamic for query params
 export const dynamic = 'force-dynamic';
 
 // Log environment variables (masking sensitive data)
-console.log('[Historic API] Supabase URL:', process.env.SUPABASE_URL ? '✓ Found' : '✗ Missing')
-console.log('[Historic API] Supabase Anon Key:', process.env.SUPABASE_ANON_KEY ? '✓ Found' : '✗ Missing')
-
-const supabase = createClient(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_ANON_KEY!
-)
 
 // Calculate seconds until next UTC+1
 function getSecondsUntilNextUTC1(): number {
@@ -38,7 +31,7 @@ export async function GET(request: NextRequest) {
     console.log('[Historic API] Querying Supabase for:', field)
     
     // Fetch all data for this token, matching the original query
-    const { data: rows, error } = await supabase
+    const { data: rows, error } = await cryptoDb
       .from('historic_prices')
       .select(`date, ${field}`)
       .not(field, 'is', null)
