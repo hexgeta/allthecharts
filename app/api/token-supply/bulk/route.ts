@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
+import { cryptoDbWriter } from '@/lib/crypto-db'
 
 // Hardcoded supplies that don't change
 const HARDCODED_SUPPLIES: Record<string, number> = {
@@ -21,10 +21,7 @@ export async function GET(request: NextRequest) {
   
   try {
     // Initialize Supabase client
-    const supabase = createClient(
-      process.env.SUPABASE_URL!,
-      process.env.SUPABASE_SERVICE_ROLE_KEY!
-    );
+    const supabase = cryptoDbWriter();
 
     // Get the latest supply for all tokens in one query
     console.log('[Bulk Token Supplies] Querying all token supplies');

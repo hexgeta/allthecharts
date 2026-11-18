@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createClient } from '@supabase/supabase-js'
+import { cryptoDbWriter } from '@/lib/crypto-db'
 
 // Force dynamic rendering since we use request headers
 export const dynamic = 'force-dynamic'
@@ -18,10 +18,7 @@ export async function GET(
     }
 
     // Initialize Supabase client
-    const supabase = createClient(
-      process.env.SUPABASE_URL!,
-      process.env.SUPABASE_SERVICE_ROLE_KEY!
-    )
+    const supabase = cryptoDbWriter()
 
     const tableName = `league_${token}`
 

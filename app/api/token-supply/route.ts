@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
+import { cryptoDbWriter } from '@/lib/crypto-db'
 
 // Only PLS should be hardcoded as requested
 const HARDCODED_SUPPLIES: Record<string, number> = {
@@ -50,10 +50,7 @@ export async function GET(request: NextRequest) {
   try {
     // Initialize Supabase client with service role key
     console.log(`[Token Supply API] Initializing Supabase client for ${ticker}`);
-    const supabase = createClient(
-      process.env.SUPABASE_URL!,
-      process.env.SUPABASE_SERVICE_ROLE_KEY!
-    );
+    const supabase = cryptoDbWriter();
 
     // Get the latest supply for the token from daily_token_supplies table
     console.log(`[Token Supply API] Querying daily_token_supplies for ${ticker}`);

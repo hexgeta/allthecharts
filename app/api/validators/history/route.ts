@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
+import { cryptoDbWriter } from '@/lib/crypto-db'
 
 // Force dynamic rendering since we're fetching live data
 export const dynamic = 'force-dynamic';
@@ -28,10 +28,7 @@ interface ValidatorHistoryPoint {
 export async function GET(request: NextRequest) {
   try {
     // Initialize Supabase client
-    const supabase = createClient(
-      process.env.SUPABASE_URL!,
-      process.env.SUPABASE_SERVICE_ROLE_KEY!
-    );
+    const supabase = cryptoDbWriter();
 
     // Fetch historical validator data ordered by date
     const { data: historyData, error } = await supabase

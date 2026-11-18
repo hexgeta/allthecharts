@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
+import { cryptoDbWriter } from '@/lib/crypto-db'
 import { TOKEN_CONSTANTS } from '@/constants/crypto';
 
 // Force dynamic rendering since we use request headers
@@ -189,10 +189,7 @@ export async function GET(request: NextRequest) {
     }
 
     // Initialize Supabase client inside the function to avoid build-time errors
-    const supabase = createClient(
-      process.env.SUPABASE_URL!,
-      process.env.SUPABASE_SERVICE_ROLE_KEY!
-    );
+    const supabase = cryptoDbWriter();
 
     console.log('Starting daily token supply collection...');
     

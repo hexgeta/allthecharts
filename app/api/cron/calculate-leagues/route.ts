@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
+import { cryptoDbWriter } from '@/lib/crypto-db'
 
 // League definitions (matching the structure used in individual cron jobs)
 const LEAGUES = [
@@ -291,10 +291,7 @@ export async function GET(request: NextRequest) {
 
     console.log('🏆 Starting league calculations for all tokens...');
     
-    const supabase = createClient(
-      process.env.SUPABASE_URL!,
-      process.env.SUPABASE_SERVICE_ROLE_KEY!
-    );
+    const supabase = cryptoDbWriter();
 
     const date = new Date().toISOString().split('T')[0];
     const results: any = {};
